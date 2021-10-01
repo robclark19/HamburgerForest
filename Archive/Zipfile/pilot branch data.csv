@@ -1,0 +1,721 @@
+branch_code,time_block,tree,treatment,date,bug_count,morphospecies,wet_mass_g
+BB7C,1,Sweet Birch,control,24-May,8,8,0.0279
+AB9B,1,Beech,bag,24-May,21,15,0.0744
+BB11C,1,Sweet Birch,control,24-May,18,9,0.0336
+BY6B,1,Barberry,bag,24-May,29,15,0.1459
+HS1C,1,Honeysuckle,control,24-May,19,12,0.1148
+BY7B,1,Barberry,bag,24-May,22,13,0.0232
+AB9C,1,Beech,control,24-May,21,13,0.0685
+SM1C,1,Striped Maple,control,24-May,8,8,0.0055
+BB11B,1,Sweet Birch,bag,24-May,18,14,0.0255
+SM1B,1,Striped Maple,bag,24-May,11,7,0.0265
+WH4B,1,Witch-hazel,bag,24-May,23,16,0.092
+BB12C,1,Sweet Birch,control,24-May,12,9,0.03
+HS2B,1,Honeysuckle,bag,24-May,22,19,0.0651
+BY6C,1,Barberry,control,24-May,24,15,0.146
+HS2C,1,Honeysuckle,control,24-May,22,17,0.0679
+HS1B,1,Honeysuckle,bag,24-May,31,27,0.1174
+MW2C,1,Musclewood,control,24-May,23,15,0.0364
+BC4B,1,Black Cherry,bag,24-May,15,14,0.0202
+AO1C,1,Autumn Olive,control,24-May,48,19,0.0358
+AO1B,1,Autumn Olive,bag,24-May,50,28,0.2909
+WE1B,1,Burning Bush,bag,24-May,29,20,0.1176
+BB12B,1,Sweet Birch,bag,24-May,22,14,0.113
+WH3C,1,Witch-hazel,control,24-May,32,22,0.1082
+BC4C,1,Black Cherry,control,24-May,26,9,0.1968
+SM2B,1,Striped Maple,bag,24-May,52,26,0.0866
+SM2C,1,Striped Maple,control,24-May,13,8,0.0248
+WH4C,1,Witch-hazel,control,24-May,17,11,0.0162
+BC5B,1,Black Cherry,bag,24-May,15,10,0.0103
+AO8C,1,Autumn Olive,control,24-May,14,11,0.0309
+BC5C,1,Black Cherry,control,24-May,2,2,NA
+WE1C,1,Burning Bush,control,24-May,30,12,0.0471
+WE9C,1,Burning Bush,control,24-May,16,14,0.0884
+WH3B,1,Witch-hazel,bag,24-May,22,12,0.0706
+MW1C,1,Musclewood,control,24-May,57,19,0.0859
+WE9B,1,Burning Bush,bag,24-May,32,17,0.071
+AB1B,1,Beech,bag,24-May,12,10,0.0276
+AB1C,1,Beech,control,24-May,12,11,0.0294
+AO8B,1,Autumn Olive,bag,24-May,17,12,0.0129
+MW1B,1,Musclewood,bag,24-May,82,24,0.1542
+MW2B,1,Musclewood,bag,24-May,32,18,0.0201
+WH1C,1,Witch-hazel,control,26-May,15,9,0.0243
+BB1B,1,Sweet Birch,bag,26-May,30,12,0.786
+WH1B,1,Witch-hazel,bag,26-May,25,18,0.0726
+WH2B,1,Witch-hazel,bag,26-May,31,12,0.0645
+AO3C,1,Autumn Olive,control,26-May,12,8,0.0133
+MW4B,1,Musclewood,bag,26-May,24,17,0.0763
+MW3B,1,Musclewood,bag,26-May,9,8,0.0154
+AB10C,1,Beech,control,26-May,11,11,0.0427
+MW4C,1,Musclewood,control,26-May,25,19,0.0964
+AB10B,1,Beech,bag,26-May,17,9,0.0209
+AO2C,1,Autumn Olive,control,26-May,22,12,0.0498
+BB2B,1,Sweet Birch,bag,26-May,21,10,0.0798
+WE7B,1,Burning Bush,bag,26-May,25,16,0.0345
+HS4B,1,Honeysuckle,bag,26-May,21,17,0.1471
+SM4B,1,Striped Maple,bag,26-May,72,10,0.0362
+BY1B,1,Barberry,bag,26-May,25,13,0.0683
+AB11B,1,Beech,bag,26-May,12,10,0.0444
+BC6C,1,Black Cherry,control,26-May,7,5,0.0073
+BB1C,1,Sweet Birch,control,26-May,22,10,0.0337
+BC7C,1,Black Cherry,control,26-May,7,6,0.1598
+BC6B,1,Black Cherry,bag,26-May,13,9,0.0378
+AO3B,1,Autumn Olive,bag,26-May,63,15,0.11
+AB11C,1,Beech,control,26-May,9,7,0.0417
+MW3C,1,Musclewood,control,26-May,19,12,0.0486
+WE8B,1,Burning Bush,bag,26-May,24,14,0.0804
+HS4C,1,Honeysuckle,control,26-May,12,10,0.0171
+WE7C,1,Burning Bush,control,26-May,14,11,0.0179
+WE8C,1,Burning Bush,control,26-May,21,13,0.0639
+HS3B,1,Honeysuckle,bag,26-May,9,7,0.0677
+WH2C,1,Witch-hazel,control,26-May,15,9,0.0332
+SM4C,1,Striped Maple,control,26-May,20,8,0.0124
+BY1C,1,Barberry,control,26-May,29,14,0.0565
+AO2B,1,Autumn Olive,bag,26-May,12,8,0.0098
+BY2C,1,Barberry,control,26-May,9,6,0.0064
+BC7B,1,Black Cherry,bag,26-May,24,12,0.0393
+SM3C,1,Striped Maple,control,26-May,11,8,0.0572
+BB2C,1,Sweet Birch,control,26-May,12,7,0.0624
+BY2B,1,Barberry,bag,26-May,17,9,0.039
+HS3C,1,Honeysuckle,control,26-May,11,10,0.0098
+SM3B,1,Striped Maple,bag,26-May,21,12,0.1019
+AO5B,1,Autumn Olive,bag,28-May,70,21,0.3089
+SM6B,1,Striped Maple,bag,28-May,41,12,0.0257
+SM5C,1,Striped Maple,control,28-May,52,12,0.1582
+BY5B,1,Barberry,bag,28-May,65,21,0.3111
+WH6B,1,Witch-hazel,bag,28-May,25,15,0.1003
+BC3C,1,Black Cherry,control,28-May,74,5,0.1221
+BC1C,1,Black Cherry,control,28-May,14,6,0.0256
+MW6C,1,Musclewood,control,28-May,18,13,0.6196
+WE3B,1,Burning Bush,bag,28-May,38,13,0.0746
+AB2C,1,Beech,control,28-May,206,8,0.0812
+BB4B,1,Sweet Birch,bag,28-May,34,13,0.1442
+AB12B,1,Beech,bag,28-May,20,10,0.0427
+HS6B,1,Honeysuckle,bag,28-May,19,15,0.2337
+WE3C,1,Burning Bush,control,28-May,19,6,0.0065
+AB12C,1,Beech,control,28-May,23,12,0.0274
+BC1B,1,Black Cherry,bag,28-May,30,17,0.1212
+WE2B,1,Burning Bush,bag,28-May,32,16,0.108
+WH5C,1,Witch-hazel,control,28-May,10,10,0.0231
+HS6C,1,Honeysuckle,control,28-May,7,5,0.0225
+BC3B,1,Black Cherry,bag,28-May,19,13,0.0401
+AB2B,1,Beech,bag,28-May,26,13,0.2071
+BB4C,1,Sweet Birch,control,28-May,8,6,0.4708
+AO5C,1,Autumn Olive,control,28-May,71,17,0.084
+HS5C,1,Honeysuckle,control,28-May,34,16,0.0676
+BY5C,1,Barberry,control,28-May,18,8,0.0092
+HS5B,1,Honeysuckle,bag,28-May,48,18,0.1986
+BY4B,1,Barberry,bag,28-May,27,16,0.0598
+WH5B,1,Witch-hazel,bag,28-May,35,17,0.0537
+AO4C,1,Autumn Olive,control,28-May,58,18,0.1761
+WE3C,1,Burning Bush,control,28-May,17,11,0.0824
+SM6C,1,Striped Maple,control,28-May,14,8,0.0352
+AO4B,1,Autumn Olive,bag,28-May,81,13,0.069
+SM5B,1,Striped Maple,bag,28-May,28,8,0.0626
+MW5B,1,Musclewood,bag,28-May,53,24,0.246
+BB3C,1,Sweet Birch,control,28-May,49,16,0.1271
+BB3B,1,Sweet Birch,bag,28-May,39,15,0.8082
+WH6C,1,Witch-hazel,control,28-May,14,11,0.2276
+BY4C,1,Barberry,control,28-May,21,7,0.0243
+MW5C,1,Musclewood,control,28-May,43,14,0.1047
+MW6B,1,Musclewood,bag,28-May,35,17,0.0573
+AO7C,1,Autumn Olive,control,31-May,11,10,0.2314
+BY9C,1,Barberry,control,31-May,21,12,0.0601
+WE5C,1,Burning Bush,control,31-May,21,16,0.0375
+WE5B,1,Burning Bush,bag,31-May,18,13,0.1141
+HS7B,1,Honeysuckle,bag,31-May,19,12,0.0666
+BY3C,1,Barberry,control,31-May,17,13,0.0291
+WH7C,1,Witch-hazel,control,31-May,5,5,0.0182
+WH7B,1,Witch-hazel,bag,31-May,25,15,0.0901
+BY3B,1,Barberry,bag,31-May,13,8,0.0555
+HS8C,1,Honeysuckle,control,31-May,14,11,0.3978
+MW7B,1,Musclewood,bag,31-May,28,21,0.1176
+WE4C,1,Burning Bush,control,31-May,14,9,0.0276
+WE4B,1,Burning Bush,bag,31-May,29,15,0.2536
+MW7C,1,Musclewood,control,31-May,18,5,0.0256
+HS7C,1,Honeysuckle,control,31-May,10,6,0.0747
+AO6B,1,Autumn Olive,bag,31-May,20,11,0.1949
+AO7B,1,Autumn Olive,bag,31-May,23,16,0.0514
+BY9B,1,Barberry,bag,31-May,34,15,0.0356
+HS8B,1,Honeysuckle,bag,31-May,15,12,0.8597
+AO6C,1,Autumn Olive,control,31-May,6,5,0.0177
+MW8C,1,Musclewood,control,31-May,94,12,0.2698
+WH8C,1,Witch-hazel,control,31-May,14,9,0.3732
+BB6C,1,Sweet Birch,control,31-May,7,6,0.033
+SM7B,1,Striped Maple,bag,31-May,19,12,0.1556
+AB3B,1,Beech,bag,31-May,14,12,0.2454
+SM7C,1,Striped Maple,control,31-May,19,11,0.1204
+BC8B,1,Black Cherry,bag,31-May,28,9,0.7552
+AB3C,1,Beech,control,31-May,9,6,0.0358
+BB5C,1,Sweet Birch,control,31-May,7,7,0.0475
+SM8C,1,Striped Maple,control,31-May,10,8,0.0358
+AB4B,1,Beech,bag,31-May,8,7,0.0639
+BC2C,1,Black Cherry,control,31-May,6,5,0.041
+MW8B,1,Musclewood,bag,31-May,33,11,0.1476
+BB5B,1,Sweet Birch,bag,31-May,22,13,0.1734
+BB6B,1,Sweet Birch,bag,31-May,12,10,0.1515
+SM8B,1,Striped Maple,bag,31-May,14,8,0.0695
+BC2B,1,Black Cherry,bag,31-May,18,13,0.085
+AB4C,1,Beech,control,31-May,10,8,0.0282
+BC8C,1,Black Cherry,control,31-May,9,8,0.0249
+WH8B,1,Witch-hazel,bag,31-May,10,9,0.1288
+HS9C,1,Honeysuckle,control,2-Jun,16,13,0.08
+MW9B,1,Musclewood,bag,2-Jun,11,9,0.1203
+BY10B,1,Barberry,bag,2-Jun,40,19,0.0958
+WE6B,1,Burning Bush,bag,2-Jun,27,14,0.3037
+SM10B,1,Striped Maple,bag,2-Jun,16,13,0.2149
+BB7B,1,Sweet Birch,bag,2-Jun,17,10,0.4046
+WH9C,1,Witch-hazel,control,2-Jun,16,9,0.2956
+BY10C,1,Barberry,control,2-Jun,17,8,0.1061
+BB7C,1,Sweet Birch,control,2-Jun,17,6,0.0744
+AO9B,1,Autumn Olive,bag,2-Jun,25,17,0.1278
+AO10B,1,Autumn Olive,bag,2-Jun,68,21,0.4437
+HS10B,1,Honeysuckle,bag,2-Jun,21,16,0.0669
+SM10C,1,Striped Maple,control,2-Jun,18,12,0.0232
+BC9B,1,Black Cherry,bag,2-Jun,15,11,0.0197
+MW10B,1,Musclewood,bag,2-Jun,35,12,0.7226
+WH10B,1,Witch-hazel,bag,2-Jun,24,15,0.1762
+AB5B,1,Beech,bag,2-Jun,20,11,0.2346
+BC9C,1,Black Cherry,control,2-Jun,20,7,0.0448
+HS9B,1,Honeysuckle,bag,2-Jun,35,16,0.0692
+AO9C,1,Autumn Olive,control,2-Jun,142,10,0.0866
+SM9B,1,Striped Maple,bag,2-Jun,23,15,0.0872
+AB6B,1,Beech,bag,2-Jun,26,14,0.0802
+WE10B,1,Burning Bush,bag,2-Jun,11,9,0.0502
+WE6C,1,Burning Bush,control,2-Jun,23,12,0.1741
+WH9B,1,Witch-hazel,bag,2-Jun,18,13,0.1301
+BY8C,1,Barberry,control,2-Jun,14,10,0.0247
+BB8B,1,Sweet Birch,bag,2-Jun,7,7,0.0272
+BY8B,1,Barberry,bag,2-Jun,62,17,0.1383
+BB8C,1,Sweet Birch,control,2-Jun,8,7,0.0198
+AB5C,1,Beech,control,2-Jun,7,6,0.0157
+MW10C,1,Musclewood,control,2-Jun,21,11,0.0964
+BC10B,1,Black Cherry,bag,2-Jun,84,14,0.6508
+AO10C,1,Autumn Olive,control,2-Jun,18,7,0.0036
+MW9C,1,Musclewood,control,2-Jun,14,12,0.0732
+BC10C,1,Black Cherry,control,2-Jun,16,14,0.1183
+HS10C,1,Honeysuckle,control,2-Jun,26,11,0.0307
+AB6C,1,Beech,control,2-Jun,9,7,0.0592
+SM9C,1,Striped Maple,control,2-Jun,9,8,0.0169
+WE10C,1,Burning Bush,control,2-Jun,16,14,0.0368
+WH10C,1,Witch-hazel,control,2-Jun,,,
+MW12B,1,Musclewood,bag,4-Jun,26,14,0.085
+WE12B,1,Burning Bush,bag,4-Jun,50,22,0.1046
+AO12C,1,Autumn Olive,control,4-Jun,15,11,0.0932
+BC11B,1,Black Cherry,bag,4-Jun,20,10,0.0744
+SM12C,1,Striped Maple,control,4-Jun,17,7,0.06
+HS12C,1,Honeysuckle,control,4-Jun,13,6,1.1911
+WE12C,1,Burning Bush,control,4-Jun,16,11,0.0366
+HS11C,1,Honeysuckle,control,4-Jun,46,14,0.0845
+SM12B,1,Striped Maple,bag,4-Jun,20,14,0.0835
+BB9B,1,Sweet Birch,bag,4-Jun,14,14,0.1189
+AO11B,1,Autumn Olive,bag,4-Jun,37,16,0.1762
+AO12B,1,Autumn Olive,bag,4-Jun,35,11,0.1544
+HS12B,1,Honeysuckle,bag,4-Jun,60,16,5.3696
+WH11B,1,Witch-hazel,bag,4-Jun,14,11,0.0786
+AB8C,1,Beech,control,4-Jun,3,3,0.0023
+AB7C,1,Beech,control,4-Jun,3,3,0.0043
+MW12C,1,Musclewood,control,4-Jun,32,15,0.1593
+AB8B,1,Beech,bag,4-Jun,11,10,0.1322
+BY12C,1,Barberry,control,4-Jun,13,5,0.0443
+WE11B,1,Burning Bush,bag,4-Jun,13,12,0.0716
+BB10B,1,Sweet Birch,bag,4-Jun,12,10,0.3035
+WE11C,1,Burning Bush,control,4-Jun,41,16,0.1794
+MW11B,1,Musclewood,bag,4-Jun,9,8,0.1203
+BC11C,1,Black Cherry,control,4-Jun,13,10,0.1737
+AB7B,1,Beech,bag,4-Jun,18,12,0.6563
+WH11C,1,Witch-hazel,control,4-Jun,8,7,0.0472
+MW11C,1,Musclewood,control,4-Jun,11,9,0.0813
+SM11C,1,Striped Maple,control,4-Jun,4,4,0.0273
+BB9C,1,Sweet Birch,control,4-Jun,5,3,0.0095
+BY11B,1,Barberry,bag,4-Jun,34,15,0.0859
+BY12B,1,Barberry,bag,4-Jun,17,9,0.307
+WH12C,1,Witch-hazel,control,4-Jun,6,4,0.0318
+BC12B,1,Black Cherry,bag,4-Jun,6,5,0.1903
+BB10C,1,Sweet Birch,control,4-Jun,1,1,0.006
+WH12B,1,Witch-hazel,bag,4-Jun,11,9,0.4285
+SM11B,1,Striped Maple,bag,4-Jun,14,11,0.0923
+AO11C,1,Autumn Olive,control,4-Jun,8,8,0.0751
+BC12C,1,Black Cherry,control,4-Jun,4,3,0.03
+BY11C,1,Barberry,control,4-Jun,13,10,0.059
+HS11B,1,Honeysuckle,bag,4-Jun,29,15,0.2265
+MW1B,2,Musclewood,bag,7-Jun,24,13,0.0538
+BB11B,2,Sweet Birch,bag,7-Jun,23,12,0.1383
+BB12B,2,Sweet Birch,bag,7-Jun,25,14,0.0575
+BB12C,2,Sweet Birch,control,7-Jun,16,9,0.0449
+MW2C,2,Musclewood,control,7-Jun,10,7,0.0479
+SM1B,2,Striped Maple,bag,7-Jun,19,10,0.0579
+AB9B,2,Beech,bag,7-Jun,31,13,0.0492
+BC4B,2,Black Cherry,bag,7-Jun,78,12,0.04
+SM2B,2,Striped Maple,bag,7-Jun,27,15,0.2254
+HS2B,2,Honeysuckle,bag,7-Jun,27,17,0.1225
+WH4C,2,Witch-hazel,control,7-Jun,33,16,0.0833
+HS1B,2,Honeysuckle,bag,7-Jun,39,12,0.1378
+WH3C,2,Witch-hazel,control,7-Jun,22,16,0.0815
+MW1C,2,Musclewood,control,7-Jun,27,15,0.0344
+WH3B,2,Witch-hazel,bag,7-Jun,10,6,0.2492
+WH4B,2,Witch-hazel,bag,7-Jun,23,17,0.1308
+WE1B,2,Burning Bush,bag,7-Jun,25,18,0.1702
+BY7B,2,Barberry,bag,7-Jun,11,9,0.0679
+BB11C,2,Sweet Birch,control,7-Jun,15,7,0.0706
+AO1C,2,Autumn Olive,control,7-Jun,21,15,0.243
+HS1C,2,Honeysuckle,control,7-Jun,25,17,0.1433
+HS2C,2,Honeysuckle,control,7-Jun,17,9,0.0174
+WE1C,2,Burning Bush,control,7-Jun,14,10,0.1194
+AB9C,2,Beech,control,7-Jun,18,14,0.093
+BY6C,2,Barberry,control,7-Jun,32,12,0.099
+BY6B,2,Barberry,bag,7-Jun,29,11,0.0873
+BY7C,2,Barberry,control,7-Jun,7,7,0.0145
+MW2B,2,Musclewood,bag,7-Jun,21,14,0.3431
+AB1C,2,Beech,control,7-Jun,19,11,0.0635
+AB1B,2,Beech,bag,7-Jun,10,7,0.1554
+WE9B,2,Burning Bush,bag,7-Jun,15,9,0.0525
+WE9C,2,Burning Bush,control,7-Jun,6,6,0.0292
+SM1C,2,Striped Maple,control,7-Jun,7,6,0.0078
+SM2C,2,Striped Maple,control,7-Jun,7,5,0.769
+AO8C,2,Autumn Olive,control,7-Jun,25,16,0.0167
+BC5C,2,Black Cherry,control,7-Jun,7,5,0.1284
+AO8B,2,Autumn Olive,bag,7-Jun,17,12,0.0558
+BC4C,2,Black Cherry,control,7-Jun,314,10,0.042
+BC5B,2,Black Cherry,bag,7-Jun,13,7,0.1974
+AO1B,2,Autumn Olive,bag,7-Jun,25,18,0.1771
+HS4C,2,Honeysuckle,control,9-Jun,11,10,0.0431
+AB11B,2,Beech,bag,9-Jun,15,12,0.0716
+BB1B,2,Sweet Birch,bag,9-Jun,78,10,0.0559
+BB2B,2,Sweet Birch,bag,9-Jun,5,4,0.4028
+AB10C,2,Beech,control,9-Jun,4,4,0.03
+AO2C,2,Autumn Olive,control,9-Jun,10,6,0.0135
+BC6B,2,Black Cherry,bag,9-Jun,7,6,0.0225
+BC6C,2,Black Cherry,control,9-Jun,9,7,0.0042
+AB11C,2,Beech,control,9-Jun,9,7,0.0353
+BB2C,2,Sweet Birch,control,9-Jun,9,9,0.0166
+SM4C,2,Striped Maple,control,9-Jun,15,10,0.0328
+BB1C,2,Sweet Birch,control,9-Jun,15,7,0.056
+WH2C,2,Witch-hazel,control,9-Jun,12,11,0.0342
+WH1C,2,Witch-hazel,control,9-Jun,14,10,0.0444
+MW4C,2,Musclewood,control,9-Jun,17,9,0.0746
+SM3B,2,Striped Maple,bag,9-Jun,9,6,0.0135
+AO2B,2,Autumn Olive,bag,9-Jun,6,6,0.0183
+SM4B,2,Striped Maple,bag,9-Jun,27,14,0.037
+WE8C,2,Burning Bush,control,9-Jun,9,9,0.2013
+AO3B,2,Autumn Olive,bag,9-Jun,15,9,0.0569
+HS4B,2,Honeysuckle,bag,9-Jun,17,12,0.0925
+BY1B,2,Barberry,bag,9-Jun,21,11,0.4174
+AO3C,2,Autumn Olive,control,9-Jun,9,9,0.0239
+MW3C,2,Musclewood,control,9-Jun,16,15,0.1351
+WE8B,2,Burning Bush,bag,9-Jun,14,12,0.5006
+WH1B,2,Witch-hazel,bag,9-Jun,26,17,0.7018
+WE7C,2,Burning Bush,control,9-Jun,11,9,0.0341
+SM3C,2,Striped Maple,control,9-Jun,7,7,0.0422
+MW3B,2,Musclewood,bag,9-Jun,8,8,0.0798
+AB10B,2,Beech,bag,9-Jun,24,13,0.1074
+WH2B,2,Witch-hazel,bag,9-Jun,17,13,0.0776
+HS3B,2,Honeysuckle,bag,9-Jun,10,7,0.0293
+MW4B,2,Musclewood,bag,9-Jun,19,14,0.1157
+WE7B,2,Burning Bush,bag,9-Jun,9,7,0.988
+HS3C,2,Honeysuckle,control,9-Jun,8,7,0.0215
+BY2B,2,Barberry,bag,9-Jun,23,13,0.1786
+BY2C,2,Barberry,control,9-Jun,15,11,0.5916
+BC7B,2,Black Cherry,bag,9-Jun,15,10,0.2191
+BC7C,2,Black Cherry,control,9-Jun,8,7,0.0085
+BY1C,2,Barberry,control,9-Jun,9,9,0.0559
+SM5C,2,Striped Maple,control,11-Jun,59,17,0.1657
+AB2C,2,Beech,control,11-Jun,18,10,0.0256
+AB12B,2,Beech,bag,11-Jun,18,11,0.0339
+AB12C,2,Beech,control,11-Jun,18,7,0.0273
+AB2B,2,Beech,bag,11-Jun,23,15,0.1491
+AO4C,2,Autumn Olive,control,11-Jun,12,7,0.0219
+SM6C,2,Striped Maple,control,11-Jun,20,10,0.0645
+BB4C,2,Sweet Birch,control,11-Jun,25,12,0.0405
+BB4B,2,Sweet Birch,bag,11-Jun,24,11,0.1656
+BY5B,2,Barberry,bag,11-Jun,32,15,0.0459
+BY5C,2,Barberry,control,11-Jun,23,12,0.0691
+WH5C,2,Witch-hazel,control,11-Jun,20,10,0.0397
+AO4B,2,Autumn Olive,bag,11-Jun,30,15,0.0616
+SM5B,2,Striped Maple,bag,11-Jun,27,14,0.2882
+BB3C,2,Sweet Birch,control,11-Jun,38,18,0.0252
+WH5B,2,Witch-hazel,bag,11-Jun,50,16,0.0764
+SM6B,2,Striped Maple,bag,11-Jun,32,13,0.0491
+MW6C,2,Musclewood,control,11-Jun,18,12,0.2017
+BB3B,2,Sweet Birch,bag,11-Jun,34,16,0.1029
+AO5B,2,Autumn Olive,bag,11-Jun,22,12,0.5696
+BC1C,2,Black Cherry,control,11-Jun,18,8,0.0175
+MW5C,2,Musclewood,control,11-Jun,16,8,0.0502
+AO5C,2,Autumn Olive,control,11-Jun,13,9,0.0249
+BC3B,2,Black Cherry,bag,11-Jun,14,11,0.0435
+BC1B,2,Black Cherry,bag,11-Jun,21,10,0.0308
+WH6C,2,Witch-hazel,control,11-Jun,24,13,0.021
+WE2B,2,Burning Bush,bag,11-Jun,26,15,0.0333
+HS6C,2,Honeysuckle,control,11-Jun,29,10,0.0939
+HS5B,2,Honeysuckle,bag,11-Jun,34,14,0.16
+WE2C,2,Burning Bush,control,11-Jun,17,13,0.1209
+HS5C,2,Honeysuckle,control,11-Jun,21,12,0.2034
+BY4C,2,Barberry,control,11-Jun,18,13,0.0425
+WE3B,2,Burning Bush,bag,11-Jun,16,12,0.0342
+WH6B,2,Witch-hazel,bag,11-Jun,20,14,0.0341
+BC3C,2,Black Cherry,control,11-Jun,21,10,0.0104
+WE3C,2,Burning Bush,control,11-Jun,23,18,0.0441
+MW6B,2,Musclewood,bag,11-Jun,26,16,0.3017
+BY4B,2,Barberry,bag,11-Jun,15,11,0.0048
+HS6B,2,Honeysuckle,bag,11-Jun,22,14,0.1837
+MW5B,2,Musclewood,bag,11-Jun,31,19,0.1071
+WE5B,2,Burning Bush,bag,16-Jun,26,19,0.1
+BB6B,2,Sweet Birch,bag,16-Jun,18,12,0.0181
+SM8C,2,Striped Maple,control,16-Jun,15,11,0.0476
+WE5C,2,Burning Bush,control,16-Jun,27,14,0.1112
+WH8B,2,Witch-hazel,bag,16-Jun,16,9,0.3561
+BB5C,2,Sweet Birch,control,16-Jun,30,14,0.1172
+BC2C,2,Black Cherry,control,16-Jun,20,5,0.0391
+AB4C,2,Beech,control,16-Jun,5,4,0.0095
+AB4B,2,Beech,bag,16-Jun,14,8,0.0554
+MW8C,2,Musclewood,control,16-Jun,38,15,0.1759
+SM8B,2,Striped Maple,bag,16-Jun,23,13,0.1213
+AO7B,2,Autumn Olive,bag,16-Jun,27,20,0.0689
+AO7C,2,Autumn Olive,control,16-Jun,9,7,0.0266
+BC2B,2,Black Cherry,bag,16-Jun,26,16,0.1155
+BC8B,2,Black Cherry,bag,16-Jun,17,13,0.0901
+AB3C,2,Beech,control,16-Jun,14,12,0.0273
+MW7C,2,Musclewood,control,16-Jun,19,9,0.0293
+WH7B,2,Witch-hazel,bag,16-Jun,42,21,0.0595
+AO6C,2,Autumn Olive,control,16-Jun,6,6,0.0116
+BY9B,2,Barberry,bag,16-Jun,35,17,0.093
+AO6B,2,Autumn Olive,bag,16-Jun,13,10,0.6179
+MW7B,2,Musclewood,bag,16-Jun,25,14,0.041
+HS7C,2,Honeysuckle,control,16-Jun,32,18,0.0655
+HS8B,2,Honeysuckle,bag,16-Jun,24,16,0.045
+BY3B,2,Barberry,bag,16-Jun,19,15,0.0321
+WE4B,2,Burning Bush,bag,16-Jun,27,14,0.0655
+BY9C,2,Barberry,control,16-Jun,21,13,0.0178
+HS7B,2,Honeysuckle,bag,16-Jun,35,18,0.367
+HS8C,2,Honeysuckle,control,16-Jun,16,13,0.0109
+BB6C,2,Sweet Birch,control,16-Jun,21,10,0.1303
+WE4C,2,Burning Bush,control,16-Jun,16,9,0.0267
+BB5B,2,Sweet Birch,bag,16-Jun,25,9,0.2657
+WH8C,2,Witch-hazel,control,16-Jun,20,10,0.1362
+WH7C,2,Witch-hazel,control,16-Jun,44,19,0.0319
+BC8C,2,Black Cherry,control,16-Jun,6,5,0.0364
+MW8B,2,Musclewood,bag,16-Jun,18,11,0.0402
+SM7C,2,Striped Maple,control,16-Jun,15,10,0.0418
+AB3B,2,Beech,bag,16-Jun,16,14,0.1351
+BY3C,2,Barberry,control,16-Jun,23,16,0.4954
+SM7B,2,Striped Maple,bag,16-Jun,21,13,0.1532
+BY10B,2,Barberry,bag,16-Jun,22,10,0.0321
+BY10C,2,Barberry,control,16-Jun,8,8,0.0316
+SM10C,2,Striped Maple,control,16-Jun,11,7,0.0103
+WE10C,2,Burning Bush,control,16-Jun,12,9,0.0082
+BC9C,2,Black Cherry,control,16-Jun,22,10,0.0356
+WE10B,2,Burning Bush,bag,16-Jun,15,12,0.0653
+HS9B,2,Honeysuckle,bag,16-Jun,27,19,0.2634
+WH10C,2,Witch-hazel,control,16-Jun,8,7,0.025
+MW10B,2,Musclewood,bag,16-Jun,16,12,0.1658
+MW10C,2,Musclewood,control,16-Jun,13,11,0.4541
+SM9C,2,Striped Maple,control,16-Jun,4,4,0.012
+AB5C,2,Beech,control,16-Jun,10,9,0.0185
+SM9B,2,Striped Maple,bag,16-Jun,13,12,0.1272
+HS9C,2,Honeysuckle,control,16-Jun,14,12,0.1715
+WH9B,2,Witch-hazel,bag,16-Jun,24,10,0.0774
+BC9B,2,Black Cherry,bag,16-Jun,24,14,0.1036
+WH10B,2,Witch-hazel,bag,16-Jun,26,17,0.1657
+WH9C,2,Witch-hazel,control,16-Jun,13,10,0.1142
+BB8B,2,Sweet Birch,bag,16-Jun,8,7,0.0342
+MW9C,2,Musclewood,control,16-Jun,4,4,0.005
+BB7C,2,Sweet Birch,control,16-Jun,11,10,0.0776
+AB6C,2,Beech,control,16-Jun,8,5,0.0466
+BC10C,2,Black Cherry,control,16-Jun,15,10,0.0481
+BB8C,2,Sweet Birch,control,16-Jun,4,4,0.0183
+AB5B,2,Beech,bag,16-Jun,13,9,0.0582
+AB6B,2,Beech,bag,16-Jun,41,18,0.3186
+SM10B,2,Striped Maple,bag,16-Jun,12,11,0.0651
+BC10B,2,Black Cherry,bag,16-Jun,12,11,0.101
+AO9C,2,Autumn Olive,control,16-Jun,17,12,0.0478
+WE6C,2,Burning Bush,control,16-Jun,14,8,0.0113
+AO10C,2,Autumn Olive,control,16-Jun,23,12,0.033
+BY8C,2,Barberry,control,16-Jun,22,16,0.0389
+AO9B,2,Autumn Olive,bag,16-Jun,28,17,0.0601
+WE6B,2,Burning Bush,bag,16-Jun,25,14,0.0472
+AO10B,2,Autumn Olive,bag,16-Jun,49,14,0.0784
+HS10C,2,Honeysuckle,control,16-Jun,19,10,0.1928
+HS10B,2,Honeysuckle,bag,16-Jun,34,13,0.2092
+BY8B,2,Barberry,bag,16-Jun,29,17,0.0524
+BB7B,2,Sweet Birch,bag,16-Jun,17,10,0.2009
+MW9B,2,Musclewood,bag,16-Jun,33,18,0.2753
+WH11C,2,Witch-hazel,control,18-Jun,23,11,0.0259
+MW11B,2,Musclewood,bag,18-Jun,19,15,0.1486
+BC11B,2,Black Cherry,bag,18-Jun,24,15,0.1635
+SM11C,2,Striped Maple,control,18-Jun,20,13,0.069
+WH12C,2,Witch-hazel,control,18-Jun,12,12,0.1925
+BB9B,2,Sweet Birch,bag,18-Jun,16,7,0.0505
+BC12B,2,Black Cherry,bag,18-Jun,24,14,0.0789
+BB10B,2,Sweet Birch,bag,18-Jun,36,17,0.1285
+SM11B,2,Striped Maple,bag,18-Jun,19,10,0.1419
+BC11C,2,Black Cherry,control,18-Jun,30,15,0.0938
+AB8C,2,Beech,control,18-Jun,12,6,0.0369
+AB7B,2,Beech,bag,18-Jun,19,10,0.2957
+SM12C,2,Striped Maple,control,18-Jun,9,3,0.0047
+AB7C,2,Beech,control,18-Jun,13,10,0.0798
+BB9C,2,Sweet Birch,control,18-Jun,11,4,0.0034
+AO12B,2,Autumn Olive,bag,18-Jun,7,5,0.0116
+BB10C,2,Sweet Birch,control,18-Jun,78,6,0.0691
+SM12B,2,Striped Maple,bag,18-Jun,14,8,0.1353
+MW11C,2,Musclewood,control,18-Jun,12,9,0.0715
+AO12C,2,Autumn Olive,control,18-Jun,14,6,0.0208
+WE11C,2,Burning Bush,control,18-Jun,19,16,0.0422
+WH11B,2,Witch-hazel,bag,18-Jun,20,9,0.0989
+WH12B,2,Witch-hazel,bag,18-Jun,19,15,0.1418
+BC12C,2,Black Cherry,control,18-Jun,14,4,0.0041
+AB8B,2,Beech,bag,18-Jun,19,9,0.0582
+MW12C,2,Musclewood,control,18-Jun,25,15,0.6018
+AO11C,2,Autumn Olive,control,18-Jun,11,8,0.0202
+WE11B,2,Burning Bush,bag,18-Jun,31,20,0.3103
+HS11C,2,Honeysuckle,control,18-Jun,22,19,0.0882
+HS11B,2,Honeysuckle,bag,18-Jun,39,18,0.0315
+HS12C,2,Honeysuckle,control,18-Jun,17,11,0.1794
+AO11B,2,Autumn Olive,bag,18-Jun,22,14,0.0379
+BY11C,2,Barberry,control,18-Jun,13,12,0.0477
+WE12C,2,Burning Bush,control,18-Jun,18,13,0.0618
+MW12B,2,Musclewood,bag,18-Jun,25,17,0.0235
+HS12B,2,Honeysuckle,bag,18-Jun,34,16,0.4543
+WE12B,2,Burning Bush,bag,18-Jun,29,15,0.0317
+BY11B,2,Barberry,bag,18-Jun,33,17,0.0635
+BY12B,2,Barberry,bag,18-Jun,25,11,0.0469
+BY12C,2,Barberry,control,18-Jun,28,18,0.0231
+WH4C,3,Witch-hazel,control,21-Jun,29,20,0.1196
+HS2C,3,Honeysuckle,control,21-Jun,15,10,0.0364
+WH4B,3,Witch-hazel,bag,21-Jun,23,15,0.0913
+BY7B,3,Barberry,bag,21-Jun,12,9,0.0153
+SM1B,3,Striped Maple,bag,21-Jun,26,19,0.0346
+BB12B,3,Sweet Birch,bag,21-Jun,22,11,0.1027
+WH3C,3,Witch-hazel,control,21-Jun,16,11,0.1256
+WE1C,3,Burning Bush,control,21-Jun,19,13,0.0617
+BB11C,3,Sweet Birch,control,21-Jun,13,7,0.0443
+BB12C,3,Sweet Birch,control,21-Jun,9,7,0.041
+SM1C,3,Striped Maple,control,21-Jun,9,7,0.0069
+BY6C,3,Barberry,control,21-Jun,8,5,0.0199
+BC4C,3,Black Cherry,control,21-Jun,22,10,0.0143
+BB11B,3,Sweet Birch,bag,21-Jun,25,11,0.0688
+AB1C,3,Beech,control,21-Jun,9,5,0.0093
+HS1C,3,Honeysuckle,control,21-Jun,14,11,0.038
+AO8C,3,Autumn Olive,control,21-Jun,23,12,0.1244
+BY6B,3,Barberry,bag,21-Jun,12,7,0.3382
+WE9B,3,Burning Bush,bag,21-Jun,21,14,0.0329
+AO8B,3,Autumn Olive,bag,21-Jun,34,18,0.247
+SM2B,3,Striped Maple,bag,21-Jun,32,18,0.3429
+SM2C,3,Striped Maple,control,21-Jun,14,12,0.0381
+BC5C,3,Black Cherry,control,21-Jun,8,6,0.0152
+MW2B,3,Musclewood,bag,21-Jun,13,11,0.0916
+WE9C,3,Burning Bush,control,21-Jun,19,13,0.037
+MW1C,3,Musclewood,control,21-Jun,12,7,0.0497
+BC5B,3,Black Cherry,bag,21-Jun,18,15,0.0595
+HS2B,3,Honeysuckle,bag,21-Jun,38,21,0.1397
+WH3B,3,Witch-hazel,bag,21-Jun,13,9,0.0728
+AO1B,3,Autumn Olive,bag,21-Jun,36,16,0.0608
+BY7C,3,Barberry,control,21-Jun,9,8,0.2068
+AB9C,3,Beech,control,21-Jun,12,9,0.0193
+AB1B,3,Beech,bag,21-Jun,21,13,0.5156
+AB9B,3,Beech,bag,21-Jun,26,15,0.0932
+MW1B,3,Musclewood,bag,21-Jun,22,13,0.0532
+AO1C,3,Autumn Olive,control,21-Jun,29,14,0.0229
+HS1B,3,Honeysuckle,bag,21-Jun,13,9,0.1565
+WE1B,3,Burning Bush,bag,21-Jun,26,15,0.1058
+BC4B,3,Black Cherry,bag,21-Jun,41,17,0.0657
+MW2C,3,Musclewood,control,21-Jun,36,11,0.0422
+SM4C,3,Striped Maple,control,23-Jun,47,23,0.0777
+HS4C,3,Honeysuckle,control,23-Jun,24,15,0.0632
+BC7C,3,Black Cherry,control,23-Jun,15,8,0.1712
+BC6C,3,Black Cherry,control,23-Jun,21,15,0.0725
+SM3C,3,Striped Maple,control,23-Jun,9,7,0.0061
+AB10B,3,Beech,bag,23-Jun,9,9,0.292
+SM3B,3,Striped Maple,bag,23-Jun,19,15,0.2065
+HS4B,3,Honeysuckle,bag,23-Jun,47,26,0.7412
+AB10C,3,Beech,control,23-Jun,21,14,0.0334
+AO3B,3,Autumn Olive,bag,23-Jun,26,19,0.1048
+BB1B,3,Sweet Birch,bag,23-Jun,42,17,0.1092
+AB11C,3,Beech,control,23-Jun,16,12,0.0911
+AB11B,3,Beech,bag,23-Jun,23,16,0.0866
+WH1B,3,Witch-hazel,bag,23-Jun,57,22,0.3501
+BB2B,3,Sweet Birch,bag,23-Jun,16,12,0.0559
+BB2C,3,Sweet Birch,control,23-Jun,30,20,0.0649
+BB1C,3,Sweet Birch,control,23-Jun,17,12,0.0669
+HS3C,3,Honeysuckle,control,23-Jun,18,9,0.0582
+AO2B,3,Autumn Olive,bag,23-Jun,16,10,0.0702
+SM4B,3,Striped Maple,bag,23-Jun,28,18,0.0575
+WH1C,3,Witch-hazel,control,23-Jun,13,8,0.0161
+MW4B,3,Musclewood,bag,23-Jun,32,22,0.1478
+HS3B,3,Honeysuckle,bag,23-Jun,27,11,0.0653
+BY2C,3,Barberry,control,23-Jun,14,11,0.0214
+BC6B,3,Black Cherry,bag,23-Jun,33,16,0.00452
+BY1C,3,Barberry,control,23-Jun,26,13,0.084
+BC7B,3,Black Cherry,bag,23-Jun,15,9,0.0579
+AO2C,3,Autumn Olive,control,23-Jun,14,12,0.0143
+WE8B,3,Burning Bush,bag,23-Jun,21,14,0.1628
+AO3C,3,Autumn Olive,control,23-Jun,9,6,0.0069
+WH2C,3,Witch-hazel,control,23-Jun,15,10,0.0461
+MW3B,3,Musclewood,bag,23-Jun,25,12,0.1335
+MW4C,3,Musclewood,control,23-Jun,22,15,0.1383
+WE7C,3,Burning Bush,control,23-Jun,13,9,0.1328
+WE7B,3,Burning Bush,bag,23-Jun,17,13,0.0382
+BY1B,3,Barberry,bag,23-Jun,34,15,0.1035
+BY2B,3,Barberry,bag,23-Jun,9,8,0.0473
+MW3C,3,Musclewood,control,23-Jun,24,15,0.2199
+WE8C,3,Burning Bush,control,23-Jun,5,5,0.057
+WH2B,3,Witch-hazel,bag,23-Jun,34,17,0.3012
+SM5C,3,Striped Maple,control,25-Jun,47,16,0.076
+BC1B,3,Black Cherry,bag,25-Jun,16,13,0.0398
+SM6B,3,Striped Maple,bag,25-Jun,27,12,0.0912
+WH6B,3,Witch-hazel,bag,25-Jun,24,15,0.1276
+AO4C,3,Autumn Olive,control,25-Jun,8,6,0.0133
+MW5B,3,Musclewood,bag,25-Jun,38,25,0.1176
+WH5C,3,Witch-hazel,control,25-Jun,20,10,0.0189
+MW5C,3,Musclewood,control,25-Jun,16,9,0.1018
+BB4B,3,Sweet Birch,bag,25-Jun,36,16,0.2022
+BC1C,3,Black Cherry,control,25-Jun,81,11,0.0333
+BC3B,3,Black Cherry,bag,25-Jun,14,11,0.039
+AB2C,3,Beech,control,25-Jun,15,12,0.0876
+BY5B,3,Barberry,bag,25-Jun,21,11,0.1068
+SM5B,3,Striped Maple,bag,25-Jun,13,9,0.0658
+MW6C,3,Musclewood,control,25-Jun,27,20,0.1346
+BB4C,3,Sweet Birch,control,25-Jun,11,8,0.2074
+BC3C,3,Black Cherry,control,25-Jun,13,11,0.044
+AB2B,3,Beech,bag,25-Jun,43,19,0.1008
+HS5B,3,Honeysuckle,bag,25-Jun,99,20,0.0886
+AB12C,3,Beech,control,25-Jun,8,8,0.012
+HS5C,3,Honeysuckle,control,25-Jun,25,13,0.0318
+HS6B,3,Honeysuckle,bag,25-Jun,18,8,0.0348
+HS6C,3,Honeysuckle,control,25-Jun,17,10,0.0736
+WH5B,3,Witch-hazel,bag,25-Jun,18,12,0.1188
+BB3B,3,Sweet Birch,bag,25-Jun,21,12,0.1276
+BY4B,3,Barberry,bag,25-Jun,12,11,0.0487
+BY4C,3,Barberry,control,25-Jun,24,16,0.1162
+SM6C,3,Striped Maple,control,25-Jun,14,10,0.3162
+AB12B,3,Beech,bag,25-Jun,13,8,0.0105
+WE2B,3,Burning Bush,bag,25-Jun,12,7,0.0196
+WE3B,3,Burning Bush,bag,25-Jun,7,6,0.0119
+BB3C,3,Sweet Birch,control,25-Jun,24,15,0.0908
+AO4B,3,Autumn Olive,bag,25-Jun,10,8,0.0693
+AO5B,3,Autumn Olive,bag,25-Jun,32,13,0.0439
+WE3C,3,Burning Bush,control,25-Jun,10,9,0.0178
+BY5C,3,Barberry,control,25-Jun,9,7,0.0036
+WE2C,3,Burning Bush,control,25-Jun,9,8,0.043
+AO5C,3,Autumn Olive,control,25-Jun,16,9,0.0365
+MW6B,3,Musclewood,bag,25-Jun,31,15,0.0432
+WH6C,3,Witch-hazel,control,25-Jun,18,13,0.0285
+WH7B,3,Witch-hazel,bag,28-Jun,28,19,0.1062
+AO6B,3,Autumn Olive,bag,28-Jun,11,5,0.0091
+WE5B,3,Burning Bush,bag,28-Jun,19,15,0.0262
+BY3C,3,Barberry,control,28-Jun,20,11,0.0098
+BY9C,3,Barberry,control,28-Jun,12,9,0.091
+BY3B,3,Barberry,bag,28-Jun,16,11,0.049
+AO7B,3,Autumn Olive,bag,28-Jun,16,8,0.0233
+AO7C,3,Autumn Olive,control,28-Jun,14,8,0.0316
+WE4C,3,Burning Bush,control,28-Jun,4,4,0.0192
+HS7C,3,Honeysuckle,control,28-Jun,26,11,0.0619
+MW7B,3,Musclewood,bag,28-Jun,24,12,0.0615
+HS7B,3,Honeysuckle,bag,28-Jun,31,14,0.0981
+WE4B,3,Burning Bush,bag,28-Jun,14,8,0.0357
+WE5C,3,Burning Bush,control,28-Jun,10,9,0.0342
+MW7C,3,Musclewood,control,28-Jun,4,4,0.0079
+HS8B,3,Honeysuckle,bag,28-Jun,11,11,0.0555
+HS8C,3,Honeysuckle,control,28-Jun,22,10,0.0386
+AO6C,3,Autumn Olive,control,28-Jun,13,10,0.0223
+BY9B,3,Barberry,bag,28-Jun,14,11,0.0757
+MW8C,3,Musclewood,control,28-Jun,16,9,0.1001
+WH7C,3,Witch-hazel,control,28-Jun,27,16,0.0352
+MW8B,3,Musclewood,bag,28-Jun,11,11,0.0623
+BB6B,3,Sweet Birch,bag,28-Jun,91,15,0.1125
+SM7B,3,Striped Maple,bag,28-Jun,15,13,0.185
+SM7C,3,Striped Maple,control,28-Jun,10,8,0.1875
+SM8B,3,Striped Maple,bag,28-Jun,20,9,0.1106
+SM8C,3,Striped Maple,control,28-Jun,13,7,0.0213
+BB5B,3,Sweet Birch,bag,28-Jun,27,16,0.1366
+BB5C,3,Sweet Birch,control,28-Jun,13,7,0.0588
+AB3B,3,Beech,bag,28-Jun,21,12,0.0932
+WH8C,3,Witch-hazel,control,28-Jun,31,22,0.1544
+WH8B,3,Witch-hazel,bag,28-Jun,15,11,0.147
+AB4C,3,Beech,control,28-Jun,9,6,0.0571
+AB4B,3,Beech,bag,28-Jun,17,10,0.0192
+AB3C,3,Beech,control,28-Jun,8,5,0.0241
+BC8B,3,Black Cherry,bag,28-Jun,26,13,0.0918
+BC8C,3,Black Cherry,control,28-Jun,41,9,0.0666
+BC2C,3,Black Cherry,control,28-Jun,189,15,0.0371
+BB6C,3,Sweet Birch,control,28-Jun,23,12,0.0853
+BC2B,3,Black Cherry,bag,28-Jun,79,13,0.0685
+AO10B,3,Autumn Olive,bag,30-Jun,24,14,0.0916
+MW9B,3,Musclewood,bag,30-Jun,22,13,0.1692
+BB7B,3,Sweet Birch,bag,30-Jun,14,12,0.0858
+BY8B,3,Barberry,bag,30-Jun,19,8,0.0304
+HS9B,3,Honeysuckle,bag,30-Jun,44,20,0.2503
+BB8B,3,Sweet Birch,bag,30-Jun,27,16,0.0296
+SM9B,3,Striped Maple,bag,30-Jun,13,11,0.1165
+AO10C,3,Autumn Olive,control,30-Jun,124,8,0.135
+MW9C,3,Musclewood,control,30-Jun,25,11,0.0376
+SM9C,3,Striped Maple,control,30-Jun,12,6,0.0182
+WH9B,3,Witch-hazel,bag,30-Jun,19,13,0.1834
+AB5C,3,Beech,control,30-Jun,18,12,0.0381
+WH10C,3,Witch-hazel,control,30-Jun,6,6,0.0223
+WH10B,3,Witch-hazel,bag,30-Jun,50,19,0.4507
+WE10C,3,Burning Bush,control,30-Jun,4,3,0.0011
+MW10C,3,Musclewood,control,30-Jun,16,10,0.0807
+HS10C,3,Honeysuckle,control,30-Jun,70,10,0.1072
+MW10B,3,Musclewood,bag,30-Jun,26,12,0.1279
+BB8C,3,Sweet Birch,control,30-Jun,41,10,0.021
+BY10B,3,Barberry,bag,30-Jun,18,9,0.0595
+WE6B,3,Burning Bush,bag,30-Jun,25,13,0.053
+BY10C,3,Barberry,control,30-Jun,5,4,0.0038
+WE6C,3,Burning Bush,control,30-Jun,16,11,0.0263
+BY8C,3,Barberry,control,30-Jun,16,10,0.0223
+SM10B,3,Striped Maple,bag,30-Jun,54,12,0.0254
+HS9C,3,Honeysuckle,control,30-Jun,13,9,0.0105
+AB6C,3,Beech,control,30-Jun,179,14,0.0317
+AO9B,3,Autumn Olive,bag,30-Jun,32,9,0.0657
+SM10C,3,Striped Maple,control,30-Jun,12,10,0.0198
+BC9B,3,Black Cherry,bag,30-Jun,41,12,0.3542
+BB7C,3,Sweet Birch,control,30-Jun,10,7,0.0197
+BC10C,3,Black Cherry,control,30-Jun,34,9,0.0385
+BC9C,3,Black Cherry,control,30-Jun,8,8,0.0603
+AB6B,3,Beech,bag,30-Jun,395,21,0.4031
+WH9C,3,Witch-hazel,control,30-Jun,9,8,0.1044
+WE10B,3,Burning Bush,bag,30-Jun,16,14,0.014
+HS10B,3,Honeysuckle,bag,30-Jun,55,14,0.0638
+BC10B,3,Black Cherry,bag,30-Jun,18,12,0.0701
+AB5B,3,Beech,bag,30-Jun,45,11,0.0284
+AO9C,3,Autumn Olive,control,30-Jun,13,6,0.0974
+SM11B,3,Striped Maple,bag,5-Jul,48,19,0.3424
+SM11C,3,Striped Maple,control,5-Jul,15,11,0.0269
+SM12B,3,Striped Maple,bag,5-Jul,32,14,0.1781
+SM12C,3,Striped Maple,control,5-Jul,10,7,0.0442
+MW12B,3,Musclewood,bag,5-Jul,15,9,0.0452
+BC12C,3,Black Cherry,control,5-Jul,9,8,0.0175
+BC12B,3,Black Cherry,bag,5-Jul,13,11,0.1393
+MW11C,3,Musclewood,control,5-Jul,15,7,0.9071
+BC11C,3,Black Cherry,control,5-Jul,22,15,0.089
+AB7C,3,Beech,control,5-Jul,11,10,0.1018
+MW12C,3,Musclewood,control,5-Jul,17,12,0.0512
+WH11B,3,Witch-hazel,bag,5-Jul,17,13,0.1936
+MW11B,3,Musclewood,bag,5-Jul,27,17,0.3826
+BB10B,3,Sweet Birch,bag,5-Jul,38,18,0.5783
+AB8C,3,Beech,control,5-Jul,26,19,0.0973
+AB8B,3,Beech,bag,5-Jul,126,15,0.1318
+BC11B,3,Black Cherry,bag,5-Jul,27,20,0.3308
+AO11B,3,Autumn Olive,bag,5-Jul,20,11,0.134
+BY11C,3,Barberry,control,5-Jul,12,9,0.0736
+BB9B,3,Sweet Birch,bag,5-Jul,16,10,0.1576
+AB7B,3,Beech,bag,5-Jul,29,13,0.1555
+BB10C,3,Sweet Birch,control,5-Jul,6,5,0.0218
+WH12B,3,Witch-hazel,bag,5-Jul,35,17,0.2106
+WH11C,3,Witch-hazel,control,5-Jul,30,14,0.0286
+WH12C,3,Witch-hazel,control,5-Jul,16,10,0.0569
+HS11B,3,Honeysuckle,bag,5-Jul,25,14,0.4097
+WE11B,3,Burning Bush,bag,5-Jul,24,13,0.0837
+HS11C,3,Honeysuckle,control,5-Jul,34,18,0.1414
+AO11C,3,Autumn Olive,control,5-Jul,14,9,0.1882
+BY12C,3,Barberry,control,5-Jul,19,9,0.3284
+WE11C,3,Burning Bush,control,5-Jul,21,16,0.0504
+AO12C,3,Autumn Olive,control,5-Jul,25,15,0.1004
+WE12C,3,Burning Bush,control,5-Jul,11,10,0.0606
+BY11B,3,Barberry,bag,5-Jul,27,15,0.5211
+HS12C,3,Honeysuckle,control,5-Jul,28,17,0.0659
+WE12B,3,Burning Bush,bag,5-Jul,22,16,0.1496
+AO12B,3,Autumn Olive,bag,5-Jul,10,7,0.0132
+HS12B,3,Honeysuckle,bag,5-Jul,68,20,1.9145
+BY12B,3,Barberry,bag,5-Jul,44,13,2.7223
+BB9C,3,Sweet Birch,control,5-Jul,8,7,0.5744
