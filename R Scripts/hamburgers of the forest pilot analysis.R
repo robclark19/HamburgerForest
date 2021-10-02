@@ -1,6 +1,6 @@
 # packages
+# set working directory as R project directory "HamburgerForest"
 
-library("xlsx")
 library("car")
 library("multcomp")
 library("ggplot2")
@@ -14,8 +14,7 @@ library("readr")
 library("lme4")
 
 # pilot branch data #####
-
-hotf_dat <- read.csv("pilot branch data.csv")
+hotf_dat <- read.csv("./Data/Originals/pilot branch data.csv")
 
 # pilot glmms ####
 # make a new column that is "native" vs "non-native"
@@ -116,7 +115,7 @@ plot(emmeans(hotf_glm_3, ~ tree, type="response"))
 
 # pilot leaf analysis #####
 
-leaf_dat <- read.csv("pilot leaf count data.csv")
+leaf_dat <- read.csv("./Data/Originals/pilot leaf count data.csv")
 
 hist(leaf_dat$leaf.count)
 # plot(vcd::goodfit(leaf_dat$leaf.count, type="poisson"))
@@ -134,7 +133,8 @@ plot(emmeans(leaf_glm, ~ treatment|morphospecies., nesting = NULL))
 plot(emmeans(leaf_glm, ~ treatment|wet_mass_g, nesting = NULL))
 plot(emmeans(leaf_glm, ~tree, type="response" ))
 
-emmip(leaf_glm, ~ morphospecies.|tree, cov.reduce = range)
+# emmean reg plots ####
+emmip(leaf_glm, ~ morphospecies.|tree, cov.reduce = range, type="response")
 
 hist(log(leaf_dat$bug_count))
 hist(log(leaf_dat$morphospecies.))
