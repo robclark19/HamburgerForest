@@ -1,0 +1,241 @@
+"","treatment","tree","branch_code","sum_wet_mass"
+"1","bag","Autumn Olive","AO10B",0.6137
+"2","bag","Autumn Olive","AO11B",0.3481
+"3","bag","Autumn Olive","AO12B",0.1792
+"4","bag","Autumn Olive","AO1B",0.5288
+"5","bag","Autumn Olive","AO2B",0.0983
+"6","bag","Autumn Olive","AO3B",0.2717
+"7","bag","Autumn Olive","AO4B",0.1999
+"8","bag","Autumn Olive","AO5B",0.9224
+"9","bag","Autumn Olive","AO6B",0.8219
+"10","bag","Autumn Olive","AO7B",0.1436
+"11","bag","Autumn Olive","AO8B",0.3157
+"12","bag","Autumn Olive","AO9B",0.2536
+"13","bag","Barberry","BY10B",0.1874
+"14","bag","Barberry","BY11B",0.6705
+"15","bag","Barberry","BY12B",3.0762
+"16","bag","Barberry","BY1B",0.5892
+"17","bag","Barberry","BY2B",0.2649
+"18","bag","Barberry","BY3B",0.1366
+"19","bag","Barberry","BY4B",0.1133
+"20","bag","Barberry","BY5B",0.4638
+"21","bag","Barberry","BY6B",0.5714
+"22","bag","Barberry","BY7B",0.1064
+"23","bag","Barberry","BY8B",0.2211
+"24","bag","Barberry","BY9B",0.2043
+"25","bag","Beech","AB10B",0.4203
+"26","bag","Beech","AB11B",0.2026
+"27","bag","Beech","AB12B",0.0871
+"28","bag","Beech","AB1B",0.6986
+"29","bag","Beech","AB2B",0.457
+"30","bag","Beech","AB3B",0.4737
+"31","bag","Beech","AB4B",0.1385
+"32","bag","Beech","AB5B",0.3212
+"33","bag","Beech","AB6B",0.8019
+"34","bag","Beech","AB7B",1.1075
+"35","bag","Beech","AB8B",0.3222
+"36","bag","Beech","AB9B",0.2168
+"37","bag","Black Cherry","BC10B",0.8219
+"38","bag","Black Cherry","BC11B",0.5687
+"39","bag","Black Cherry","BC12B",0.4085
+"40","bag","Black Cherry","BC1B",0.1918
+"41","bag","Black Cherry","BC2B",0.269
+"42","bag","Black Cherry","BC3B",0.1226
+"43","bag","Black Cherry","BC4B",0.1259
+"44","bag","Black Cherry","BC5B",0.2672
+"45","bag","Black Cherry","BC6B",0.06482
+"46","bag","Black Cherry","BC7B",0.3163
+"47","bag","Black Cherry","BC8B",0.9371
+"48","bag","Black Cherry","BC9B",0.4775
+"49","bag","Burning Bush","WE10B",0.1295
+"50","bag","Burning Bush","WE11B",0.4656
+"51","bag","Burning Bush","WE12B",0.2859
+"52","bag","Burning Bush","WE1B",0.3936
+"53","bag","Burning Bush","WE2B",0.1609
+"54","bag","Burning Bush","WE3B",0.1207
+"55","bag","Burning Bush","WE4B",0.3548
+"56","bag","Burning Bush","WE5B",0.2403
+"57","bag","Burning Bush","WE6B",0.4039
+"58","bag","Burning Bush","WE7B",1.0607
+"59","bag","Burning Bush","WE8B",0.7438
+"60","bag","Burning Bush","WE9B",0.1564
+"61","bag","Honeysuckle","HS10B",0.3399
+"62","bag","Honeysuckle","HS11B",0.6677
+"63","bag","Honeysuckle","HS12B",7.7384
+"64","bag","Honeysuckle","HS1B",0.4117
+"65","bag","Honeysuckle","HS2B",0.3273
+"66","bag","Honeysuckle","HS3B",0.1623
+"67","bag","Honeysuckle","HS4B",0.9808
+"68","bag","Honeysuckle","HS5B",0.4472
+"69","bag","Honeysuckle","HS6B",0.4522
+"70","bag","Honeysuckle","HS7B",0.5317
+"71","bag","Honeysuckle","HS8B",0.9602
+"72","bag","Honeysuckle","HS9B",0.5829
+"73","bag","Musclewood","MW10B",1.0163
+"74","bag","Musclewood","MW11B",0.6515
+"75","bag","Musclewood","MW12B",0.1537
+"76","bag","Musclewood","MW1B",0.2612
+"77","bag","Musclewood","MW2B",0.4548
+"78","bag","Musclewood","MW3B",0.2287
+"79","bag","Musclewood","MW4B",0.3398
+"80","bag","Musclewood","MW5B",0.4707
+"81","bag","Musclewood","MW6B",0.4022
+"82","bag","Musclewood","MW7B",0.2201
+"83","bag","Musclewood","MW8B",0.2501
+"84","bag","Musclewood","MW9B",0.5648
+"85","bag","Striped Maple","SM10B",0.3054
+"86","bag","Striped Maple","SM11B",0.5766
+"87","bag","Striped Maple","SM12B",0.3969
+"88","bag","Striped Maple","SM1B",0.119
+"89","bag","Striped Maple","SM2B",0.6549
+"90","bag","Striped Maple","SM3B",0.3219
+"91","bag","Striped Maple","SM4B",0.1307
+"92","bag","Striped Maple","SM5B",0.4166
+"93","bag","Striped Maple","SM6B",0.166
+"94","bag","Striped Maple","SM7B",0.4938
+"95","bag","Striped Maple","SM8B",0.3014
+"96","bag","Striped Maple","SM9B",0.3309
+"97","bag","Sweet Birch","BB10B",1.0103
+"98","bag","Sweet Birch","BB11B",0.2326
+"99","bag","Sweet Birch","BB12B",0.2732
+"100","bag","Sweet Birch","BB1B",0.9511
+"101","bag","Sweet Birch","BB2B",0.5385
+"102","bag","Sweet Birch","BB3B",1.0387
+"103","bag","Sweet Birch","BB4B",0.512
+"104","bag","Sweet Birch","BB5B",0.5757
+"105","bag","Sweet Birch","BB6B",0.2821
+"106","bag","Sweet Birch","BB7B",0.6913
+"107","bag","Sweet Birch","BB8B",0.091
+"108","bag","Sweet Birch","BB9B",0.327
+"109","bag","Witch-hazel","WH10B",0.7926
+"110","bag","Witch-hazel","WH11B",0.3711
+"111","bag","Witch-hazel","WH12B",0.7809
+"112","bag","Witch-hazel","WH1B",1.1245
+"113","bag","Witch-hazel","WH2B",0.4433
+"114","bag","Witch-hazel","WH3B",0.3926
+"115","bag","Witch-hazel","WH4B",0.3141
+"116","bag","Witch-hazel","WH5B",0.2489
+"117","bag","Witch-hazel","WH6B",0.262
+"118","bag","Witch-hazel","WH7B",0.2558
+"119","bag","Witch-hazel","WH8B",0.6319
+"120","bag","Witch-hazel","WH9B",0.3909
+"121","control","Autumn Olive","AO10C",0.1716
+"122","control","Autumn Olive","AO11C",0.2835
+"123","control","Autumn Olive","AO12C",0.2144
+"124","control","Autumn Olive","AO1C",0.3017
+"125","control","Autumn Olive","AO2C",0.0776
+"126","control","Autumn Olive","AO3C",0.0441
+"127","control","Autumn Olive","AO4C",0.2113
+"128","control","Autumn Olive","AO5C",0.1454
+"129","control","Autumn Olive","AO6C",0.0516
+"130","control","Autumn Olive","AO7C",0.2896
+"131","control","Autumn Olive","AO8C",0.172
+"132","control","Autumn Olive","AO9C",0.2318
+"133","control","Barberry","BY10C",0.1415
+"134","control","Barberry","BY11C",0.1803
+"135","control","Barberry","BY12C",0.3958
+"136","control","Barberry","BY1C",0.1964
+"137","control","Barberry","BY2C",0.6194
+"138","control","Barberry","BY3C",0.5343
+"139","control","Barberry","BY4C",0.183
+"140","control","Barberry","BY5C",0.0819
+"141","control","Barberry","BY6C",0.2649
+"142","control","Barberry","BY7C",0.2213
+"143","control","Barberry","BY8C",0.0859
+"144","control","Barberry","BY9C",0.1689
+"145","control","Beech","AB10C",0.1061
+"146","control","Beech","AB11C",0.1681
+"147","control","Beech","AB12C",0.0667
+"148","control","Beech","AB1C",0.1022
+"149","control","Beech","AB2C",0.1944
+"150","control","Beech","AB3C",0.0872
+"151","control","Beech","AB4C",0.0948
+"152","control","Beech","AB5C",0.0723
+"153","control","Beech","AB6C",0.1375
+"154","control","Beech","AB7C",0.1859
+"155","control","Beech","AB8C",0.1365
+"156","control","Beech","AB9C",0.1808
+"157","control","Black Cherry","BC10C",0.2049
+"158","control","Black Cherry","BC11C",0.3565
+"159","control","Black Cherry","BC12C",0.0516
+"160","control","Black Cherry","BC1C",0.0764
+"161","control","Black Cherry","BC2C",0.1172
+"162","control","Black Cherry","BC3C",0.1765
+"163","control","Black Cherry","BC4C",0.2531
+"164","control","Black Cherry","BC5C",NA
+"165","control","Black Cherry","BC6C",0.084
+"166","control","Black Cherry","BC7C",0.3395
+"167","control","Black Cherry","BC8C",0.1279
+"168","control","Black Cherry","BC9C",0.1407
+"169","control","Burning Bush","WE10C",0.0461
+"170","control","Burning Bush","WE11C",0.272
+"171","control","Burning Bush","WE12C",0.159
+"172","control","Burning Bush","WE1C",0.2282
+"173","control","Burning Bush","WE2C",0.1639
+"174","control","Burning Bush","WE3C",0.1508
+"175","control","Burning Bush","WE4C",0.0735
+"176","control","Burning Bush","WE5C",0.1829
+"177","control","Burning Bush","WE6C",0.2117
+"178","control","Burning Bush","WE7C",0.1848
+"179","control","Burning Bush","WE8C",0.3222
+"180","control","Burning Bush","WE9C",0.1546
+"181","control","Honeysuckle","HS10C",0.3307
+"182","control","Honeysuckle","HS11C",0.3141
+"183","control","Honeysuckle","HS12C",1.4364
+"184","control","Honeysuckle","HS1C",0.2961
+"185","control","Honeysuckle","HS2C",0.1217
+"186","control","Honeysuckle","HS3C",0.0895
+"187","control","Honeysuckle","HS4C",0.1234
+"188","control","Honeysuckle","HS5C",0.3028
+"189","control","Honeysuckle","HS6C",0.19
+"190","control","Honeysuckle","HS7C",0.2021
+"191","control","Honeysuckle","HS8C",0.4473
+"192","control","Honeysuckle","HS9C",0.262
+"193","control","Musclewood","MW10C",0.6312
+"194","control","Musclewood","MW11C",1.0599
+"195","control","Musclewood","MW12C",0.8123
+"196","control","Musclewood","MW1C",0.17
+"197","control","Musclewood","MW2C",0.1265
+"198","control","Musclewood","MW3C",0.4036
+"199","control","Musclewood","MW4C",0.3093
+"200","control","Musclewood","MW5C",0.2567
+"201","control","Musclewood","MW6C",0.9559
+"202","control","Musclewood","MW7C",0.0628
+"203","control","Musclewood","MW8C",0.5458
+"204","control","Musclewood","MW9C",0.1158
+"205","control","Striped Maple","SM10C",0.0533
+"206","control","Striped Maple","SM11C",0.1232
+"207","control","Striped Maple","SM12C",0.1089
+"208","control","Striped Maple","SM1C",0.0202
+"209","control","Striped Maple","SM2C",0.8319
+"210","control","Striped Maple","SM3C",0.1055
+"211","control","Striped Maple","SM4C",0.1229
+"212","control","Striped Maple","SM5C",0.3999
+"213","control","Striped Maple","SM6C",0.4159
+"214","control","Striped Maple","SM7C",0.3497
+"215","control","Striped Maple","SM8C",0.1047
+"216","control","Striped Maple","SM9C",0.0471
+"217","control","Sweet Birch","BB10C",0.0969
+"218","control","Sweet Birch","BB11C",0.1485
+"219","control","Sweet Birch","BB12C",0.1159
+"220","control","Sweet Birch","BB1C",0.1566
+"221","control","Sweet Birch","BB2C",0.1439
+"222","control","Sweet Birch","BB3C",0.2431
+"223","control","Sweet Birch","BB4C",0.7187
+"224","control","Sweet Birch","BB5C",0.2235
+"225","control","Sweet Birch","BB6C",0.2486
+"226","control","Sweet Birch","BB7C",0.1996
+"227","control","Sweet Birch","BB8C",0.0591
+"228","control","Sweet Birch","BB9C",0.5873
+"229","control","Witch-hazel","WH10C",NA
+"230","control","Witch-hazel","WH11C",0.1017
+"231","control","Witch-hazel","WH12C",0.2812
+"232","control","Witch-hazel","WH1C",0.0848
+"233","control","Witch-hazel","WH2C",0.1135
+"234","control","Witch-hazel","WH3C",0.3153
+"235","control","Witch-hazel","WH4C",0.2191
+"236","control","Witch-hazel","WH5C",0.0817
+"237","control","Witch-hazel","WH6C",0.2771
+"238","control","Witch-hazel","WH7C",0.0853
+"239","control","Witch-hazel","WH8C",0.6638
+"240","control","Witch-hazel","WH9C",0.5142
