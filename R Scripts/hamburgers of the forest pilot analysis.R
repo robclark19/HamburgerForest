@@ -1,12 +1,15 @@
 # packages
 # set working directory as R project directory "HamburgerForest"
 
+# pilot analysis is just used to evaluate main treatment effects and some
+
 library("car")
 library("multcomp")
 library("ggplot2")
 library("emmeans")
 library("multcompView")
 library("tidyverse")
+library("xlsx")
 library("janitor")
 library("ggpubr")
 library("dplyr")
@@ -146,3 +149,18 @@ yup.glm.2 <- glm(wet_mass_g ~ treatment, data = leaf_dat)
 AIC(yup.glm.2)
 
 anova(yup.glm, yup.glm.2)
+
+
+
+
+
+# pilot NMDS ######
+
+# 2018 data #######
+
+# bug diveristy data
+
+# import csv
+
+
+
