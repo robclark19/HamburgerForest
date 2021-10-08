@@ -24,7 +24,7 @@ hotf_dat <- read.csv("./Data/Originals/pilot branch data.csv")
 # make a new column that is "native" vs "non-native"
 # make a guiding table
 native_dat <- tibble(
-  id = c("Honeysuckle", "Barberry", "Burning Bush", "Autumn Olive", "Musclewood", "Sweet Birch", "Beech", "Black Cherry", "Witch-hazel", "Striped Maple"),
+  id = c("Honeysuckle", "Barberry", "Burning Bush", "Autumn Olive", "Musclewood", "Black Birch", "Beech", "Black Cherry", "Witch-hazel", "Striped Maple"),
   exo = c("Non-native", "Non-native", "Non-native", "Non-native", "Native", "Native", "Native", "Native", "Native", "Native")
 )
 
@@ -237,25 +237,33 @@ ord.fit.tree
 stressplot(trophic.mds)
 
 
+# Invert GLMs ####
+# merge guiding table and raw data
+trophic_dat <- trophic_nmds_dat %>%
+  left_join(y = native_dat, by = c(tree = "id"))
+
 
 # basic glmms on invert groups
-str(trophic_nmds_dat)
+str(trophic_dat)
 
 # aquatic glmm ####
-aquatics.glm <- glm.nb(aquatics ~ treatment*tree, data=trophic_nmds_dat)
+aquatics.glm <- glm.nb(aquatics ~ treatment*exo, data=trophic_dat)
 summary(aquatics.glm)
 
-plot(emmeans(aquatics.glm, ~ tree), type="response")
-plot(emmeans(aquatics.glm, ~ treatment*tree), type="response")
+plot(emmeans(aquatics.glm, ~ treatment), type="response")
+plot(emmeans(aquatics.glm, ~ treatment*exo), type="response")
 
 
 
 # arachnids glmm ####
 
-spider.glm <- glm.nb(arachnids ~ tree + treatment, data=trophic_nmds_dat)
+spider.glm <- glm.nb(arachnids ~ exo + treatment, data=trophic_dat)
 summary(spider.glm)
 
-plot(emmeans(spider.glm, ~ treatment*tree), type="response")
+plot(emmeans(spider.glm, ~ treatment*exo), type="response")
+plot(emmeans(spider.glm, ~ exo,), type="response")
+
+# is there a bird-arachnid-herbivore trophic cascade?
 
 
 # hymenoptera glmm ####
@@ -267,37 +275,38 @@ plot(emmeans(hymenoptera.glm, ~ tree), type="response")
 
 
 # lepidoptera glmm #####
-lepidoptera.glm <- glm.nb(lepidoptera  ~ treatment + tree , data=trophic_nmds_dat)
+lepidoptera.glm <- glm.nb(lepidoptera  ~ treatment + exo , data=trophic_dat)
 summary(lepidoptera.glm)
 
 plot(emmeans(lepidoptera.glm, ~ treatment), type="response")
-plot(emmeans(lepidoptera.glm, ~ tree), type="response")
+plot(emmeans(lepidoptera.glm, ~ exo), type="response")
 
 
 
 # hemiptera ######
-hemiptera.glm <- glmer.nb(hemiptera ~ treatment + (1|branch_code), data=trophic_nmds_dat)
+hemiptera.glm <- glm.nb(hemiptera ~ treatment * exo, data=trophic_dat)
 summary(hemiptera.glm)
+Anova(hemiptera.glm)
 
 plot(emmeans(hemiptera.glm, ~ treatment), type="response")
-
+plot(emmeans(hemiptera.glm, ~ exo), type="response")
+plot(emmeans(hemiptera.glm, ~ treatment*exo), type="response")
 
 # coleoptera ###
-coleoptera.glm <- glmer.nb(coleoptera ~ treatment + (1|branch_code), data=trophic_nmds_dat)
+coleoptera.glm <- glmer.nb(coleoptera ~ treatment*exo + (1|branch_code), data=trophic_dat)
 summary(coleoptera.glm)
 
-plot(emmeans(coleoptera.glm, ~ treatment), type="response")
+plot(emmeans(coleoptera.glm, ~ treatment*exo), type="response")
 
 
 # gastropubs
-
 gastropods.glm <- glmer.nb(gastropods ~ treatment + (1|branch_code), data=trophic_nmds_dat)
 summary(gastropods.glm)
 
 plot(emmeans(gastropods.glm, ~ treatment), type="response")
 
 # orthoptera ##### 
-orthopterids.glm <- glmer.nb(orthopterids ~ treatment + (1|branch_code), data=trophic_nmds_dat)
+orthopterids.glm <- glmer.nb(orthopterids ~ treatment*exo + (1|branch_code), data=trophic_dat)
 summary(orthopterids.glm)
 
-plot(emmeans(orthopterids.glm, ~ treatment), type="response")
+plot(emmeans(orthopterids.glm, ~ treatment*exo), type="response")
