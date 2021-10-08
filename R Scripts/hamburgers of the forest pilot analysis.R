@@ -15,6 +15,7 @@ library("ggpubr")
 library("dplyr")
 library("readr")
 library("lme4")
+library("vegan")
 
 # pilot branch data #####
 hotf_dat <- read.csv("./Data/Originals/pilot branch data.csv")
@@ -155,12 +156,148 @@ anova(yup.glm, yup.glm.2)
 
 
 # pilot NMDS ######
-
-# 2018 data #######
+# also some glms for major functional groups
 
 # bug diveristy data
+trophic_nmds_dat <- read.csv("./Data/Output/trophicnmds1.csv", header=TRUE)
 
-# import csv
+# 
+#make new object so commands below dont edit primary data
+matrix.dat <- trophic_nmds_dat
+
+#drop env columns to make a species matrix
+matrix.dat$branch_code <- NULL
+matrix.dat$time_block <- NULL
+matrix.dat$tree <- NULL
+matrix.dat$treatment <- NULL
+
+colSums(matrix.dat)
+
+
+#nmds requires you drop any rows with far too many zeroes
+# matrix.dat$ERA <- NULL
+
+
+#check
+colSums(matrix.dat)
+
+
+# K=2 NMDS #####
+#run nmds with k=2 dimensions
+trophic.mds <- metaMDS(matrix.dat, k=2, plot=TRUE)
+trophic.mds
+
+# attach puts this in memory so if you call groups = treatment later,
+# it knows to pull from this frame
+attach(trophic_nmds_dat)
+#just plot points (sites and species)
+
+
+plot(trophic.mds)
+
+#ordination plot (starts with blank ordination that layers can be added on)
+ordiplot(trophic.mds, type="none")
+#species plot (add insect species first)
+orditorp(trophic.mds,display="species",col="black",air=0.2,cex=1)
+
+# Bag effect NMDS plot ####
+# draws a shape around it based on the environmental variable of interest
+ordihull(trophic.mds, groups=treatment, draw="polygon",col="grey90",label=T)
+
+# now for tree
+ordihull(trophic.mds, groups=tree, draw="polygon",col="grey90",label=T)
+
+#air determines how much space is between, <1 means it will let things overlap.
+#dropped overlapping text shown as a circle
+
+
+#try to add arrows that indicate impact of a species on ordination
+# ordiarrows(trophic.mds, groups=treatment, label=TRUE)
+
+#site plot (no species data shown)
+ordiplot(trophic.mds, type="n")
+orditorp(trophic.mds,display="sites",col="black",air=1,cex=1)
+
+ordiplot(trophic.mds, type="n")
+ordiellipse(trophic.mds, site, label=T,air=0.01,cex=0.5)
+
+
+# Bag effect test ####
+# actual statistical test to for bag vs. bird treatment
+ord.fit <- envfit(trophic.mds ~ treatment, data=trophic_nmds_dat, perm=999)
+ord.fit
+
+ord.fit.tree <- envfit(trophic.mds ~ tree, data=trophic_nmds_dat, perm=999)
+ord.fit.tree
+
+# do this analysis with comparing natives 
+
+# Stress plot shows how well the data fit:
+# it should cluster around the red line (sort of like ANOVA residuals)
+stressplot(trophic.mds)
 
 
 
+# basic glmms on invert groups
+str(trophic_nmds_dat)
+
+# aquatic glmm ####
+aquatics.glm <- glm.nb(aquatics ~ treatment*tree, data=trophic_nmds_dat)
+summary(aquatics.glm)
+
+plot(emmeans(aquatics.glm, ~ tree), type="response")
+plot(emmeans(aquatics.glm, ~ treatment*tree), type="response")
+
+
+
+# arachnids glmm ####
+
+spider.glm <- glm.nb(arachnids ~ tree + treatment, data=trophic_nmds_dat)
+summary(spider.glm)
+
+plot(emmeans(spider.glm, ~ treatment*tree), type="response")
+
+
+# hymenoptera glmm ####
+hymenoptera.glm <- glm.nb(hymenoptera ~ treatment + tree, data=trophic_nmds_dat)
+summary(hymenoptera.glm)
+
+plot(emmeans(hymenoptera.glm, ~ treatment), type="response")
+plot(emmeans(hymenoptera.glm, ~ tree), type="response")
+
+
+# lepidoptera glmm #####
+lepidoptera.glm <- glm.nb(lepidoptera  ~ treatment + tree , data=trophic_nmds_dat)
+summary(lepidoptera.glm)
+
+plot(emmeans(lepidoptera.glm, ~ treatment), type="response")
+plot(emmeans(lepidoptera.glm, ~ tree), type="response")
+
+
+
+# hemiptera ######
+hemiptera.glm <- glmer.nb(hemiptera ~ treatment + (1|branch_code), data=trophic_nmds_dat)
+summary(hemiptera.glm)
+
+plot(emmeans(hemiptera.glm, ~ treatment), type="response")
+
+
+# coleoptera ###
+coleoptera.glm <- glmer.nb(coleoptera ~ treatment + (1|branch_code), data=trophic_nmds_dat)
+summary(coleoptera.glm)
+
+plot(emmeans(coleoptera.glm, ~ treatment), type="response")
+
+
+# gastropubs
+
+gastropods.glm <- glmer.nb(gastropods ~ treatment + (1|branch_code), data=trophic_nmds_dat)
+summary(gastropods.glm)
+
+plot(emmeans(gastropods.glm, ~ treatment), type="response")
+
+# orthoptera ##### 
+orthopterids.glm <- glmer.nb(orthopterids ~ treatment + (1|branch_code), data=trophic_nmds_dat)
+summary(orthopterids.glm)
+
+plot(emmeans(orthopterids.glm, ~ treatment), type="response")
