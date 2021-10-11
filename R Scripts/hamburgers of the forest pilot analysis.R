@@ -76,6 +76,9 @@ plot(emmeans(hotf_glm_1, ~ treatment * tree), type = "response")
 
 cld(emmeans(hotf_glm_1, ~ treatment | tree), type = "response", adjust = "none")
 
+plot(emmeans(hotf_glm_1, ~ tree), type = "response", adjust = "none", sort="TRUE")
+
+
 
 # native vs. non-native
 native_glm_1 <- lmer(log(wet_mass_g) ~ exo * treatment + (1 | branch_code), data = hotf_dat)
@@ -262,6 +265,14 @@ summary(spider.glm)
 
 plot(emmeans(spider.glm, ~ treatment*exo), type="response")
 plot(emmeans(spider.glm, ~ exo,), type="response")
+
+
+spider.glm.2 <- glm.nb(arachnids ~ tree + as.factor(time_block) + treatment, data=trophic_dat)
+summary(spider.glm.2)
+
+plot(emmeans(spider.glm.2, ~ treatment|tree))
+
+plot(emmeans(spider.glm.2, ~ time_block|tree), type="response")
 
 # is there a bird-arachnid-herbivore trophic cascade?
 
