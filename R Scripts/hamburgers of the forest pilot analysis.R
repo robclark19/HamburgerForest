@@ -33,7 +33,8 @@ hotf_dat <- hotf_dat %>%
   left_join(y = native_dat, by = c(tree = "id"))
 
 
-# line 69 in raw data we8c was incorrectly specified as a "bag" but this is a typo (only we8c was written in the field)
+# line 69 in raw data we8c was incorrectly specified as a "bag" 
+# but this is a typo (only we8c was written in the field)
 # i changed raw data on 10 1 2021 from bag to control
 
 # summarize wet_mass_g by time_block
@@ -85,6 +86,23 @@ native_glm_1 <- lmer(log(wet_mass_g) ~ exo * treatment + (1 | branch_code), data
 Anova(native_glm_1)
 
 plot(emmeans(native_glm_1, ~ treatment * exo), type = "response")
+
+exo.lsm <- emmeans(native_glm_1, ~ treatment * exo, type = "response") %>% cld()
+
+
+# bird and native plant effects plot for GH newsletters
+
+newsletter_plot <- ggplot(data=exo.lsm, aes(x = treatment, y = response)) +
+  theme_bw(base_size=12) +
+  geom_point(size=2) +
+  geom_errorbar(aes(ymin=response-(SE), ymax=response+(SE), width=0)) +
+  ylab("Average Insect Biomass (grams)") +
+  xlab("Bird Exclusion") +
+  geom_text(aes(x = treatment, y = (response+SE), label = .group, hjust=-.5)) +
+  facet_wrap( ~ exo, nrow=1)
+newsletter_plot
+
+
 
 # bug count
 hotf_dat$bug_count <- as.numeric(hotf_dat$bug_count)
