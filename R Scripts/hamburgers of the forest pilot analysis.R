@@ -24,13 +24,24 @@ hotf_dat <- read.csv("./Data/Originals/pilot branch data.csv")
 # make a new column that is "native" vs "non-native"
 # make a guiding table
 native_dat <- tibble(
-  id = c("Honeysuckle", "Barberry", "Burning Bush", "Autumn Olive", "Musclewood", "Black Birch", "Beech", "Black Cherry", "Witch-hazel", "Striped Maple"),
+  id = c("Honeysuckle", "Barberry", "Burning Bush", "Autumn Olive", "Musclewood", "Sweet Birch", "Beech", "Black Cherry", "Witch-hazel", "Striped Maple"),
   exo = c("Non-native", "Non-native", "Non-native", "Non-native", "Native", "Native", "Native", "Native", "Native", "Native")
 )
 
 # merge guiding table and raw data
 hotf_dat <- hotf_dat %>%
   left_join(y = native_dat, by = c(tree = "id"))
+
+# Shadbush fix #####
+# replace all instances of black cherry with shadbush
+# exclude the handful in which black cherry was actually sampled
+# was is cherry pair 5 6 and 7
+bc_drop <- data.frame(branch_code = c("BC5B", "BC5C","BC6B", "BC6C","BC7B", "BC7C"))
+
+hotf_dat <- hotf_dat %>% anti_join(bc_drop, by = "branch_code", copy=TRUE) %>%                               # Replacing values
+  mutate(tree = replace(tree, tree == "Black Cherry", "Shadbush"))
+
+
 
 
 # line 69 in raw data we8c was incorrectly specified as a "bag" 
@@ -46,7 +57,7 @@ hotf_summary
 hotf_dat$wet_mass_g <- as.numeric(hotf_dat$wet_mass_g)
 hotf_dat$time_block <- as.factor(hotf_dat$time_block)
 
-write.csv(hotf_summary, "./Data/Output/hotf_mass.csv")
+# write.csv(hotf_summary, "./Data/Output/hotf_mass.csv")
 
 # multiple high values
 arrange(hotf_summary, -sum_wet_mass)
@@ -93,9 +104,14 @@ exo.lsm <- emmeans(native_glm_1, ~ treatment * exo, type = "response") %>% cld()
 # bird and native plant effects plot for GH newsletters
 
 newsletter_plot <- ggplot(data=exo.lsm, aes(x = treatment, y = response)) +
-  theme_bw(base_size=12) +
+  theme_bw(base_size=14) +
   geom_point(size=2) +
   geom_errorbar(aes(ymin=response-(SE), ymax=response+(SE), width=0)) +
+  ylab("Average Insect Biomass (grams)") +
+  xlab("") +
+  scale_x_discrete(labels=c("bag" = "Birds Excluded", "control" = "Birds Present")) +
+  # geom_text(aes(x = treatment, y = (response+SE), label = .group, hjust=-.5)) +
+  facet_wrap( ~ exo, nrow=1) +
   ylab("Average arthropod biomass (grams)") +
   xlab("Bird Exclusion") +
   geom_text(aes(x = treatment, y = (response+SE), label = .group, hjust=-.5)) +
@@ -106,7 +122,7 @@ newsletter_plot
 
 # newsletter plot 2 with host plants
 # native vs. non-native
-native_glm_2 <- lmer(log(wet_mass_g) ~ tree * treatment + (1 | branch_code), data = hotf_dat)
+native_glm_2 <- lmer(log(bug_count) ~ tree * treatment + (1 | branch_code), data = hotf_dat)
 Anova(native_glm_2)
 
 plot(emmeans(native_glm_2, ~ treatment * tree), type = "response")
@@ -122,17 +138,23 @@ newsletter_plot_2 <- ggplot(data=tree.lsm, aes(x = treatment, y = response)) +
   geom_errorbar(aes(ymin=response-(SE), ymax=response+(SE), width=0)) +
   ylab("Average arthropod biomass (grams)") +
   xlab("Bird Exclusion") +
+  scale_x_discrete(labels=c("bag" = "- Birds", "control" = "+ Birds")) +
   geom_text(aes(x = treatment, y = (response+SE), label = .group, hjust=-.5)) +
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank()) +
   facet_wrap( ~ tree, nrow=2) 
 newsletter_plot_2
 
 
+# bag only biomass figure
+
+# musclewood over time
+hotf_dat$time_block <- as.factor(hotf_dat$time_block)
+
+mt_glm <- glm(log(bug_count) ~ tree * time_block, data = hotf_dat)
+Anova(mt_glm)
 
 
-
-
-
+cld(emmeans(mt_glm, ~ time_block|tree, adjust = "none"), adjust = "none")
 
 
 
@@ -171,6 +193,21 @@ plot(emmeans(hotf_glm_3, ~ treatment * tree, type = "response"))
 
 plot(emmeans(hotf_glm_3, ~tree, type = "response"))
 
+
+
+# count x biomass regression ######
+
+cb_glm <- lmer(log(bug_count) ~ log(wet_mass_g) + (1 | branch_code), data = hotf_dat)
+summary(cb_glm)
+Anova(cb_glm)
+
+plot(hotf_dat$bug_count, hotf_dat$wet_mass_g)
+
+ggplot(hotf_dat, aes(x=log(bug_count), y=log(wet_mass_g))) + geom_point() +
+  geom_smooth(method=lm)
+
+
+
 # pilot leaf analysis #####
 
 leaf_dat <- read.csv("./Data/Originals/pilot leaf count data.csv")
@@ -190,6 +227,11 @@ plot(emmeans(leaf_glm, ~ treatment | tree | bug_count, nesting = NULL))
 plot(emmeans(leaf_glm, ~ treatment | morphospecies., nesting = NULL))
 plot(emmeans(leaf_glm, ~ treatment | wet_mass_g, nesting = NULL))
 plot(emmeans(leaf_glm, ~tree, type = "response"))
+
+
+# just species. yah we did a good job with bagging
+leaf_glm_2 <- glm(leaf.count ~ tree*treatment, data=leaf_dat)
+plot(emmeans(leaf_glm_2, ~ treatment | tree, nesting = NULL, type = "response"))
 
 # emmean reg plots ####
 emmip(leaf_glm, ~ morphospecies. | tree, cov.reduce = range, type = "response")
@@ -277,7 +319,7 @@ ordihull(trophic.mds, groups=tree, draw="polygon",col="grey90",label=T)
 #site plot (no species data shown)
 ordiplot(trophic.mds, type="n")
 orditorp(trophic.mds,display="sites",col="black",air=1,cex=1)
-
+f
 ordiplot(trophic.mds, type="n")
 ordiellipse(trophic.mds, site, label=T,air=0.01,cex=0.5)
 
@@ -307,11 +349,11 @@ trophic_dat <- trophic_nmds_dat %>%
 str(trophic_dat)
 
 # aquatic glmm ####
-aquatics.glm <- glm.nb(aquatics ~ treatment*exo, data=trophic_dat)
+aquatics.glm <- glm.nb(aquatics ~ treatment*tree, data=trophic_dat)
 summary(aquatics.glm)
 
 plot(emmeans(aquatics.glm, ~ treatment), type="response")
-plot(emmeans(aquatics.glm, ~ treatment*exo), type="response")
+plot(emmeans(aquatics.glm, ~ treatment*tree), type="response")
 
 
 
@@ -343,22 +385,23 @@ plot(emmeans(hymenoptera.glm, ~ tree), type="response")
 
 
 # lepidoptera glmm #####
-lepidoptera.glm <- glm.nb(lepidoptera  ~ treatment + exo , data=trophic_dat)
+lepidoptera.glm <- glm.nb(lepidoptera  ~ treatment * tree , data=trophic_dat)
 summary(lepidoptera.glm)
 
-plot(emmeans(lepidoptera.glm, ~ treatment), type="response")
-plot(emmeans(lepidoptera.glm, ~ exo), type="response")
+plot(emmeans(lepidoptera.glm, ~ treatment*tree), type="response")
+
+cld(emmeans(lepidoptera.glm, ~ treatment|tree), type="response")
 
 
 
 # hemiptera ######
-hemiptera.glm <- glm.nb(hemiptera ~ treatment * exo, data=trophic_dat)
+hemiptera.glm <- glm.nb(hemiptera ~ treatment * tree, data=trophic_dat)
 summary(hemiptera.glm)
 Anova(hemiptera.glm)
 
 plot(emmeans(hemiptera.glm, ~ treatment), type="response")
-plot(emmeans(hemiptera.glm, ~ exo), type="response")
-plot(emmeans(hemiptera.glm, ~ treatment*exo), type="response")
+plot(emmeans(hemiptera.glm, ~ tree), type="response")
+plot(emmeans(hemiptera.glm, ~ treatment*tree), type="response")
 
 # coleoptera ###
 coleoptera.glm <- glmer.nb(coleoptera ~ treatment*exo + (1|branch_code), data=trophic_dat)
@@ -368,13 +411,15 @@ plot(emmeans(coleoptera.glm, ~ treatment*exo), type="response")
 
 
 # gastropubs
+# too many zeroes for tree-level analysis
 gastropods.glm <- glmer.nb(gastropods ~ treatment + (1|branch_code), data=trophic_nmds_dat)
 summary(gastropods.glm)
 
 plot(emmeans(gastropods.glm, ~ treatment), type="response")
 
+
 # orthoptera ##### 
-orthopterids.glm <- glmer.nb(orthopterids ~ treatment*exo + (1|branch_code), data=trophic_dat)
+orthopterids.glm <- glm.nb(orthopterids ~ treatment*tree, data=trophic_dat)
 summary(orthopterids.glm)
 
-plot(emmeans(orthopterids.glm, ~ treatment*exo), type="response")
+plot(emmeans(orthopterids.glm, ~ treatment*tree), type="response")
