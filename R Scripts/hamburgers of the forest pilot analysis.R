@@ -354,6 +354,12 @@ summary(aquatics.glm)
 
 plot(emmeans(aquatics.glm, ~ treatment), type="response")
 plot(emmeans(aquatics.glm, ~ treatment*tree), type="response")
+plot(emmeans(aquatics.glm, ~ tree), type="response")
+
+cld(emmeans(aquatics.glm, ~ tree), type="response", adjust="none")
+
+# aquatics plot #####
+cld(emmeans(aquatics.glm, ~ tree), type="response", adjust="none")
 
 
 
@@ -373,6 +379,12 @@ plot(emmeans(spider.glm.2, ~ treatment|tree))
 
 plot(emmeans(spider.glm.2, ~ time_block|tree), type="response")
 
+plot(emmeans(spider.glm.2, ~tree, type="response"))
+
+# spider plot
+# pooled and unpooled across tree species (native vs. nonnative, all 10 together)
+
+
 # is there a bird-arachnid-herbivore trophic cascade?
 
 
@@ -385,12 +397,14 @@ plot(emmeans(hymenoptera.glm, ~ tree), type="response")
 
 
 # lepidoptera glmm #####
-lepidoptera.glm <- glm.nb(lepidoptera  ~ treatment * tree , data=trophic_dat)
+lepidoptera.glm <- glmer.nb(lepidoptera  ~ treatment * tree + (1|branch_code), data=trophic_dat)
 summary(lepidoptera.glm)
 
 plot(emmeans(lepidoptera.glm, ~ treatment*tree), type="response")
 
 cld(emmeans(lepidoptera.glm, ~ treatment|tree), type="response")
+
+# make a lep figure just showing the 6 trees with bird effects
 
 
 
