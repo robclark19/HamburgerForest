@@ -16,6 +16,7 @@ library("dplyr")
 library("readr")
 library("lme4")
 library("vegan")
+library("plotrix") # for std.error function
 
 # pilot branch data #####
 hotf_dat <- read.csv("./Data/Originals/pilot branch data.csv")
@@ -257,6 +258,26 @@ anova(yup.glm, yup.glm.2)
 
 
 
+
+# effect size analysis using keenwa code
+cross.irr.lsm <- cld(emmeans(keenwa2r.mix, ~ Irrigation*Year, type="response"),
+                     sort=FALSE, Letters=c("bac"))
+cross.irr.lsm$.group=gsub(" ", "", cross.irr.lsm$.group)
+cross.irr.lsm$response <- cross.irr.lsm$rate
+
+# % change#####
+as.data.frame(cross.irr.lsm)
+Irr.2018 <- cross.irr.lsm[3,"response"]
+NI.2018 <- cross.irr.lsm[4,"response"]
+
+NI.2018.percent.increase <- ((NI.2018 / Irr.2018)-1)*100
+NI.2018.percent.increase
+
+
+
+
+
+
 # pilot NMDS ######
 # also some glms for major functional groups
 
@@ -340,9 +361,23 @@ stressplot(trophic.mds)
 
 
 # Invert GLMs ####
+# Change black birch to sweet birch
+# bug diveristy data
+trophic_dat <- read.csv("./Data/Output/trophicnmds1.csv", header=TRUE)
+
+
+trophic_dat <- trophic_dat %>% mutate(tree = replace(tree, tree == "Black Birch", "Sweet Birch"))
+
 # merge guiding table and raw data
-trophic_dat <- trophic_nmds_dat %>%
+trophic_dat <- trophic_dat %>%
   left_join(y = native_dat, by = c(tree = "id"))
+
+
+# update names for invert level analysis
+bc_drop <- data.frame(branch_code = c("BC5B", "BC5C","BC6B", "BC6C","BC7B", "BC7C"))
+
+trophic_dat <- trophic_dat %>% anti_join(bc_drop, by = "branch_code", copy=TRUE) %>%                               # Replacing values
+  mutate(tree = replace(tree, tree == "Black Cherry", "Shadbush"))
 
 
 # basic glmms on invert groups
@@ -360,6 +395,40 @@ cld(emmeans(aquatics.glm, ~ tree), type="response", adjust="none")
 
 # aquatics plot #####
 cld(emmeans(aquatics.glm, ~ tree), type="response", adjust="none")
+
+
+# write a summary table of totals and means for insects by host plant
+# mean, total, SEM
+aquatics_summary <- trophic_dat %>% 
+  filter(treatment == 'bag') %>%
+  group_by(tree,exo) %>% 
+  summarise(aquatics = mean(aquatics), SE = std.error(aquatics)) 
+
+
+
+
+# aquatics pub fig #####
+#aphid density fig for 2018 non-crop legume transects
+aquatics_fig <- ggplot(aquatics_summary, aes(x=aquatics,y=reorder(tree,-desc(aquatics)),fill=exo)) +
+  geom_bar(stat="identity", width=0.6, position="dodge") +
+  theme_bw(base_size = 16) + 
+  theme(panel.border = element_blank(), panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(), axis.line = element_line(colour = "black")) +
+  labs(y="Plant species", x="Average aquatic insect # (bag branches)", fill="Plant type") + 
+  scale_fill_grey() +
+  theme(axis.line.x = element_line(color="black", size = 0.5),
+        axis.line.y = element_line(color="black", size = 0.5)) +
+  theme(legend.position=c(0.8,0.2))
+aquatics_fig
+
+
+# write figure 3 to folder, use arguments to modify size or file type!
+ggsave(filename = "./Figures/Aquatics.svg", plot = aquatics_fig, device = "svg",
+       width = 6, height = 5, units = "in")
+
+
+
+
 
 
 
@@ -383,6 +452,42 @@ plot(emmeans(spider.glm.2, ~tree, type="response"))
 
 # spider plot
 # pooled and unpooled across tree species (native vs. nonnative, all 10 together)
+
+# write a summary table of totals and means for insects by host plant
+# mean, total, SEM
+spider_summary <- trophic_dat %>% 
+  filter(treatment == 'bag') %>%
+  group_by(tree,exo) %>% 
+  summarise(spiders = mean(arachnids), SE = sd(arachnids)) 
+
+# spider pub fig #####
+spiders_fig <- ggplot(spider_summary, aes(x=spiders,y=reorder(tree,-desc(spiders)),fill=exo)) +
+  geom_bar(stat="identity", width=0.6, position="dodge") +
+  theme_bw(base_size = 16) + 
+  theme(panel.border = element_blank(), panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(), axis.line = element_line(colour = "black")) +
+  labs(y="Plant species", x="Average spider # (bag branches)", fill="Plant type") + 
+  scale_fill_grey() +
+  theme(axis.line.x = element_line(color="black", size = 0.5),
+        axis.line.y = element_line(color="black", size = 0.5)) +
+  theme(legend.position=c(0.8,0.2))
+spiders_fig
+
+
+# write figure 3 to folder, use arguments to modify size or file type!
+ggsave(filename = "./Figures/spiders.svg", plot = spiders_fig, device = "svg",
+       width = 6, height = 5, units = "in")
+
+
+
+
+
+
+
+
+
+
+
 
 
 # is there a bird-arachnid-herbivore trophic cascade?
@@ -408,6 +513,41 @@ cld(emmeans(lepidoptera.glm, ~ treatment|tree), type="response")
 
 
 
+
+
+# lep abundance pub fig #####
+# write a summary table of totals and means for insects by host plant
+# mean, total, SEM
+lep_summary <- trophic_dat %>% 
+  filter(treatment == 'bag') %>%
+  group_by(tree,exo) %>% 
+  summarise(Lepidoptera = mean(lepidoptera), SE = sd(lepidoptera)) 
+
+# spider pub fig #####
+Lepidoptera_fig <- ggplot(lep_summary, aes(x=Lepidoptera,y=reorder(tree,-desc(Lepidoptera)),fill=exo)) +
+  geom_bar(stat="identity", width=0.6, position="dodge") +
+  theme_bw(base_size = 16) + 
+  theme(panel.border = element_blank(), panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(), axis.line = element_line(colour = "black")) +
+  labs(y="Plant species", x="Average Lepidoptera # (bag branches)", fill="Plant type") + 
+  scale_fill_grey() +
+  theme(axis.line.x = element_line(color="black", size = 0.5),
+        axis.line.y = element_line(color="black", size = 0.5)) +
+  theme(legend.position=c(0.8,0.2))
+Lepidoptera_fig
+
+
+# write figure to folder, use arguments to modify size or file type!
+ggsave(filename = "./Figures/Lepidoptera.svg", plot = Lepidoptera_fig, device = "svg",
+       width = 6, height = 5, units = "in")
+
+
+
+
+
+
+
+
 # hemiptera ######
 hemiptera.glm <- glm.nb(hemiptera ~ treatment * tree, data=trophic_dat)
 summary(hemiptera.glm)
@@ -417,11 +557,57 @@ plot(emmeans(hemiptera.glm, ~ treatment), type="response")
 plot(emmeans(hemiptera.glm, ~ tree), type="response")
 plot(emmeans(hemiptera.glm, ~ treatment*tree), type="response")
 
-# coleoptera ###
+
+
+# hemiptera pub fig
+hemiptera_summary <- trophic_dat %>% 
+  filter(treatment == 'bag') %>%
+  group_by(tree,exo) %>% 
+  summarise(hemiptera = mean(hemiptera), SE = sd(hemiptera)) 
+
+# spider pub fig #####
+hemiptera_fig <- ggplot(hemiptera_summary, aes(x=hemiptera,y=reorder(tree,-desc(hemiptera)),fill=exo)) +
+  geom_bar(stat="identity", width=0.6, position="dodge") +
+  theme_bw(base_size = 16) + 
+  theme(panel.border = element_blank(), panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(), axis.line = element_line(colour = "black")) +
+  labs(y="Plant species", x="Average Hemiptera # (bag branches)", fill="Plant type") + 
+  scale_fill_grey() +
+  theme(axis.line.x = element_line(color="black", size = 0.5),
+        axis.line.y = element_line(color="black", size = 0.5)) +
+  theme(legend.position=c(0.8,0.2))
+hemiptera_fig
+
+
+# write figure to folder, use arguments to modify size or file type!
+ggsave(filename = "./Figures/hemiptera.svg", plot = hemiptera_fig, device = "svg",
+       width = 6, height = 5, units = "in")
+
+
+
+
+
+
+
+
+
+
+
+
+
+# coleoptera ####
 coleoptera.glm <- glmer.nb(coleoptera ~ treatment*exo + (1|branch_code), data=trophic_dat)
 summary(coleoptera.glm)
 
 plot(emmeans(coleoptera.glm, ~ treatment*exo), type="response")
+
+
+
+
+
+
+
+
 
 
 # gastropubs
@@ -437,3 +623,29 @@ orthopterids.glm <- glm.nb(orthopterids ~ treatment*tree, data=trophic_dat)
 summary(orthopterids.glm)
 
 plot(emmeans(orthopterids.glm, ~ treatment*tree), type="response")
+
+# orthoptera pub fig ######
+orthoptera_summary <- trophic_dat %>% 
+  filter(treatment == 'bag') %>%
+  group_by(tree,exo) %>% 
+  summarise(orthoptera = mean(orthopterids), SE = sd(orthoptera)) 
+
+# spider pub fig #####
+orthoptera_fig <- ggplot(orthoptera_summary, aes(x=orthoptera,y=reorder(tree,-desc(orthoptera)),fill=exo)) +
+  geom_bar(stat="identity", width=0.6, position="dodge") +
+  theme_bw(base_size = 16) + 
+  theme(panel.border = element_blank(), panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(), axis.line = element_line(colour = "black")) +
+  labs(y="Plant species", x="Average Orthoptera # (bag branches)", fill="Plant type") + 
+  scale_fill_grey() +
+  theme(axis.line.x = element_line(color="black", size = 0.5),
+        axis.line.y = element_line(color="black", size = 0.5)) +
+  theme(legend.position=c(0.8,0.2))
+orthoptera_fig
+
+
+# write figure to folder, use arguments to modify size or file type!
+ggsave(filename = "./Figures/orthoptera.svg", plot = orthoptera_fig, device = "svg",
+       width = 6, height = 5, units = "in")
+
+
