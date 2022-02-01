@@ -458,19 +458,21 @@ plot(emmeans(spider.glm.2, ~tree, type="response"))
 spider_summary <- trophic_dat %>% 
   filter(treatment == 'bag') %>%
   group_by(tree,exo) %>% 
-  summarise(spiders = mean(arachnids), SE = sd(arachnids)) 
+  summarise(spiders = mean(arachnids), SE = std.error(arachnids, na.rm=TRUE)) 
 
 # spider pub fig #####
 spiders_fig <- ggplot(spider_summary, aes(x=spiders,y=reorder(tree,-desc(spiders)),fill=exo)) +
   geom_bar(stat="identity", width=0.6, position="dodge") +
-  theme_bw(base_size = 16) + 
+  theme_bw(base_size = 16) +
+  scale_fill_manual(values = c("gray79", "gray45")) +
+  geom_errorbar(aes(xmin=spiders-(SE/2), xmax=spiders+(SE/2)), width=0.1) +
   theme(panel.border = element_blank(), panel.grid.major = element_blank(),
         panel.grid.minor = element_blank(), axis.line = element_line(colour = "black")) +
   labs(y="Plant species", x="Average spider # (bag branches)", fill="Plant type") + 
-  scale_fill_grey() +
   theme(axis.line.x = element_line(color="black", size = 0.5),
         axis.line.y = element_line(color="black", size = 0.5)) +
-  theme(legend.position=c(0.8,0.2))
+  theme(legend.position=c(0.8,0.1)) +
+  theme(legend.title = element_blank())
 spiders_fig
 
 
@@ -565,7 +567,7 @@ hemiptera_summary <- trophic_dat %>%
   group_by(tree,exo) %>% 
   summarise(hemiptera = mean(hemiptera), SE = sd(hemiptera)) 
 
-# spider pub fig #####
+# hemi pub fig #####
 hemiptera_fig <- ggplot(hemiptera_summary, aes(x=hemiptera,y=reorder(tree,-desc(hemiptera)),fill=exo)) +
   geom_bar(stat="identity", width=0.6, position="dodge") +
   theme_bw(base_size = 16) + 
