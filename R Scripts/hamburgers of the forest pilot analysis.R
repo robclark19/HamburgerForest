@@ -402,23 +402,25 @@ cld(emmeans(aquatics.glm, ~ tree), type="response", adjust="none")
 aquatics_summary <- trophic_dat %>% 
   filter(treatment == 'bag') %>%
   group_by(tree,exo) %>% 
-  summarise(aquatics = mean(aquatics), SE = std.error(aquatics)) 
+  summarise(Aquatics = mean(aquatics), SE = std.error(aquatics, na.rm=TRUE)) 
 
 
 
 
 # aquatics pub fig #####
 #aphid density fig for 2018 non-crop legume transects
-aquatics_fig <- ggplot(aquatics_summary, aes(x=aquatics,y=reorder(tree,-desc(aquatics)),fill=exo)) +
+aquatics_fig <- ggplot(aquatics_summary, aes(x=Aquatics,y=reorder(tree,-desc(Aquatics)),fill=exo)) +
   geom_bar(stat="identity", width=0.6, position="dodge") +
   theme_bw(base_size = 16) + 
+  scale_fill_manual(values = c("gray79", "gray45")) +
+  geom_errorbar(aes(xmin=Aquatics-(SE/2), xmax=Aquatics+(SE/2)), width=0.1) +
   theme(panel.border = element_blank(), panel.grid.major = element_blank(),
         panel.grid.minor = element_blank(), axis.line = element_line(colour = "black")) +
   labs(y="Plant species", x="Average aquatic insect # (bag branches)", fill="Plant type") + 
-  scale_fill_grey() +
   theme(axis.line.x = element_line(color="black", size = 0.5),
         axis.line.y = element_line(color="black", size = 0.5)) +
-  theme(legend.position=c(0.8,0.2))
+  theme(legend.position=c(0.8,0.2)) +
+  theme(legend.title = element_blank())
 aquatics_fig
 
 
@@ -523,19 +525,21 @@ cld(emmeans(lepidoptera.glm, ~ treatment|tree), type="response")
 lep_summary <- trophic_dat %>% 
   filter(treatment == 'bag') %>%
   group_by(tree,exo) %>% 
-  summarise(Lepidoptera = mean(lepidoptera), SE = sd(lepidoptera)) 
+  summarise(Lepidoptera = mean(lepidoptera), SE = std.error(lepidoptera, na.rm=TRUE))
 
-# spider pub fig #####
+# lep pub fig #####
 Lepidoptera_fig <- ggplot(lep_summary, aes(x=Lepidoptera,y=reorder(tree,-desc(Lepidoptera)),fill=exo)) +
   geom_bar(stat="identity", width=0.6, position="dodge") +
   theme_bw(base_size = 16) + 
+  scale_fill_manual(values = c("gray79", "gray45")) +
+  geom_errorbar(aes(xmin=Lepidoptera-(SE/2), xmax=Lepidoptera+(SE/2)), width=0.1) +
   theme(panel.border = element_blank(), panel.grid.major = element_blank(),
         panel.grid.minor = element_blank(), axis.line = element_line(colour = "black")) +
   labs(y="Plant species", x="Average Lepidoptera # (bag branches)", fill="Plant type") + 
-  scale_fill_grey() +
   theme(axis.line.x = element_line(color="black", size = 0.5),
         axis.line.y = element_line(color="black", size = 0.5)) +
-  theme(legend.position=c(0.8,0.2))
+  theme(legend.position=c(0.8,0.2)) +
+  theme(legend.title = element_blank())
 Lepidoptera_fig
 
 
@@ -565,19 +569,22 @@ plot(emmeans(hemiptera.glm, ~ treatment*tree), type="response")
 hemiptera_summary <- trophic_dat %>% 
   filter(treatment == 'bag') %>%
   group_by(tree,exo) %>% 
-  summarise(hemiptera = mean(hemiptera), SE = sd(hemiptera)) 
+  summarise(Hemiptera = mean(hemiptera), SE = std.error(hemiptera, na.rm=TRUE))
+
 
 # hemi pub fig #####
-hemiptera_fig <- ggplot(hemiptera_summary, aes(x=hemiptera,y=reorder(tree,-desc(hemiptera)),fill=exo)) +
+hemiptera_fig <- ggplot(hemiptera_summary, aes(x=Hemiptera,y=reorder(tree,-desc(Hemiptera)),fill=exo)) +
   geom_bar(stat="identity", width=0.6, position="dodge") +
   theme_bw(base_size = 16) + 
+  scale_fill_manual(values = c("gray79", "gray45")) +
+  geom_errorbar(aes(xmin=Hemiptera-(SE/2), xmax=Hemiptera+(SE/2)), width=0.1) +
   theme(panel.border = element_blank(), panel.grid.major = element_blank(),
         panel.grid.minor = element_blank(), axis.line = element_line(colour = "black")) +
   labs(y="Plant species", x="Average Hemiptera # (bag branches)", fill="Plant type") + 
-  scale_fill_grey() +
   theme(axis.line.x = element_line(color="black", size = 0.5),
         axis.line.y = element_line(color="black", size = 0.5)) +
-  theme(legend.position=c(0.8,0.2))
+  theme(legend.position=c(0.8,0.2)) +
+  theme(legend.title = element_blank())
 hemiptera_fig
 
 
@@ -598,12 +605,38 @@ ggsave(filename = "./Figures/hemiptera.svg", plot = hemiptera_fig, device = "svg
 
 
 # coleoptera ####
-coleoptera.glm <- glmer.nb(coleoptera ~ treatment*exo + (1|branch_code), data=trophic_dat)
+coleoptera.glm <- glmer.nb(coleoptera ~ treatment + tree + (1|branch_code), data=trophic_dat)
 summary(coleoptera.glm)
 
-plot(emmeans(coleoptera.glm, ~ treatment*exo), type="response")
+plot(emmeans(coleoptera.glm, ~ tree), type="response")
+
+# beetle pub fig
+beetle_summary <- trophic_dat %>% 
+  filter(treatment == 'bag') %>%
+  group_by(tree,exo) %>% 
+  summarise(Coleoptera = mean(coleoptera), SE = std.error(coleoptera, na.rm=TRUE))
 
 
+
+# beetle pub fig #####
+beetle_fig <- ggplot(beetle_summary, aes(x=Coleoptera,y=reorder(tree,-desc(Coleoptera)),fill=exo)) +
+  geom_bar(stat="identity", width=0.6, position="dodge") +
+  theme_bw(base_size = 16) + 
+  scale_fill_manual(values = c("gray79", "gray45")) +
+  geom_errorbar(aes(xmin=Coleoptera-(SE/2), xmax=Coleoptera+(SE/2)), width=0.1) +
+  theme(panel.border = element_blank(), panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(), axis.line = element_line(colour = "black")) +
+  labs(y="Plant species", x="Average Coleoptera # (bag branches)", fill="Plant type") + 
+  theme(axis.line.x = element_line(color="black", size = 0.5),
+        axis.line.y = element_line(color="black", size = 0.5)) +
+  theme(legend.position=c(0.8,0.2)) +
+  theme(legend.title = element_blank())
+beetle_fig
+
+
+# write figure to folder, use arguments to modify size or file type!
+ggsave(filename = "./Figures/beetles.svg", plot = beetle_fig, device = "svg",
+       width = 6, height = 5, units = "in")
 
 
 
@@ -630,19 +663,21 @@ plot(emmeans(orthopterids.glm, ~ treatment*tree), type="response")
 orthoptera_summary <- trophic_dat %>% 
   filter(treatment == 'bag') %>%
   group_by(tree,exo) %>% 
-  summarise(orthoptera = mean(orthopterids), SE = sd(orthoptera)) 
+  summarise(orthoptera = mean(orthopterids), SE = std.error(orthopterids, na.rm = TRUE)) 
 
 # spider pub fig #####
 orthoptera_fig <- ggplot(orthoptera_summary, aes(x=orthoptera,y=reorder(tree,-desc(orthoptera)),fill=exo)) +
   geom_bar(stat="identity", width=0.6, position="dodge") +
   theme_bw(base_size = 16) + 
+  scale_fill_manual(values = c("gray79", "gray45")) +
+  geom_errorbar(aes(xmin=orthoptera-(SE/2), xmax=orthoptera+(SE/2)), width=0.1) +
   theme(panel.border = element_blank(), panel.grid.major = element_blank(),
         panel.grid.minor = element_blank(), axis.line = element_line(colour = "black")) +
   labs(y="Plant species", x="Average Orthoptera # (bag branches)", fill="Plant type") + 
-  scale_fill_grey() +
   theme(axis.line.x = element_line(color="black", size = 0.5),
         axis.line.y = element_line(color="black", size = 0.5)) +
-  theme(legend.position=c(0.8,0.2))
+  theme(legend.position=c(0.8,0.2)) +
+  theme(legend.title = element_blank())
 orthoptera_fig
 
 
