@@ -148,6 +148,11 @@ newsletter_plot_2
 
 # bag only biomass figure
 
+
+
+
+
+
 # musclewood over time
 hotf_dat$time_block <- as.factor(hotf_dat$time_block)
 
