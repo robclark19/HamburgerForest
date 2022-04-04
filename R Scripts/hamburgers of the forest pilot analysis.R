@@ -123,7 +123,7 @@ newsletter_plot
 
 # newsletter plot 2 with host plants
 # native vs. non-native
-native_glm_2 <- lmer(log(bug_count) ~ tree * treatment + (1 | branch_code), data = hotf_dat)
+native_glm_2 <- lmer(log(wet_mass_g) ~ tree * treatment + (1 | branch_code), data = hotf_dat)
 Anova(native_glm_2)
 
 plot(emmeans(native_glm_2, ~ treatment * tree), type = "response")
@@ -132,10 +132,11 @@ tree.lsm <- emmeans(native_glm_2, ~ treatment | tree, type = "response") %>% cld
 
 
 # bird and native plant effects plot for GH newsletters
-
-newsletter_plot_2 <- ggplot(data=tree.lsm, aes(x = treatment, y = response)) +
+# source of fig 1 for manuscript #######
+Fig_1 <- ggplot(data=tree.lsm, aes(x = treatment, y = response)) +
   theme_bw(base_size=12) +
   geom_point(size=2) +
+  geom_line(aes(group = tree)) +
   geom_errorbar(aes(ymin=response-(SE), ymax=response+(SE), width=0)) +
   ylab("Average arthropod biomass (grams)") +
   xlab("Bird Exclusion") +
@@ -143,12 +144,13 @@ newsletter_plot_2 <- ggplot(data=tree.lsm, aes(x = treatment, y = response)) +
   geom_text(aes(x = treatment, y = (response+SE), label = .group, hjust=-.5)) +
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank()) +
   facet_wrap( ~ tree, nrow=2) 
-newsletter_plot_2
+Fig_1
 
 
-# bag only biomass figure
-
-
+# hedges g style effect size figure using means and SE (?) 
+# use real means and SE, but inherit posthoc tests from emmeans
+Fig2_hd <- hotf_dat %>% group_by(tree, treatment) %>%
+  summarise(response = mean(wet_mass_g, na.rm=TRUE), SE = std.error(wet_mass_g, na.rm=TRUE)) %>% as.data.frame()
 
 
 
@@ -686,8 +688,12 @@ orthoptera_fig <- ggplot(orthoptera_summary, aes(x=orthoptera,y=reorder(tree,-de
 orthoptera_fig
 
 
+
 # write figure to folder, use arguments to modify size or file type!
 ggsave(filename = "./Figures/orthoptera.svg", plot = orthoptera_fig, device = "svg",
        width = 6, height = 5, units = "in")
 
 
+
+
+# 
