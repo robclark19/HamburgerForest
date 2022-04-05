@@ -220,6 +220,8 @@ ggplot(hotf_dat, aes(x=log(bug_count), y=log(wet_mass_g))) + geom_point() +
 
 leaf_dat <- read.csv("./Data/Originals/pilot leaf count data.csv")
 
+sum(leaf_dat$leaf.count)
+
 hist(leaf_dat$leaf.count)
 # plot(vcd::goodfit(leaf_dat$leaf.count, type="poisson"))
 
@@ -256,7 +258,7 @@ yup.glm <- glm(wet_mass_g ~ tree * treatment + leaf.count, data = leaf_dat)
 Anova(yup.glm)
 AIC(yup.glm)
 
-yup.glm.2 <- glm(wet_mass_g ~ treatment, data = leaf_dat)
+yup.glm.2 <- glm(wet_mass_g ~ tree * treatment, data = leaf_dat)
 AIC(yup.glm.2)
 
 anova(yup.glm, yup.glm.2)

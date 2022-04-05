@@ -1,6 +1,12 @@
 # Trophic project 2021 Primary Figures
 # Libraries ####
-
+library("tidyverse")
+library("readr")
+library("lme4")
+library("car")
+library("multcomp")
+library("ggplot2")
+library("emmeans")
 
 
 
@@ -92,4 +98,5 @@ Fig_1
 
 
 # Figure s5: ruling out leaf area as a primary determinant of biomass patterns
+
 
