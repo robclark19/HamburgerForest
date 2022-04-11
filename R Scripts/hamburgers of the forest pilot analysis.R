@@ -388,6 +388,10 @@ bc_drop <- data.frame(branch_code = c("BC5B", "BC5C","BC6B", "BC6C","BC7B", "BC7
 trophic_dat <- trophic_dat %>% anti_join(bc_drop, by = "branch_code", copy=TRUE) %>%                               # Replacing values
   mutate(tree = replace(tree, tree == "Black Cherry", "Shadbush"))
 
+# export trophic dat ######
+# write this .csv out as a cleaned file
+
+# write.csv(x=trophic_dat, file="./Data/Output/clean_trophic_groups.csv")
 
 # basic glmms on invert groups
 str(trophic_dat)
@@ -396,6 +400,12 @@ str(trophic_dat)
 aquatics.glm <- glm.nb(aquatics ~ treatment*tree, data=trophic_dat)
 summary(aquatics.glm)
 
+# aquatic glmm #
+# exo only
+aquatics.glm <- glm.nb(aquatics ~ treatment*exo, data=trophic_dat)
+summary(aquatics.glm)
+
+plot(emmeans(aquatics.glm, ~ treatment*exo), type="response")
 plot(emmeans(aquatics.glm, ~ treatment), type="response")
 plot(emmeans(aquatics.glm, ~ treatment*tree), type="response")
 plot(emmeans(aquatics.glm, ~ tree), type="response")
@@ -515,12 +525,12 @@ plot(emmeans(hymenoptera.glm, ~ tree), type="response")
 
 
 # lepidoptera glmm #####
-lepidoptera.glm <- glmer.nb(lepidoptera  ~ treatment * tree + (1|branch_code), data=trophic_dat)
+lepidoptera.glm <- glmer.nb(lepidoptera  ~ treatment * exo + (1|branch_code) + (1|tree), data=trophic_dat)
 summary(lepidoptera.glm)
 
-plot(emmeans(lepidoptera.glm, ~ treatment*tree), type="response")
+plot(emmeans(lepidoptera.glm, ~ treatment*exo), type="response")
 
-cld(emmeans(lepidoptera.glm, ~ treatment|tree), type="response")
+cld(emmeans(lepidoptera.glm, ~ treatment*exo), type="response")
 
 # make a lep figure just showing the 6 trees with bird effects
 

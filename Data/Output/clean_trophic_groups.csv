@@ -1,0 +1,703 @@
+,branch_code,time_block,tree,treatment,arachnids,lepidoptera,diptera,coleoptera,hymenoptera,hemiptera,aquatics,gastropods,orthopterids,exo
+1,BY7C,1,Barberry,control,1,1,0,3,0,2,0,0,0,Nonnative
+2,AB9B,1,Beech,bag,9,4,0,1,1,5,0,0,0,Native
+3,BB11C,1,Sweet Birch,control,2,1,0,10,1,3,0,0,0,Native
+4,BY6B,1,Barberry,bag,10,1,1,1,1,14,0,0,0,Nonnative
+5,HS1C,1,Honeysuckle,control,3,1,2,9,1,1,0,0,0,Nonnative
+6,BY7B,1,Barberry,bag,8,0,1,0,4,8,0,0,1,Nonnative
+7,AB9C,1,Beech,control,5,0,1,4,2,9,0,0,0,Native
+8,SM1C,1,Striped Maple,control,1,0,0,1,4,1,0,0,0,Native
+9,BB11B,1,Sweet Birch,bag,5,3,1,4,0,4,0,0,0,Native
+10,SM1B,1,Striped Maple,bag,2,1,0,0,1,3,0,0,0,Native
+11,WH4B,1,Witch-hazel,bag,4,2,0,8,3,2,3,0,0,Native
+12,BB12C,1,Sweet Birch,control,4,0,0,0,0,7,0,0,0,Native
+13,HS2B,1,Honeysuckle,bag,8,1,3,4,2,4,0,0,0,Nonnative
+14,BY6C,1,Barberry,control,19,1,0,1,1,2,0,0,0,Nonnative
+15,HS2C,1,Honeysuckle,control,6,0,0,7,0,6,0,0,0,Nonnative
+16,HS1B,1,Honeysuckle,bag,6,0,4,7,3,7,0,0,0,Nonnative
+17,MW2C,1,Musclewood,control,3,2,1,8,2,6,0,0,0,Native
+18,BC4B,1,Shadbush,bag,5,0,1,2,1,2,0,0,1,Native
+19,AO1C,1,Autumn Olive,control,7,1,3,4,2,7,0,0,0,Nonnative
+20,AO1B,1,Autumn Olive,bag,6,1,9,5,3,20,1,0,0,Nonnative
+21,WE1B,1,Burning Bush,bag,7,0,4,11,3,1,0,0,0,Nonnative
+22,BB12B,1,Sweet Birch,bag,5,0,0,5,0,5,0,0,0,Native
+23,WH3C,1,Witch-hazel,control,3,0,2,13,8,1,2,0,1,Native
+24,BC4C,1,Shadbush,control,1,1,0,1,2,8,0,0,1,Native
+25,SM2B,1,Striped Maple,bag,9,1,3,13,10,6,3,0,3,Native
+26,SM2C,1,Striped Maple,control,1,0,1,6,1,3,0,0,0,Native
+27,WH4C,1,Witch-hazel,control,5,1,0,1,4,0,5,0,1,Native
+28,AO8C,1,Autumn Olive,control,7,1,0,1,0,2,0,0,0,Nonnative
+29,WE1C,1,Burning Bush,control,2,0,1,5,14,1,0,0,0,Nonnative
+30,WE9C,1,Burning Bush,control,7,0,0,2,3,3,0,0,0,Nonnative
+31,WH3B,1,Witch-hazel,bag,5,1,0,10,3,1,0,0,0,Native
+32,MW1C,1,Musclewood,control,6,1,1,10,7,29,0,0,1,Native
+33,WE9B,1,Burning Bush,bag,11,1,0,1,15,1,2,0,0,Nonnative
+34,AB1B,1,Beech,bag,3,1,1,2,1,0,2,0,0,Native
+35,AB1C,1,Beech,control,6,0,0,4,0,2,0,0,0,Native
+36,AO8B,1,Autumn Olive,bag,3,0,0,2,8,1,2,0,0,Nonnative
+37,MW1B,1,Musclewood,bag,12,1,1,24,2,34,4,0,3,Native
+38,MW2B,1,Musclewood,bag,10,1,2,6,3,8,0,0,0,Native
+39,WH1C,1,Witch-hazel,control,1,0,1,2,8,0,0,0,0,Native
+40,BB1B,1,Sweet Birch,bag,12,0,1,1,1,15,0,0,0,Native
+41,WH1B,1,Witch-hazel,bag,11,0,3,4,1,4,2,0,0,Native
+42,WH2B,1,Witch-hazel,bag,5,1,5,9,1,7,0,0,0,Native
+43,AO3C,1,Autumn Olive,control,3,1,0,4,1,1,0,0,0,Nonnative
+44,MW4B,1,Musclewood,bag,5,0,3,7,2,3,2,0,0,Native
+45,MW3B,1,Musclewood,bag,4,0,0,3,0,1,2,0,0,Native
+46,AB10C,1,Beech,control,2,1,0,3,0,2,0,0,1,Native
+47,MW4C,1,Musclewood,control,5,1,2,8,4,3,2,0,0,Native
+48,AB10B,1,Beech,bag,3,1,1,1,2,8,0,0,0,Native
+49,AO2C,1,Autumn Olive,control,5,0,2,3,1,10,0,0,0,Nonnative
+50,BB2B,1,Sweet Birch,bag,2,0,1,4,3,7,1,0,0,Native
+51,WE7B,1,Burning Bush,bag,9,2,2,4,0,2,0,0,0,Nonnative
+52,HS4B,1,Honeysuckle,bag,10,1,1,0,1,5,2,0,0,Nonnative
+53,SM4B,1,Striped Maple,bag,10,0,0,3,0,57,0,0,1,Native
+54,BY1B,1,Barberry,bag,8,0,3,4,2,5,0,0,0,Nonnative
+55,AB11B,1,Beech,bag,5,1,0,3,0,1,0,0,0,Native
+56,BB1C,1,Sweet Birch,control,2,0,5,3,0,12,0,0,0,Native
+57,AO3B,1,Autumn Olive,bag,7,1,0,23,15,15,0,0,1,Nonnative
+58,AB11C,1,Beech,control,1,1,0,3,0,4,0,0,0,Native
+59,MW3C,1,Musclewood,control,3,0,0,3,2,5,0,0,1,Native
+60,WE8B,1,Burning Bush,bag,10,1,0,2,4,6,0,0,0,Nonnative
+61,HS4C,1,Honeysuckle,control,8,0,0,3,0,1,0,0,0,Nonnative
+62,WE7C,1,Burning Bush,control,3,2,1,2,0,5,0,0,0,Nonnative
+63,WE8C,1,Burning Bush,control,11,0,2,2,1,4,0,0,0,Nonnative
+64,HS3B,1,Honeysuckle,bag,3,2,0,1,1,1,0,0,0,Nonnative
+65,WH2C,1,Witch-hazel,control,3,0,2,3,3,2,0,0,0,Native
+66,SM4C,1,Striped Maple,control,2,0,1,0,1,14,2,0,0,Native
+67,BY1C,1,Barberry,control,16,0,1,1,0,5,0,0,0,Nonnative
+68,AO2B,1,Autumn Olive,bag,5,0,0,5,0,1,0,0,0,Nonnative
+69,BY2C,1,Barberry,control,4,0,0,3,0,1,0,0,0,Nonnative
+70,SM3C,1,Striped Maple,control,2,1,0,1,1,5,0,0,0,Native
+71,BB2C,1,Sweet Birch,control,3,0,0,2,0,5,1,0,0,Native
+72,BY2B,1,Barberry,bag,11,0,1,0,0,1,0,0,0,Nonnative
+73,HS3C,1,Honeysuckle,control,2,1,2,0,1,3,0,0,1,Nonnative
+74,SM3B,1,Striped Maple,bag,13,1,0,1,0,10,1,0,0,Native
+75,AO5B,1,Autumn Olive,bag,7,2,2,15,0,42,2,0,1,Nonnative
+76,SM6B,1,Striped Maple,bag,13,0,2,5,2,19,0,0,0,Native
+77,SM5C,1,Striped Maple,control,4,0,1,4,1,40,0,0,0,Native
+78,BY5B,1,Barberry,bag,16,2,0,0,1,30,0,0,1,Nonnative
+79,WH6B,1,Witch-hazel,bag,12,1,3,1,0,5,0,0,2,Native
+80,BC3C,1,Shadbush,control,1,0,1,1,4,67,0,0,0,Native
+81,BC1C,1,Shadbush,control,1,1,2,0,1,7,0,0,2,Native
+82,MW6C,1,Musclewood,control,2,1,1,2,2,5,0,0,1,Native
+83,WE3B,1,Burning Bush,bag,7,0,20,5,0,3,3,0,0,Nonnative
+84,AB2C,1,Beech,control,199,0,1,0,2,1,2,0,0,Native
+85,BB4B,1,Sweet Birch,bag,11,0,4,7,6,3,6,0,0,Native
+86,AB12B,1,Beech,bag,5,1,2,1,1,8,1,0,0,Native
+87,HS6B,1,Honeysuckle,bag,10,1,2,4,0,2,0,0,0,Nonnative
+88,WE3C,1,Burning Bush,control,14,0,14,6,0,1,0,0,0,Nonnative
+89,AB12C,1,Beech,control,3,0,1,1,0,8,1,0,1,Native
+90,BC1B,1,Shadbush,bag,4,0,5,4,3,7,3,0,2,Native
+91,WE2B,1,Burning Bush,bag,9,2,1,9,2,3,2,0,0,Nonnative
+92,WH5C,1,Witch-hazel,control,3,0,0,1,1,2,0,0,1,Native
+93,HS6C,1,Honeysuckle,control,1,0,3,1,1,1,0,0,0,Nonnative
+94,BC3B,1,Shadbush,bag,5,0,2,3,1,5,1,0,0,Native
+95,AB2B,1,Beech,bag,5,4,4,7,2,2,1,0,0,Native
+96,BB4C,1,Sweet Birch,control,2,1,0,0,3,1,1,0,0,Native
+97,AO5C,1,Autumn Olive,control,5,0,2,9,0,50,0,0,0,Nonnative
+98,HS5C,1,Honeysuckle,control,9,1,1,5,2,15,0,0,0,Nonnative
+99,BY5C,1,Barberry,control,6,0,0,0,1,7,0,0,0,Nonnative
+100,HS5B,1,Honeysuckle,bag,13,2,11,0,1,20,0,0,1,Nonnative
+101,BY4B,1,Barberry,bag,10,0,1,2,1,6,0,0,0,Nonnative
+102,WH5B,1,Witch-hazel,bag,17,1,0,3,4,5,0,0,1,Native
+103,AO4C,1,Autumn Olive,control,10,1,7,7,0,33,0,0,0,Nonnative
+104,SM6C,1,Striped Maple,control,3,0,0,2,0,7,1,0,0,Native
+105,AO4B,1,Autumn Olive,bag,3,1,6,21,1,47,0,0,0,Nonnative
+106,SM5B,1,Striped Maple,bag,3,0,0,4,0,19,0,0,2,Native
+107,MW5B,1,Musclewood,bag,15,4,0,6,13,13,2,0,0,Native
+108,BB3C,1,Sweet Birch,control,2,3,1,8,0,26,3,0,0,Native
+109,BB3B,1,Sweet Birch,bag,6,1,2,5,2,22,0,0,1,Native
+110,WH6C,1,Witch-hazel,control,5,2,0,0,3,3,0,0,0,Native
+111,BY4C,1,Barberry,control,1,0,0,0,1,16,0,0,0,Nonnative
+112,MW5C,1,Musclewood,control,8,1,1,3,3,26,0,0,0,Native
+113,MW6B,1,Musclewood,bag,13,1,1,3,1,12,1,0,0,Native
+114,WE2C,1,Burning Bush,control,10,0,0,6,0,0,0,0,0,Nonnative
+115,AO7C,1,Autumn Olive,control,3,1,1,0,0,2,2,0,1,Nonnative
+116,BY9C,1,Barberry,control,10,0,0,2,0,8,0,0,0,Nonnative
+117,WE5C,1,Burning Bush,control,7,0,1,3,2,5,0,0,0,Nonnative
+118,WE5B,1,Burning Bush,bag,8,0,0,2,1,6,0,0,0,Nonnative
+119,HS7B,1,Honeysuckle,bag,8,0,4,0,1,2,0,0,1,Nonnative
+120,BY3C,1,Barberry,control,6,1,0,3,0,5,0,0,0,Nonnative
+121,WH7C,1,Witch-hazel,control,1,0,0,3,0,1,0,0,0,Native
+122,WH7B,1,Witch-hazel,bag,17,0,4,3,0,1,0,0,0,Native
+123,BY3B,1,Barberry,bag,7,0,0,0,0,4,0,0,0,Nonnative
+124,HS8C,1,Honeysuckle,control,5,2,0,0,0,5,0,0,1,Nonnative
+125,MW7B,1,Musclewood,bag,9,1,1,10,1,6,0,0,0,Native
+126,WE4C,1,Burning Bush,control,2,0,0,3,0,7,1,0,1,Nonnative
+127,WE4B,1,Burning Bush,bag,5,1,3,0,1,14,2,1,0,Nonnative
+128,MW7C,1,Musclewood,control,2,0,1,0,0,15,0,0,0,Native
+129,HS7C,1,Honeysuckle,control,4,0,3,1,0,2,0,0,0,Nonnative
+130,AO6B,1,Autumn Olive,bag,1,2,3,13,0,0,0,0,0,Nonnative
+131,AO7B,1,Autumn Olive,bag,4,1,1,9,0,3,4,2,1,Nonnative
+132,BY9B,1,Barberry,bag,18,0,1,2,1,8,0,0,0,Nonnative
+133,HS8B,1,Honeysuckle,bag,7,0,0,2,2,2,1,1,0,Nonnative
+134,AO6C,1,Autumn Olive,control,2,0,0,3,0,0,1,0,0,Nonnative
+135,MW8C,1,Musclewood,control,1,0,0,2,3,83,3,0,1,Native
+136,WH8C,1,Witch-hazel,control,1,3,0,3,0,2,6,0,1,Native
+137,BB6C,1,Sweet Birch,control,2,0,2,1,0,0,0,0,1,Native
+138,SM7B,1,Striped Maple,bag,6,1,3,2,1,1,3,0,2,Native
+139,AB3B,1,Beech,bag,4,2,0,2,0,4,2,0,0,Native
+140,SM7C,1,Striped Maple,control,1,1,1,5,0,3,8,0,0,Native
+141,BC8B,1,Shadbush,bag,0,5,0,10,0,10,0,0,3,Native
+142,AB3C,1,Beech,control,1,0,1,1,0,5,2,0,0,Native
+143,BB5C,1,Sweet Birch,control,0,0,1,0,0,2,3,0,1,Native
+144,SM8C,1,Striped Maple,control,2,0,2,1,1,4,0,0,0,Native
+145,AB4B,1,Beech,bag,2,1,0,1,0,3,0,0,0,Native
+146,BC2C,1,Shadbush,control,0,2,0,1,2,1,0,0,0,Native
+147,MW8B,1,Musclewood,bag,2,0,0,2,2,23,1,0,1,Native
+148,BB5B,1,Sweet Birch,bag,4,1,1,5,1,3,7,0,0,Native
+149,BB6B,1,Sweet Birch,bag,2,1,1,1,1,4,1,0,1,Native
+150,SM8B,1,Striped Maple,bag,1,0,0,3,1,5,3,0,0,Native
+151,BC2B,1,Shadbush,bag,3,2,0,1,1,5,1,0,2,Native
+152,AB4C,1,Beech,control,1,1,2,1,0,3,1,0,1,Native
+153,BC8C,1,Shadbush,control,3,1,0,0,0,2,1,0,2,Native
+154,WH8B,1,Witch-hazel,bag,3,1,2,0,0,2,1,0,1,Native
+155,HS9C,1,Honeysuckle,control,3,0,1,1,2,4,1,0,2,Nonnative
+156,MW9B,1,Musclewood,bag,6,0,1,2,1,0,1,0,0,Native
+157,BY10B,1,Barberry,bag,15,0,1,4,1,12,2,0,0,Nonnative
+158,WE6B,1,Burning Bush,bag,13,2,0,1,0,8,0,0,0,Nonnative
+159,SM10B,1,Striped Maple,bag,6,1,1,2,1,2,1,0,0,Native
+160,BB7B,1,Sweet Birch,bag,5,2,0,1,0,4,0,1,1,Native
+161,WH9C,1,Witch-hazel,control,5,2,0,4,0,1,0,0,0,Native
+162,BY10C,1,Barberry,control,13,0,0,1,1,2,0,0,0,Nonnative
+163,BB7C,1,Sweet Birch,control,1,0,0,5,0,7,0,0,0,Native
+164,AO9B,1,Autumn Olive,bag,7,0,0,9,2,2,1,0,1,Nonnative
+165,AO10B,1,Autumn Olive,bag,15,3,1,14,27,3,0,0,0,Nonnative
+166,HS10B,1,Honeysuckle,bag,7,0,0,1,3,6,0,0,1,Nonnative
+167,SM10C,1,Striped Maple,control,7,0,1,0,2,5,0,0,0,Native
+168,BC9B,1,Shadbush,bag,5,0,1,1,0,5,1,0,0,Native
+169,MW10B,1,Musclewood,bag,3,5,0,9,0,10,7,0,0,Native
+170,WH10B,1,Witch-hazel,bag,13,2,1,5,0,0,1,0,0,Native
+171,AB5B,1,Beech,bag,3,2,1,3,0,2,0,0,0,Native
+172,BC9C,1,Shadbush,control,2,1,0,1,0,15,0,0,0,Native
+173,HS9B,1,Honeysuckle,bag,8,1,0,13,0,12,0,0,0,Nonnative
+174,AO9C,1,Autumn Olive,control,0,3,3,15,15,104,0,0,0,Nonnative
+175,SM9B,1,Striped Maple,bag,8,0,2,7,1,3,1,0,0,Native
+176,AB6B,1,Beech,bag,8,0,3,2,0,4,0,0,2,Native
+177,WE10B,1,Burning Bush,bag,3,1,0,2,1,0,3,0,0,Nonnative
+178,WE6C,1,Burning Bush,control,16,2,0,2,0,1,0,0,0,Nonnative
+179,WH9B,1,Witch-hazel,bag,6,0,0,4,1,1,0,0,2,Native
+180,BY8C,1,Barberry,control,5,2,1,2,0,1,0,0,2,Nonnative
+181,BB8B,1,Sweet Birch,bag,2,0,2,3,0,0,0,0,0,Native
+182,BY8B,1,Barberry,bag,30,1,0,4,1,10,0,0,0,Nonnative
+183,BB8C,1,Sweet Birch,control,1,0,1,2,2,1,0,0,0,Native
+184,AB5C,1,Beech,control,0,0,1,3,1,0,0,0,0,Native
+185,MW10C,1,Musclewood,control,2,1,0,13,0,4,1,0,0,Native
+186,BC10B,1,Shadbush,bag,8,1,13,1,3,58,0,0,0,Native
+187,AO10C,1,Autumn Olive,control,1,0,2,1,2,3,0,0,0,Nonnative
+188,MW9C,1,Musclewood,control,1,1,2,3,1,2,1,0,2,Native
+189,BC10C,1,Shadbush,control,4,1,1,2,1,3,0,0,2,Native
+190,HS10C,1,Honeysuckle,control,3,0,0,1,10,8,0,0,1,Nonnative
+191,AB6C,1,Beech,control,1,1,0,5,0,0,0,0,0,Native
+192,SM9C,1,Striped Maple,control,1,0,0,1,1,2,0,0,0,Native
+193,WE10C,1,Burning Bush,control,6,0,2,2,0,1,1,0,1,Nonnative
+194,WH10C,1,Witch-hazel,control,1,0,0,1,0,2,0,0,0,Native
+195,MW12B,1,Musclewood,bag,5,0,0,7,0,10,4,0,0,Native
+196,WE12B,1,Burning Bush,bag,33,2,0,2,2,7,1,0,0,Nonnative
+197,AO12C,1,Autumn Olive,control,6,0,0,4,2,3,0,0,0,Nonnative
+198,BC11B,1,Shadbush,bag,3,0,1,1,4,9,0,0,1,Native
+199,SM12C,1,Striped Maple,control,2,2,0,0,11,1,0,0,1,Native
+200,HS12C,1,Honeysuckle,control,1,0,0,0,5,3,0,3,0,Nonnative
+201,WE12C,1,Burning Bush,control,9,1,1,1,1,2,0,0,0,Nonnative
+202,HS11C,1,Honeysuckle,control,22,0,1,3,0,20,0,0,0,Nonnative
+203,SM12B,1,Striped Maple,bag,6,1,2,3,0,5,0,0,1,Native
+204,BB9B,1,Sweet Birch,bag,4,2,1,2,1,2,0,0,0,Native
+205,AO11B,1,Autumn Olive,bag,25,0,1,3,1,3,3,0,1,Nonnative
+206,AO12B,1,Autumn Olive,bag,9,0,1,20,0,5,0,0,0,Nonnative
+207,HS12B,1,Honeysuckle,bag,8,1,0,1,7,9,0,33,0,Nonnative
+208,WH11B,1,Witch-hazel,bag,9,0,0,3,1,0,0,0,1,Native
+209,AB8C,1,Beech,control,1,0,0,0,0,1,0,0,0,Native
+210,AB7C,1,Beech,control,0,0,1,1,0,1,0,0,0,Native
+211,MW12C,1,Musclewood,control,7,1,0,4,1,18,1,0,1,Native
+212,AB8B,1,Beech,bag,4,2,0,0,0,2,0,1,0,Native
+213,BY12C,1,Barberry,control,11,0,0,0,0,0,0,1,0,Nonnative
+214,WE11B,1,Burning Bush,bag,7,1,0,0,1,2,1,1,0,Nonnative
+215,BB10B,1,Sweet Birch,bag,1,1,1,5,1,1,0,0,1,Native
+216,WE11C,1,Burning Bush,control,13,0,0,1,6,15,4,0,2,Nonnative
+217,MW11B,1,Musclewood,bag,4,1,0,0,2,0,2,0,1,Native
+218,BC11C,1,Shadbush,control,2,0,0,5,1,4,0,0,1,Native
+219,AB7B,1,Beech,bag,8,3,0,2,1,4,0,0,0,Native
+220,WH11C,1,Witch-hazel,control,1,1,0,4,0,1,0,0,1,Native
+221,MW11C,1,Musclewood,control,1,2,0,3,1,2,2,0,0,Native
+222,SM11C,1,Striped Maple,control,0,0,0,2,1,1,0,0,0,Native
+223,BB9C,1,Sweet Birch,control,0,0,0,0,0,2,0,0,0,Native
+224,BY11B,1,Barberry,bag,16,1,0,1,2,7,1,0,0,Nonnative
+225,BY12B,1,Barberry,bag,5,0,1,0,0,2,0,5,0,Nonnative
+226,WH12C,1,Witch-hazel,control,1,2,0,1,0,0,0,0,2,Native
+227,BC12B,1,Shadbush,bag,3,2,0,0,0,0,0,0,0,Native
+228,BB10C,1,Sweet Birch,control,0,0,0,0,0,0,0,0,1,Native
+229,WH12B,1,Witch-hazel,bag,4,2,0,1,0,3,0,0,0,Native
+230,SM11B,1,Striped Maple,bag,6,0,1,3,1,2,0,0,1,Native
+231,AO11C,1,Autumn Olive,control,0,0,1,2,1,1,2,0,0,Nonnative
+232,BC12C,1,Shadbush,control,1,0,0,1,2,0,0,0,0,Native
+233,BY11C,1,Barberry,control,8,0,0,0,1,0,2,0,0,Nonnative
+234,HS11B,1,Honeysuckle,bag,13,2,0,4,1,7,0,0,0,Nonnative
+235,MW1B,2,Musclewood,bag,14,0,2,3,0,4,0,0,1,Native
+236,BB11B,2,Sweet Birch,bag,16,0,0,4,1,2,0,0,0,Native
+237,BB12B,2,Sweet Birch,bag,12,1,0,2,1,8,1,0,0,Native
+238,BB12C,2,Sweet Birch,control,5,0,0,3,2,6,0,0,0,Native
+239,MW2C,2,Musclewood,control,3,1,0,2,2,2,0,0,0,Native
+240,SM1B,2,Striped Maple,bag,15,1,0,1,0,1,0,0,0,Native
+241,AB9B,2,Beech,bag,25,1,0,1,0,3,0,0,1,Native
+242,BC4B,2,Shadbush,bag,5,0,0,3,6,63,0,0,0,Native
+243,SM2B,2,Striped Maple,bag,12,2,1,4,0,5,1,0,2,Native
+244,HS2B,2,Honeysuckle,bag,8,1,1,3,4,9,0,0,0,Nonnative
+245,WH4C,2,Witch-hazel,control,6,0,1,9,0,13,2,0,1,Native
+246,HS1B,2,Honeysuckle,bag,6,0,0,18,8,6,0,0,0,Nonnative
+247,WH3C,2,Witch-hazel,control,9,0,1,6,0,3,2,0,1,Native
+248,MW1C,2,Musclewood,control,10,0,0,4,3,9,0,0,0,Native
+249,WH3B,2,Witch-hazel,bag,8,1,0,0,0,0,0,0,0,Native
+250,WH4B,2,Witch-hazel,bag,9,1,0,5,0,5,1,0,0,Native
+251,WE1B,2,Burning Bush,bag,10,0,0,9,1,3,1,0,0,Nonnative
+252,BY7B,2,Barberry,bag,4,0,0,1,3,2,0,0,0,Nonnative
+253,BB11C,2,Sweet Birch,control,2,1,0,6,0,6,0,0,0,Native
+254,AO1C,2,Autumn Olive,control,6,1,0,6,0,4,1,0,2,Nonnative
+255,HS1C,2,Honeysuckle,control,9,1,0,5,1,6,0,0,0,Nonnative
+256,HS2C,2,Honeysuckle,control,7,0,0,2,3,3,0,0,0,Nonnative
+257,WE1C,2,Burning Bush,control,9,0,0,2,1,1,0,0,0,Nonnative
+258,AB9C,2,Beech,control,3,0,0,5,1,6,1,0,0,Native
+259,BY6C,2,Barberry,control,23,0,0,6,2,1,0,0,0,Nonnative
+260,BY6B,2,Barberry,bag,22,2,0,0,1,1,1,0,0,Nonnative
+261,BY7C,2,Barberry,control,2,0,0,3,1,1,0,0,0,Nonnative
+262,MW2B,2,Musclewood,bag,9,1,1,1,1,6,0,0,0,Native
+263,AB1C,2,Beech,control,4,0,1,6,0,6,1,0,1,Native
+264,AB1B,2,Beech,bag,5,0,0,2,0,1,0,0,1,Native
+265,WE9B,2,Burning Bush,bag,8,0,0,0,0,2,4,0,1,Nonnative
+266,WE9C,2,Burning Bush,control,2,1,0,0,1,1,1,0,0,Nonnative
+267,SM1C,2,Striped Maple,control,3,0,2,0,1,1,0,0,0,Native
+268,SM2C,2,Striped Maple,control,2,1,0,0,2,1,1,0,0,Native
+269,AO8C,2,Autumn Olive,control,5,0,1,11,0,5,0,0,0,Nonnative
+270,AO8B,2,Autumn Olive,bag,9,0,0,2,0,5,0,0,0,Nonnative
+271,BC4C,2,Shadbush,control,3,0,0,1,0,304,0,0,0,Native
+272,AO1B,2,Autumn Olive,bag,9,0,0,9,2,2,1,0,0,Nonnative
+273,HS4C,2,Honeysuckle,control,8,0,0,0,1,1,0,0,1,Nonnative
+274,AB11B,2,Beech,bag,6,1,0,3,0,3,1,0,0,Native
+275,BB1B,2,Sweet Birch,bag,15,0,0,10,1,49,0,0,3,Native
+276,BB2B,2,Sweet Birch,bag,2,1,0,1,0,1,0,0,0,Native
+277,AB10C,2,Beech,control,2,0,0,2,0,0,0,0,0,Native
+278,AO2C,2,Autumn Olive,control,3,0,0,0,0,5,0,0,1,Nonnative
+279,AB11C,2,Beech,control,3,0,0,1,0,5,0,0,0,Native
+280,BB2C,2,Sweet Birch,control,2,0,0,2,3,0,0,0,0,Native
+281,SM4C,2,Striped Maple,control,5,0,0,1,0,4,0,0,1,Native
+282,BB1C,2,Sweet Birch,control,5,0,1,2,2,5,0,0,0,Native
+283,WH2C,2,Witch-hazel,control,5,0,0,1,3,2,0,0,1,Native
+284,WH1C,2,Witch-hazel,control,7,0,0,1,2,3,0,0,0,Native
+285,MW4C,2,Musclewood,control,9,0,0,2,0,3,3,0,0,Native
+286,SM3B,2,Striped Maple,bag,7,0,0,0,0,1,0,0,0,Native
+287,AO2B,2,Autumn Olive,bag,2,0,0,2,0,0,0,0,1,Nonnative
+288,SM4B,2,Striped Maple,bag,17,1,0,0,2,6,0,0,0,Native
+289,WE8C,2,Burning Bush,control,3,1,0,1,0,3,0,0,1,Nonnative
+290,AO3B,2,Autumn Olive,bag,9,0,2,3,1,0,0,0,0,Nonnative
+291,HS4B,2,Honeysuckle,bag,9,1,1,0,1,1,4,0,0,Nonnative
+292,BY1B,2,Barberry,bag,7,4,0,0,0,5,0,2,1,Nonnative
+293,AO3C,2,Autumn Olive,control,2,0,1,4,0,1,0,0,0,Nonnative
+294,MW3C,2,Musclewood,control,6,2,1,2,1,2,0,0,0,Native
+295,WE8B,2,Burning Bush,bag,9,1,0,1,0,3,0,0,0,Nonnative
+296,WH1B,2,Witch-hazel,bag,13,3,2,1,1,3,0,0,1,Native
+297,WE7C,2,Burning Bush,control,6,0,1,2,0,1,0,0,0,Nonnative
+298,SM3C,2,Striped Maple,control,2,1,0,1,1,1,0,0,0,Native
+299,MW3B,2,Musclewood,bag,4,1,0,1,0,1,1,0,0,Native
+300,AB10B,2,Beech,bag,10,1,1,1,1,5,0,0,1,Native
+301,WH2B,2,Witch-hazel,bag,9,0,2,2,1,1,0,0,0,Native
+302,HS3B,2,Honeysuckle,bag,4,0,0,1,0,4,0,1,0,Nonnative
+303,MW4B,2,Musclewood,bag,11,1,1,2,0,3,1,0,0,Native
+304,WE7B,2,Burning Bush,bag,3,2,0,3,0,0,0,0,0,Nonnative
+305,HS3C,2,Honeysuckle,control,3,1,2,0,0,1,0,0,1,Nonnative
+306,BY2B,2,Barberry,bag,11,2,1,0,0,3,1,0,0,Nonnative
+307,BY2C,2,Barberry,control,1,1,0,1,0,3,1,4,0,Nonnative
+308,BY1C,2,Barberry,control,5,0,0,0,1,1,0,0,0,Nonnative
+309,SM5C,2,Striped Maple,control,2,2,0,5,15,23,0,0,0,Native
+310,AB2C,2,Beech,control,4,0,7,1,3,0,0,0,1,Native
+311,AB12B,2,Beech,bag,4,0,0,6,1,4,1,0,0,Native
+312,AB12C,2,Beech,control,4,0,0,3,0,4,0,0,0,Native
+313,AB2B,2,Beech,bag,4,1,2,1,4,1,2,0,0,Native
+314,AO4C,2,Autumn Olive,control,3,0,0,0,1,6,0,0,0,Nonnative
+315,SM6C,2,Striped Maple,control,5,0,0,5,1,1,1,0,0,Native
+316,BB4C,2,Sweet Birch,control,1,0,4,6,4,2,2,0,1,Native
+317,BB4B,2,Sweet Birch,bag,5,1,0,5,5,0,3,0,0,Native
+318,BY5B,2,Barberry,bag,7,2,2,1,1,6,0,0,0,Nonnative
+319,BY5C,2,Barberry,control,9,0,1,2,3,0,0,0,0,Nonnative
+320,WH5C,2,Witch-hazel,control,12,0,0,3,2,2,0,0,0,Native
+321,AO4B,2,Autumn Olive,bag,9,2,1,5,0,12,0,0,0,Nonnative
+322,SM5B,2,Striped Maple,bag,7,2,0,3,1,11,0,0,0,Native
+323,BB3C,2,Sweet Birch,control,3,0,0,3,5,17,0,0,0,Native
+324,WH5B,2,Witch-hazel,bag,10,0,1,9,1,8,0,0,0,Native
+325,SM6B,2,Striped Maple,bag,21,1,0,4,0,5,0,0,0,Native
+326,MW6C,2,Musclewood,control,5,1,2,4,0,5,0,0,0,Native
+327,BB3B,2,Sweet Birch,bag,14,0,1,10,0,6,0,0,0,Native
+328,AO5B,2,Autumn Olive,bag,11,2,1,1,0,3,0,0,2,Nonnative
+329,BC1C,2,Shadbush,control,1,0,0,2,3,4,0,0,0,Native
+330,MW5C,2,Musclewood,control,6,1,1,0,0,8,0,0,0,Native
+331,AO5C,2,Autumn Olive,control,4,0,2,0,0,5,0,0,0,Nonnative
+332,BC3B,2,Shadbush,bag,4,0,1,1,1,5,0,0,0,Native
+333,BC1B,2,Shadbush,bag,3,1,0,2,4,5,0,0,0,Native
+334,WH6C,2,Witch-hazel,control,7,1,0,0,1,12,0,0,0,Native
+335,WE2B,2,Burning Bush,bag,10,0,0,4,0,8,1,0,0,Nonnative
+336,HS6C,2,Honeysuckle,control,13,0,3,0,0,8,0,0,0,Nonnative
+337,HS5B,2,Honeysuckle,bag,11,0,4,1,1,11,0,0,0,Nonnative
+338,WE2C,2,Burning Bush,control,7,3,2,3,0,1,0,0,0,Nonnative
+339,HS5C,2,Honeysuckle,control,12,0,0,2,0,4,0,0,1,Nonnative
+340,BY4C,2,Barberry,control,5,3,1,0,1,6,0,0,0,Nonnative
+341,WE3B,2,Burning Bush,bag,7,0,0,0,1,1,0,0,4,Nonnative
+342,WH6B,2,Witch-hazel,bag,10,0,0,2,1,4,0,0,0,Native
+343,BC3C,2,Shadbush,control,4,1,0,0,1,14,0,0,0,Native
+344,WE3C,2,Burning Bush,control,8,0,3,3,0,6,0,0,2,Nonnative
+345,MW6B,2,Musclewood,bag,13,0,0,5,3,3,0,0,0,Native
+346,BY4B,2,Barberry,bag,6,2,1,0,1,1,1,0,0,Nonnative
+347,HS6B,2,Honeysuckle,bag,13,1,0,3,0,3,0,0,1,Nonnative
+348,MW5B,2,Musclewood,bag,11,0,0,5,2,8,2,0,1,Native
+349,WE5B,2,Burning Bush,bag,9,0,1,7,0,1,1,0,2,Nonnative
+350,BB6B,2,Sweet Birch,bag,7,1,0,0,5,2,0,0,1,Native
+351,SM8C,2,Striped Maple,control,3,0,0,3,2,2,1,0,1,Native
+352,WE5C,2,Burning Bush,control,10,0,2,3,0,4,0,0,0,Nonnative
+353,WH8B,2,Witch-hazel,bag,2,1,0,10,1,0,0,0,0,Native
+354,BB5C,2,Sweet Birch,control,4,0,0,5,4,6,4,0,0,Native
+355,BC2C,2,Shadbush,control,1,0,0,0,1,12,0,0,0,Native
+356,AB4C,2,Beech,control,1,0,0,0,0,3,0,0,0,Native
+357,AB4B,2,Beech,bag,5,0,0,2,0,0,0,0,1,Native
+358,MW8C,2,Musclewood,control,2,2,1,9,0,13,1,0,1,Native
+359,SM8B,2,Striped Maple,bag,8,0,2,3,3,3,0,0,0,Native
+360,AO7B,2,Autumn Olive,bag,13,0,0,7,1,3,0,0,0,Nonnative
+361,AO7C,2,Autumn Olive,control,2,0,1,2,1,0,0,0,0,Nonnative
+362,BC2B,2,Shadbush,bag,1,0,0,4,3,9,0,0,2,Native
+363,BC8B,2,Shadbush,bag,3,2,2,2,1,2,0,0,1,Native
+364,AB3C,2,Beech,control,2,0,1,1,1,3,1,0,1,Native
+365,MW7C,2,Musclewood,control,8,1,2,4,0,4,0,0,0,Native
+366,WH7B,2,Witch-hazel,bag,25,2,1,5,1,6,0,0,0,Native
+367,AO6C,2,Autumn Olive,control,1,0,1,1,0,1,0,0,1,Nonnative
+368,BY9B,2,Barberry,bag,11,1,3,2,1,14,0,0,0,Nonnative
+369,AO6B,2,Autumn Olive,bag,2,2,1,2,0,4,0,0,0,Nonnative
+370,MW7B,2,Musclewood,bag,13,0,1,1,1,8,0,0,0,Native
+371,HS7C,2,Honeysuckle,control,12,0,0,4,1,8,0,0,2,Nonnative
+372,HS8B,2,Honeysuckle,bag,11,0,0,1,4,3,0,0,1,Nonnative
+373,BY3B,2,Barberry,bag,9,0,1,1,3,4,0,0,0,Nonnative
+374,WE4B,2,Burning Bush,bag,8,0,0,1,5,7,0,0,4,Nonnative
+375,BY9C,2,Barberry,control,5,1,3,1,0,6,1,0,2,Nonnative
+376,HS7B,2,Honeysuckle,bag,12,1,1,1,1,7,0,0,0,Nonnative
+377,HS8C,2,Honeysuckle,control,6,0,2,2,0,3,0,0,1,Nonnative
+378,BB6C,2,Sweet Birch,control,3,2,0,1,13,1,0,0,0,Native
+379,WE4C,2,Burning Bush,control,1,0,1,1,3,6,0,0,0,Nonnative
+380,BB5B,2,Sweet Birch,bag,7,0,0,10,1,0,0,0,0,Native
+381,WH8C,2,Witch-hazel,control,2,1,2,7,6,1,1,0,0,Native
+382,WH7C,2,Witch-hazel,control,10,0,0,4,1,20,0,0,2,Native
+383,BC8C,2,Shadbush,control,1,0,1,0,0,2,0,0,0,Native
+384,MW8B,2,Musclewood,bag,4,0,0,3,0,6,1,0,0,Native
+385,SM7C,2,Striped Maple,control,0,2,3,3,2,0,1,0,0,Native
+386,AB3B,2,Beech,bag,4,2,2,2,1,2,0,0,0,Native
+387,BY3C,2,Barberry,control,7,4,2,0,1,4,1,0,0,Nonnative
+388,SM7B,2,Striped Maple,bag,6,1,5,5,0,0,1,0,1,Native
+389,BY10B,2,Barberry,bag,8,0,0,0,0,11,0,0,0,Nonnative
+390,BY10C,2,Barberry,control,4,0,0,0,1,1,0,0,0,Nonnative
+391,SM10C,2,Striped Maple,control,3,0,0,2,1,1,0,0,0,Native
+392,WE10C,2,Burning Bush,control,3,0,0,4,0,2,0,0,0,Nonnative
+393,BC9C,2,Shadbush,control,1,2,0,4,1,12,0,0,0,Native
+394,WE10B,2,Burning Bush,bag,9,0,0,6,0,0,0,0,0,Nonnative
+395,HS9B,2,Honeysuckle,bag,6,3,0,6,1,8,1,0,0,Nonnative
+396,WH10C,2,Witch-hazel,control,1,1,0,4,0,0,1,0,0,Native
+397,MW10B,2,Musclewood,bag,2,0,1,4,1,0,6,0,0,Native
+398,MW10C,2,Musclewood,control,0,3,0,3,3,3,1,0,0,Native
+399,SM9C,2,Striped Maple,control,0,0,0,1,2,0,0,0,0,Native
+400,AB5C,2,Beech,control,2,0,0,4,2,0,0,0,0,Native
+401,SM9B,2,Striped Maple,bag,5,1,1,1,0,1,0,0,0,Native
+402,HS9C,2,Honeysuckle,control,3,0,0,1,1,6,1,0,0,Nonnative
+403,WH9B,2,Witch-hazel,bag,3,1,2,2,1,0,0,0,1,Native
+404,BC9B,2,Shadbush,bag,2,1,1,9,0,5,0,0,1,Native
+405,WH10B,2,Witch-hazel,bag,5,4,1,4,3,3,1,0,1,Native
+406,WH9C,2,Witch-hazel,control,1,0,1,3,0,2,2,0,0,Native
+407,BB8B,2,Sweet Birch,bag,1,0,0,4,1,1,0,0,0,Native
+408,MW9C,2,Musclewood,control,0,0,0,3,1,0,0,0,0,Native
+409,BB7C,2,Sweet Birch,control,2,0,0,5,0,3,0,0,0,Native
+410,AB6C,2,Beech,control,0,2,0,5,0,0,0,0,0,Native
+411,BC10C,2,Shadbush,control,0,1,0,6,1,4,0,0,1,Native
+412,BB8C,2,Sweet Birch,control,2,0,1,2,0,0,0,0,0,Native
+413,AB5B,2,Beech,bag,1,0,2,4,1,1,0,0,0,Native
+414,AB6B,2,Beech,bag,3,2,3,11,1,7,0,0,0,Native
+415,SM10B,2,Striped Maple,bag,5,0,0,2,1,1,0,0,0,Native
+416,BC10B,2,Shadbush,bag,1,2,0,3,0,3,0,0,0,Native
+417,AO9C,2,Autumn Olive,control,4,0,3,5,0,2,2,0,0,Nonnative
+418,WE6C,2,Burning Bush,control,4,0,0,0,1,2,0,0,0,Nonnative
+419,AO10C,2,Autumn Olive,control,3,0,0,2,2,5,0,0,2,Nonnative
+420,BY8C,2,Barberry,control,9,0,0,2,2,3,0,0,0,Nonnative
+421,AO9B,2,Autumn Olive,bag,13,0,1,4,0,3,0,0,2,Nonnative
+422,WE6B,2,Burning Bush,bag,9,0,3,5,0,2,0,0,4,Nonnative
+423,AO10B,2,Autumn Olive,bag,11,0,2,1,4,25,0,0,3,Nonnative
+424,HS10C,2,Honeysuckle,control,11,0,0,2,1,3,0,0,1,Nonnative
+425,HS10B,2,Honeysuckle,bag,19,0,0,2,1,4,0,0,1,Nonnative
+426,BY8B,2,Barberry,bag,6,0,1,6,1,3,0,0,0,Nonnative
+427,BB7B,2,Sweet Birch,bag,5,2,0,2,1,1,0,0,1,Native
+428,MW9B,2,Musclewood,bag,6,2,1,7,2,2,1,0,1,Native
+429,WH11C,2,Witch-hazel,control,2,0,1,7,1,4,0,0,0,Native
+430,MW11B,2,Musclewood,bag,5,0,1,1,0,9,1,0,0,Native
+431,BC11B,2,Shadbush,bag,3,0,1,4,5,4,0,0,0,Native
+432,SM11C,2,Striped Maple,control,2,0,0,8,2,1,0,0,0,Native
+433,WH12C,2,Witch-hazel,control,1,3,0,5,1,0,0,0,1,Native
+434,BB9B,2,Sweet Birch,bag,1,0,0,4,4,0,0,0,0,Native
+435,BC12B,2,Shadbush,bag,6,0,0,5,1,1,0,0,2,Native
+436,BB10B,2,Sweet Birch,bag,8,0,1,3,8,3,0,0,3,Native
+437,SM11B,2,Striped Maple,bag,3,1,0,3,1,1,0,0,0,Native
+438,BC11C,2,Shadbush,control,1,0,2,10,3,6,0,0,2,Native
+439,AB8C,2,Beech,control,1,0,0,4,0,0,0,0,1,Native
+440,AB7B,2,Beech,bag,5,1,0,5,0,0,0,0,1,Native
+441,SM12C,2,Striped Maple,control,0,0,0,0,4,0,0,0,1,Native
+442,AB7C,2,Beech,control,3,0,1,2,1,0,0,0,1,Native
+443,BB9C,2,Sweet Birch,control,0,0,2,1,0,1,0,0,0,Native
+444,AO12B,2,Autumn Olive,bag,3,0,0,0,2,2,0,0,0,Nonnative
+445,BB10C,2,Sweet Birch,control,0,0,0,1,1,1,0,0,0,Native
+446,SM12B,2,Striped Maple,bag,0,0,0,8,0,2,0,0,0,Native
+447,MW11C,2,Musclewood,control,1,0,2,2,1,6,0,0,0,Native
+448,AO12C,2,Autumn Olive,control,9,0,0,1,0,0,0,0,0,Nonnative
+449,WE11C,2,Burning Bush,control,7,0,1,1,1,2,2,0,2,Nonnative
+450,WH11B,2,Witch-hazel,bag,3,6,0,1,1,0,0,0,0,Native
+451,WH12B,2,Witch-hazel,bag,3,1,1,6,1,1,1,0,1,Native
+452,BC12C,2,Shadbush,control,1,0,0,1,0,7,0,0,0,Native
+453,AB8B,2,Beech,bag,2,0,0,0,1,5,0,0,0,Native
+454,MW12C,2,Musclewood,control,8,2,5,2,1,5,0,0,0,Native
+455,AO11C,2,Autumn Olive,control,6,0,1,0,1,2,0,0,1,Nonnative
+456,WE11B,2,Burning Bush,bag,12,3,1,1,1,8,1,0,1,Nonnative
+457,HS11C,2,Honeysuckle,control,8,1,2,4,1,2,0,0,0,Nonnative
+458,HS11B,2,Honeysuckle,bag,11,0,1,6,6,6,0,0,0,Nonnative
+459,HS12C,2,Honeysuckle,control,4,0,1,0,1,9,0,0,0,Nonnative
+460,AO11B,2,Autumn Olive,bag,13,0,1,1,1,3,2,0,1,Nonnative
+461,BY11C,2,Barberry,control,6,0,0,0,1,1,0,0,0,Nonnative
+462,WE12C,2,Burning Bush,control,6,0,0,1,0,4,1,0,0,Nonnative
+463,MW12B,2,Musclewood,bag,6,0,1,4,0,9,1,0,0,Native
+464,HS12B,2,Honeysuckle,bag,6,2,0,2,8,14,0,0,0,Nonnative
+465,WE12B,2,Burning Bush,bag,12,0,2,4,0,5,0,0,1,Nonnative
+466,BY11B,2,Barberry,bag,16,1,2,2,0,4,0,0,0,Nonnative
+467,BY12B,2,Barberry,bag,14,0,1,0,1,1,1,0,0,Nonnative
+468,BY12C,2,Barberry,control,12,1,1,1,0,4,0,0,0,Nonnative
+469,WH4C,3,Witch-hazel,control,5,0,1,7,0,5,5,0,0,Native
+470,HS2C,3,Honeysuckle,control,4,0,0,7,1,2,0,0,0,Nonnative
+471,WH4B,3,Witch-hazel,bag,6,1,0,3,1,5,2,0,2,Native
+472,BY7B,3,Barberry,bag,4,0,0,1,1,4,0,0,0,Nonnative
+473,SM1B,3,Striped Maple,bag,9,1,1,4,1,4,0,0,1,Native
+474,BB12B,3,Sweet Birch,bag,8,1,0,1,6,1,0,0,3,Native
+475,WH3C,3,Witch-hazel,control,6,0,1,1,5,3,0,0,0,Native
+476,WE1C,3,Burning Bush,control,4,0,2,0,4,5,2,0,0,Nonnative
+477,BB11C,3,Sweet Birch,control,7,0,0,2,3,0,0,0,0,Native
+478,BB12C,3,Sweet Birch,control,3,0,0,0,0,1,0,0,4,Native
+479,SM1C,3,Striped Maple,control,3,0,0,1,1,1,0,0,0,Native
+480,BY6C,3,Barberry,control,3,0,0,0,0,5,0,0,0,Nonnative
+481,BC4C,3,Shadbush,control,2,1,0,1,1,12,0,0,3,Native
+482,BB11B,3,Sweet Birch,bag,15,0,0,2,0,3,0,0,1,Native
+483,AB1C,3,Beech,control,6,0,0,0,0,2,0,0,0,Native
+484,HS1C,3,Honeysuckle,control,2,1,2,2,3,3,0,0,1,Nonnative
+485,AO8C,3,Autumn Olive,control,10,0,0,5,0,4,0,0,1,Nonnative
+486,BY6B,3,Barberry,bag,7,1,1,0,1,0,0,0,0,Nonnative
+487,WE9B,3,Burning Bush,bag,9,0,0,2,1,4,1,0,1,Nonnative
+488,AO8B,3,Autumn Olive,bag,12,1,0,1,1,13,0,0,2,Nonnative
+489,SM2B,3,Striped Maple,bag,12,1,0,4,8,2,0,0,1,Native
+490,SM2C,3,Striped Maple,control,3,0,0,3,3,1,2,0,0,Native
+491,MW2B,3,Musclewood,bag,5,0,0,1,0,5,1,0,0,Native
+492,WE9C,3,Burning Bush,control,10,0,0,2,2,1,0,0,1,Nonnative
+493,MW1C,3,Musclewood,control,6,0,0,1,0,2,0,0,0,Native
+494,HS2B,3,Honeysuckle,bag,12,0,0,2,1,8,0,0,4,Nonnative
+495,WH3B,3,Witch-hazel,bag,5,0,3,3,1,0,0,0,0,Native
+496,AO1B,3,Autumn Olive,bag,10,1,0,2,6,5,0,0,1,Nonnative
+497,BY7C,3,Barberry,control,6,0,0,1,0,1,0,0,0,Nonnative
+498,AB9C,3,Beech,control,12,0,1,2,0,1,0,0,0,Native
+499,AB1B,3,Beech,bag,3,2,0,4,0,5,0,0,1,Native
+500,AB9B,3,Beech,bag,15,1,1,3,1,3,0,0,1,Native
+501,MW1B,3,Musclewood,bag,12,1,0,4,1,2,0,0,0,Native
+502,AO1C,3,Autumn Olive,control,5,0,3,3,0,8,0,0,0,Nonnative
+503,HS1B,3,Honeysuckle,bag,2,0,0,3,1,4,0,0,0,Nonnative
+504,WE1B,3,Burning Bush,bag,10,0,0,4,3,4,1,0,0,Nonnative
+505,BC4B,3,Shadbush,bag,11,0,1,7,2,10,0,0,0,Native
+506,MW2C,3,Musclewood,control,6,1,0,2,0,6,0,0,0,Native
+507,SM4C,3,Striped Maple,control,19,1,1,4,1,8,0,0,2,Native
+508,HS4C,3,Honeysuckle,control,12,0,2,2,1,4,1,0,1,Nonnative
+509,SM3C,3,Striped Maple,control,0,0,0,2,1,3,0,0,1,Native
+510,AB10B,3,Beech,bag,2,0,1,3,0,0,1,0,0,Native
+511,SM3B,3,Striped Maple,bag,7,2,0,1,2,2,0,0,1,Native
+512,HS4B,3,Honeysuckle,bag,15,3,5,8,2,10,2,1,1,Nonnative
+513,AB10C,3,Beech,control,5,0,3,5,1,3,0,0,1,Native
+514,AO3B,3,Autumn Olive,bag,7,1,1,8,0,1,1,0,1,Nonnative
+515,BB1B,3,Sweet Birch,bag,27,1,1,1,2,8,0,0,0,Native
+516,AB11C,3,Beech,control,2,0,1,4,3,1,0,0,0,Native
+517,AB11B,3,Beech,bag,6,0,5,4,4,2,1,0,0,Native
+518,WH1B,3,Witch-hazel,bag,17,1,12,14,4,2,1,0,0,Native
+519,BB2B,3,Sweet Birch,bag,2,0,1,1,3,2,2,0,3,Native
+520,BB2C,3,Sweet Birch,control,2,1,1,4,4,6,6,0,1,Native
+521,BB1C,3,Sweet Birch,control,5,0,1,2,1,8,0,0,0,Native
+522,HS3C,3,Honeysuckle,control,3,1,0,0,6,3,0,0,3,Nonnative
+523,AO2B,3,Autumn Olive,bag,8,0,1,0,0,5,0,0,0,Nonnative
+524,SM4B,3,Striped Maple,bag,9,1,0,5,2,5,0,0,2,Native
+525,WH1C,3,Witch-hazel,control,7,0,2,1,1,1,0,0,0,Native
+526,MW4B,3,Musclewood,bag,8,1,2,7,1,4,4,0,0,Native
+527,HS3B,3,Honeysuckle,bag,13,1,2,0,1,6,0,0,3,Nonnative
+528,BY2C,3,Barberry,control,6,0,2,0,0,2,0,0,0,Nonnative
+529,BY1C,3,Barberry,control,9,2,0,1,2,11,0,0,0,Nonnative
+530,AO2C,3,Autumn Olive,control,4,1,1,1,1,4,1,0,0,Nonnative
+531,WE8B,3,Burning Bush,bag,6,2,1,1,0,3,0,0,1,Nonnative
+532,AO3C,3,Autumn Olive,control,1,1,1,4,0,1,1,0,0,Nonnative
+533,WH2C,3,Witch-hazel,control,2,0,3,1,5,3,0,0,0,Native
+534,MW3B,3,Musclewood,bag,5,1,4,2,0,2,9,0,0,Native
+535,MW4C,3,Musclewood,control,6,1,4,1,1,3,4,0,1,Native
+536,WE7C,3,Burning Bush,control,4,1,2,0,0,2,0,0,0,Nonnative
+537,WE7B,3,Burning Bush,bag,5,1,1,0,1,3,0,0,1,Nonnative
+538,BY1B,3,Barberry,bag,10,1,4,0,7,8,1,0,0,Nonnative
+539,BY2B,3,Barberry,bag,5,0,1,0,1,2,0,0,0,Nonnative
+540,MW3C,3,Musclewood,control,2,2,2,6,2,8,2,0,0,Native
+541,WE8C,3,Burning Bush,control,2,0,0,0,0,2,0,0,1,Nonnative
+542,WH2B,3,Witch-hazel,bag,10,2,5,2,6,1,1,0,2,Native
+543,SM5C,3,Striped Maple,control,4,1,0,3,19,14,0,0,0,Native
+544,BC1B,3,Shadbush,bag,3,2,1,3,1,3,0,0,0,Native
+545,SM6B,3,Striped Maple,bag,15,0,1,7,1,3,0,0,0,Native
+546,WH6B,3,Witch-hazel,bag,12,1,0,3,0,2,1,0,0,Native
+547,AO4C,3,Autumn Olive,control,2,0,1,4,0,1,0,0,0,Nonnative
+548,MW5B,3,Musclewood,bag,11,0,2,5,3,12,2,0,1,Native
+549,WH5C,3,Witch-hazel,control,10,0,1,3,1,2,1,0,0,Native
+550,MW5C,3,Musclewood,control,8,0,0,2,0,5,1,0,0,Native
+551,BB4B,3,Sweet Birch,bag,11,0,3,2,4,5,2,0,1,Native
+552,BC1C,3,Shadbush,control,1,0,0,5,0,9,0,0,0,Native
+553,BC3B,3,Shadbush,bag,6,1,0,2,1,2,0,0,0,Native
+554,AB2C,3,Beech,control,1,1,1,3,1,3,0,0,0,Native
+555,BY5B,3,Barberry,bag,8,0,0,1,0,11,0,0,0,Nonnative
+556,SM5B,3,Striped Maple,bag,5,1,0,2,3,0,0,0,0,Native
+557,MW6C,3,Musclewood,control,7,0,0,4,3,6,2,0,1,Native
+558,BB4C,3,Sweet Birch,control,4,1,0,3,1,2,0,0,0,Native
+559,BC3C,3,Shadbush,control,4,2,0,1,1,3,0,0,0,Native
+560,AB2B,3,Beech,bag,8,1,12,5,5,4,0,0,2,Native
+561,HS5B,3,Honeysuckle,bag,8,2,0,1,4,37,0,0,20,Nonnative
+562,AB12C,3,Beech,control,1,0,1,2,0,2,0,0,0,Native
+563,HS5C,3,Honeysuckle,control,15,0,1,3,1,2,0,0,2,Nonnative
+564,HS6B,3,Honeysuckle,bag,9,0,0,0,0,4,0,0,2,Nonnative
+565,HS6C,3,Honeysuckle,control,9,0,0,0,1,7,0,0,0,Nonnative
+566,WH5B,3,Witch-hazel,bag,9,0,1,0,2,2,1,0,1,Native
+567,BB3B,3,Sweet Birch,bag,5,1,0,4,2,4,0,0,3,Native
+568,BY4B,3,Barberry,bag,4,1,1,2,0,1,0,0,1,Nonnative
+569,BY4C,3,Barberry,control,6,3,1,2,0,6,0,0,0,Nonnative
+570,SM6C,3,Striped Maple,control,3,1,0,4,1,2,0,0,0,Native
+571,AB12B,3,Beech,bag,7,2,0,3,1,0,0,0,0,Native
+572,WE2B,3,Burning Bush,bag,5,0,0,2,0,3,0,0,0,Nonnative
+573,WE3B,3,Burning Bush,bag,1,0,0,0,0,1,0,0,2,Nonnative
+574,BB3C,3,Sweet Birch,control,2,0,0,4,4,7,1,0,1,Native
+575,AO4B,3,Autumn Olive,bag,4,0,0,3,0,2,0,0,0,Nonnative
+576,AO5B,3,Autumn Olive,bag,16,0,0,3,1,10,0,0,0,Nonnative
+577,WE3C,3,Burning Bush,control,1,0,1,2,0,3,0,0,1,Nonnative
+578,BY5C,3,Barberry,control,0,0,0,1,0,2,0,0,0,Nonnative
+579,WE2C,3,Burning Bush,control,3,0,1,0,0,4,0,0,0,Nonnative
+580,AO5C,3,Autumn Olive,control,2,1,1,1,0,8,1,0,1,Nonnative
+581,MW6B,3,Musclewood,bag,9,0,0,8,0,10,0,0,0,Native
+582,WH6C,3,Witch-hazel,control,4,0,1,3,6,1,0,0,0,Native
+583,WH7B,3,Witch-hazel,bag,14,1,1,2,1,5,1,0,0,Native
+584,AO6B,3,Autumn Olive,bag,5,0,0,0,0,4,0,0,2,Nonnative
+585,WE5B,3,Burning Bush,bag,5,0,3,2,1,2,0,0,1,Nonnative
+586,BY3C,3,Barberry,control,8,0,2,0,1,5,1,0,0,Nonnative
+587,BY9C,3,Barberry,control,7,2,1,0,0,0,0,0,1,Nonnative
+588,BY3B,3,Barberry,bag,8,0,1,3,0,3,1,0,0,Nonnative
+589,AO7B,3,Autumn Olive,bag,4,0,1,1,0,6,0,0,0,Nonnative
+590,AO7C,3,Autumn Olive,control,3,1,0,3,0,4,0,0,1,Nonnative
+591,WE4C,3,Burning Bush,control,1,0,0,0,0,2,0,0,1,Nonnative
+592,HS7C,3,Honeysuckle,control,10,1,0,0,0,10,0,0,0,Nonnative
+593,MW7B,3,Musclewood,bag,11,0,0,4,0,8,0,0,0,Native
+594,HS7B,3,Honeysuckle,bag,12,1,0,1,0,10,0,0,2,Nonnative
+595,WE4B,3,Burning Bush,bag,4,0,0,0,0,5,0,0,2,Nonnative
+596,WE5C,3,Burning Bush,control,1,0,0,2,1,1,1,0,0,Nonnative
+597,MW7C,3,Musclewood,control,1,1,0,0,0,1,0,0,0,Native
+598,HS8B,3,Honeysuckle,bag,4,0,0,3,0,3,0,0,1,Nonnative
+599,HS8C,3,Honeysuckle,control,12,0,2,4,0,1,0,0,3,Nonnative
+600,AO6C,3,Autumn Olive,control,4,0,0,4,1,3,0,0,0,Nonnative
+601,BY9B,3,Barberry,bag,5,0,0,1,0,3,0,0,1,Nonnative
+602,MW8C,3,Musclewood,control,1,1,0,4,0,3,0,0,0,Native
+603,WH7C,3,Witch-hazel,control,6,0,0,4,5,5,0,0,0,Native
+604,MW8B,3,Musclewood,bag,0,0,1,2,1,2,1,0,0,Native
+605,BB6B,3,Sweet Birch,bag,18,2,0,1,0,7,0,0,3,Native
+606,SM7B,3,Striped Maple,bag,6,1,1,1,1,2,2,0,0,Native
+607,SM7C,3,Striped Maple,control,2,0,1,3,0,1,0,0,0,Native
+608,SM8B,3,Striped Maple,bag,10,2,1,0,3,1,0,0,2,Native
+609,SM8C,3,Striped Maple,control,1,0,2,0,3,6,0,0,1,Native
+610,BB5B,3,Sweet Birch,bag,7,1,2,5,0,1,4,0,0,Native
+611,BB5C,3,Sweet Birch,control,1,1,0,3,0,1,6,0,0,Native
+612,AB3B,3,Beech,bag,7,0,6,1,0,2,0,0,1,Native
+613,WH8C,3,Witch-hazel,control,5,1,3,8,4,2,2,0,0,Native
+614,WH8B,3,Witch-hazel,bag,7,2,0,1,1,1,0,0,0,Native
+615,AB4C,3,Beech,control,2,0,3,2,0,1,0,0,0,Native
+616,AB4B,3,Beech,bag,6,1,1,0,0,1,0,0,2,Native
+617,AB3C,3,Beech,control,2,0,2,0,0,0,0,0,0,Native
+618,BC8B,3,Shadbush,bag,5,2,0,3,0,1,0,0,1,Native
+619,BC8C,3,Shadbush,control,0,1,1,3,6,2,0,0,0,Native
+620,BC2C,3,Shadbush,control,2,0,1,1,1,10,0,0,1,Native
+621,BB6C,3,Sweet Birch,control,4,2,0,6,9,0,0,0,0,Native
+622,BC2B,3,Shadbush,bag,4,1,0,1,3,9,0,0,0,Native
+623,AO10B,3,Autumn Olive,bag,8,3,0,1,0,6,0,0,2,Nonnative
+624,MW9B,3,Musclewood,bag,6,1,0,4,0,2,5,0,2,Native
+625,BB7B,3,Sweet Birch,bag,3,1,1,0,0,1,0,0,2,Native
+626,BY8B,3,Barberry,bag,6,0,2,1,0,6,0,0,0,Nonnative
+627,HS9B,3,Honeysuckle,bag,15,0,0,13,1,7,0,0,0,Nonnative
+628,BB8B,3,Sweet Birch,bag,7,1,2,2,0,2,1,0,0,Native
+629,SM9B,3,Striped Maple,bag,3,1,2,3,0,0,0,0,1,Native
+630,AO10C,3,Autumn Olive,control,104,0,0,0,1,10,0,0,0,Nonnative
+631,MW9C,3,Musclewood,control,2,0,2,1,3,1,11,0,0,Native
+632,SM9C,3,Striped Maple,control,1,0,0,1,0,0,0,0,0,Native
+633,WH9B,3,Witch-hazel,bag,6,1,0,1,1,2,0,0,1,Native
+634,AB5C,3,Beech,control,7,0,1,2,0,2,0,0,0,Native
+635,WH10C,3,Witch-hazel,control,1,1,0,2,0,0,0,0,0,Native
+636,WH10B,3,Witch-hazel,bag,9,2,0,7,0,1,0,0,1,Native
+637,WE10C,3,Burning Bush,control,3,0,0,0,0,0,0,0,0,Nonnative
+638,MW10C,3,Musclewood,control,4,3,0,2,1,5,1,0,0,Native
+639,HS10C,3,Honeysuckle,control,16,1,0,0,0,10,0,0,2,Nonnative
+640,MW10B,3,Musclewood,bag,7,0,6,1,1,6,1,0,0,Native
+641,BB8C,3,Sweet Birch,control,1,0,0,0,0,5,0,0,0,Native
+642,BY10B,3,Barberry,bag,6,0,0,0,0,10,0,0,0,Nonnative
+643,WE6B,3,Burning Bush,bag,12,0,2,0,0,4,0,0,1,Nonnative
+644,BY10C,3,Barberry,control,0,0,0,1,0,1,0,0,0,Nonnative
+645,WE6C,3,Burning Bush,control,2,0,1,8,1,2,0,0,0,Nonnative
+646,BY8C,3,Barberry,control,5,1,1,3,0,1,0,0,0,Nonnative
+647,SM10B,3,Striped Maple,bag,8,1,3,0,1,4,0,0,1,Native
+648,HS9C,3,Honeysuckle,control,7,0,0,0,0,5,0,0,0,Nonnative
+649,AB6C,3,Beech,control,5,1,0,1,1,7,0,0,0,Native
+650,AO9B,3,Autumn Olive,bag,12,5,0,0,0,12,0,0,0,Nonnative
+651,SM10C,3,Striped Maple,control,2,1,1,3,1,0,0,0,0,Native
+652,BC9B,3,Shadbush,bag,3,1,0,1,0,4,0,0,3,Native
+653,BB7C,3,Sweet Birch,control,3,1,0,1,0,0,0,0,0,Native
+654,BC10C,3,Shadbush,control,4,0,0,0,2,2,0,0,2,Native
+655,BC9C,3,Shadbush,control,1,0,0,1,0,2,0,0,1,Native
+656,AB6B,3,Beech,bag,21,3,1,6,2,1,0,0,1,Native
+657,WH9C,3,Witch-hazel,control,2,2,0,0,0,3,0,0,0,Native
+658,WE10B,3,Burning Bush,bag,4,1,0,3,1,4,0,0,2,Nonnative
+659,HS10B,3,Honeysuckle,bag,17,0,0,1,0,6,0,0,0,Nonnative
+660,BC10B,3,Shadbush,bag,6,3,0,5,0,3,0,0,0,Native
+661,AB5B,3,Beech,bag,4,0,1,2,1,0,0,0,0,Native
+662,AO9C,3,Autumn Olive,control,7,0,0,0,0,4,1,0,0,Nonnative
+663,SM11B,3,Striped Maple,bag,1,0,4,27,1,2,0,0,2,Native
+664,SM11C,3,Striped Maple,control,1,0,1,3,4,0,0,0,0,Native
+665,SM12B,3,Striped Maple,bag,2,3,1,15,3,2,0,0,0,Native
+666,SM12C,3,Striped Maple,control,1,0,1,3,3,0,0,0,0,Native
+667,MW12B,3,Musclewood,bag,6,2,0,1,0,5,0,0,0,Native
+668,BC12C,3,Shadbush,control,2,0,1,1,0,3,0,0,0,Native
+669,BC12B,3,Shadbush,bag,2,1,1,3,1,3,0,0,2,Native
+670,MW11C,3,Musclewood,control,3,4,0,6,1,2,0,0,0,Native
+671,BC11C,3,Shadbush,control,6,2,1,9,2,0,0,0,0,Native
+672,AB7C,3,Beech,control,1,0,2,4,1,1,0,0,0,Native
+673,MW12C,3,Musclewood,control,8,0,2,3,0,1,0,0,0,Native
+674,WH11B,3,Witch-hazel,bag,5,1,0,2,3,3,0,0,1,Native
+675,MW11B,3,Musclewood,bag,10,2,3,2,0,1,1,0,1,Native
+676,BB10B,3,Sweet Birch,bag,12,3,4,6,2,4,0,0,0,Native
+677,AB8C,3,Beech,control,3,0,2,13,1,1,0,0,1,Native
+678,AB8B,3,Beech,bag,1,0,2,11,2,1,0,0,1,Native
+679,BC11B,3,Shadbush,bag,4,2,1,12,1,1,0,0,2,Native
+680,AO11B,3,Autumn Olive,bag,13,0,0,0,0,3,0,0,0,Nonnative
+681,BY11C,3,Barberry,control,3,0,1,0,0,2,0,0,0,Nonnative
+682,BB9B,3,Sweet Birch,bag,4,1,1,6,1,1,0,0,1,Native
+683,AB7B,3,Beech,bag,5,0,2,10,1,0,0,0,1,Native
+684,BB10C,3,Sweet Birch,control,2,0,0,1,2,1,0,0,0,Native
+685,WH12B,3,Witch-hazel,bag,1,2,9,10,1,5,0,0,0,Native
+686,WH11C,3,Witch-hazel,control,5,0,2,2,0,1,0,0,1,Native
+687,WH12C,3,Witch-hazel,control,8,0,0,3,0,2,0,0,0,Native
+688,HS11B,3,Honeysuckle,bag,4,1,0,3,2,5,0,1,2,Nonnative
+689,WE11B,3,Burning Bush,bag,10,1,1,1,5,5,0,0,1,Nonnative
+690,HS11C,3,Honeysuckle,control,4,3,2,7,1,3,0,0,0,Nonnative
+691,AO11C,3,Autumn Olive,control,5,0,1,0,0,4,0,0,0,Nonnative
+692,BY12C,3,Barberry,control,7,0,0,1,2,1,0,1,0,Nonnative
+693,WE11C,3,Burning Bush,control,11,0,1,2,0,5,0,0,0,Nonnative
+694,AO12C,3,Autumn Olive,control,17,1,0,1,0,3,1,0,0,Nonnative
+695,WE12C,3,Burning Bush,control,4,1,0,2,2,1,0,0,0,Nonnative
+696,BY11B,3,Barberry,bag,4,1,2,1,1,3,0,2,0,Nonnative
+697,HS12C,3,Honeysuckle,control,7,0,0,7,2,9,0,0,1,Nonnative
+698,WE12B,3,Burning Bush,bag,6,1,2,6,0,0,0,0,0,Nonnative
+699,AO12B,3,Autumn Olive,bag,1,0,0,2,6,0,0,0,0,Nonnative
+700,HS12B,3,Honeysuckle,bag,5,0,0,6,4,17,0,13,0,Nonnative
+701,BY12B,3,Barberry,bag,7,0,0,0,0,4,0,18,0,Nonnative
+702,BB9C,3,Sweet Birch,control,0,0,0,3,1,0,0,0,0,Native
