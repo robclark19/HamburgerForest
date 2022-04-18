@@ -684,7 +684,6 @@ orthoptera_summary <- trophic_dat %>%
   group_by(tree,exo) %>% 
   summarise(orthoptera = mean(orthopterids), SE = std.error(orthopterids, na.rm = TRUE)) 
 
-# spider pub fig #####
 orthoptera_fig <- ggplot(orthoptera_summary, aes(x=orthoptera,y=reorder(tree,-desc(orthoptera)),fill=exo)) +
   geom_bar(stat="identity", width=0.6, position="dodge") +
   theme_bw(base_size = 16) + 
@@ -707,5 +706,90 @@ ggsave(filename = "./Figures/orthoptera.svg", plot = orthoptera_fig, device = "s
 
 
 
+# april 2022 pilot analyses ######
+# demo hedges g #####
 
-# 
+bag_effect <- function(data, insect_group){
+  output <- mean(hotf_dat[,insect_group], na.rm=TRUE)
+  return(output)}
+
+
+mean(hotf_dat[,"wet_mass_g"], na.rm=TRUE)
+C
+bag_effect(data=hotf_dat, insect_group = "wet_mass_g")
+
+# did a bad thing and replaced "non-native" with "nonnative" to prevent syntax errors
+trophic_bug_dat <- read.csv(file="./Data/Output/clean_trophic_groups.csv")
+str(trophic_bug_dat)
+
+# arachnids example ####
+
+spider.glm <- glmer.nb(arachnids ~ exo * treatment + (1|branch_code), data=trophic_bug_dat)
+summary(spider.glm)
+
+plot(emmeans(spider.glm, ~ treatment*exo), type="response")
+plot(emmeans(spider.glm, ~ exo,), type="response")
+
+# get hedged g for spiders with the treatment*exo pairs
+
+# install.packages("effsize")
+# library("effsize")
+
+# make a dataframe for hedges g calculation
+str(trophic_bug_dat)
+
+# make a variable called "pair"
+trophic_bug_dat$pair <- substr(trophic_bug_dat$branch_code,1,nchar(trophic_bug_dat$branch_code)-1) 
+
+
+# first pool by tree_id and sampling day
+
+spider_dat <- trophic_bug_dat %>%
+  group_by(tree, exo, treatment, pair) %>% 
+  summarise(sum_spiders = sum(arachnids)) %>%
+  as.data.frame()
+spider_dat
+
+
+# then pivot to wide format with counts per each combination of treatment*exo
+
+spider_dat_wide <- spider_dat %>% 
+  pivot_wider(names_from = c("treatment"),
+              values_from =  sum_spiders,
+              names_sep = ".",
+              names_prefix = "spider.")
+
+# then split by exo and non-exo
+spider_dat_exo <- subset(spider_dat_wide, exo=="Nonnative")
+spider_dat_nat <- subset(spider_dat_wide, exo=="Native")
+
+# then do a cohen.d for each paired comparison of bagged (among exotic, then native)
+
+cd_1 <- cohen.d(spider_dat_exo$spider.bag, spider_dat_exo$spider.control, paired=TRUE, )
+cd_1
+
+cd_2 <- cohen.d(spider_dat_nat$spider.bag, spider_dat_nat$spider.control, paired=TRUE)
+cd_2
+
+# make a table from the cd_1 and cd_2
+# stuck here #################
+a <- c(1,2)
+df <- data.frame(a)
+df
+
+df$exo_ci <- cd_1$conf.int
+
+
+df
+
+
+
+# trying LRRR ######
+str(spider_dat_wide)
+
+spider_dat_wide$LRR<- log(spider_dat_wide$spider.bag / spider_dat_wide$spider.control)
+spider_dat_wide$LRR[is.infinite(spider_dat_wide$LRR)] <- NA
+
+model_a <- glm(LRR ~ exo, data=spider_dat_wide)
+
+plot(emmeans(model_a, ~exo))
