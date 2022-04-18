@@ -17,9 +17,11 @@ bagged_dat <- subset(hotf_dat, treatment == "bag")
 
 model_1 <- lmer(log(wet_mass_g) ~ tree +  (1 | branch_code), data = bagged_dat)
 
-cld(emmeans(model_1, ~ tree, type="response"), adjust="scheffe", type="response")
+biomass_cld <- cld(emmeans(model_1, ~ tree, type="response"), adjust="scheffe", type="response")
 
 # pooled contrast of natives vs. non-natives using an emmeans reference grid
+
+
 
 # figure generation
 # write a summary table of totals and means for insects by host plant
@@ -27,10 +29,24 @@ cld(emmeans(model_1, ~ tree, type="response"), adjust="scheffe", type="response"
 biomass_summary <- hotf_dat %>% 
   filter(treatment == 'bag') %>%
   group_by(tree,exo) %>% 
-  summarise(biomass_mean = mean(wet_mass_g), SE = std.error(wet_mass_g, na.rm=TRUE)) 
+  summarise(biomass_mean = mean(wet_mass_g), sem = std.error(wet_mass_g, na.rm=TRUE)) 
+
+# order of plants for biomass fig
+biomass_order <- c("Beech","Musclewood","Shadbush","Striped Maple", "Sweet Birch", "Witch-hazel", "Autumn Olive", "Barberry", "Burning Bush", "Honeysuckle")
+
+
+# merge biomass cld with biomass_summary
+biomass_summary <- biomass_summary %>%
+  left_join(y=biomass_cld, by = c("tree"))%>%
+  as.data.frame()
+
+# Arrange pollination timing treatment levels for clarity. Using 'neworder' object.
+biomass_summary <- arrange(transform(biomass_summary, tree=factor(tree,levels=biomass_order)), tree) 
+
+
 
 # biomass pub fig #####
-biomass_fig <- ggplot(biomass_summary, aes(x=biomass_mean,y=reorder(tree,-desc(biomass_mean)),fill=exo)) +
+biomass_fig <- ggplot(biomass_summary, aes(x=biomass_mean,y=tree,fill=exo)) +
   geom_bar(stat="identity", width=0.6, position="dodge") +
   theme_bw(base_size = 16) +
   scale_fill_manual(values = c("gray79", "gray45")) +
@@ -43,6 +59,19 @@ biomass_fig <- ggplot(biomass_summary, aes(x=biomass_mean,y=reorder(tree,-desc(b
   theme(legend.position=c(0.8,0.1)) +
   theme(legend.title = element_blank())
 biomass_fig
+
+biomass_plot <- ggplot(data=biomass_summary, aes(x = tree, y = response, shape=exo)) +
+  theme_bw(base_size=16) +
+  geom_point(size=4.5) +
+  geom_errorbar(aes(ymin=response-(SE), ymax=response+(SE), width=0)) +
+    ylab("Average arthropod biomass on bagged branches (g)") +
+  xlab("Plant species") +
+  guides(shape=guide_legend(title="", title.position = "left")) +
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.background = element_blank(), axis.line = element_line(colour = "black")) +
+  # scale_shape_discrete(labels=c("Early", "Mid", "Late", "Split", "All")) +
+  theme(legend.position="bottom")
+biomass_plot 
 
 
 
