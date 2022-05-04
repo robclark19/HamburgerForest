@@ -258,7 +258,7 @@ Anova(cnbh_glm)
 summary(cnbh_glm)
 
 plot(ht_dat$herbivore_average_ratio, ht_dat$coleoptera)
-abline(lm(ht_dat$herbivore_average_ratio ~ log(ht_dat$coleoptera+1)))
+
 
 # CN by biomass
 
@@ -266,7 +266,7 @@ biomass_glm <- glm(wet_mass_g ~ herbivore_average_n + herbivore_average_c + spid
 summary(biomass_glm)
 
 plot(ht_dat$herbivore_average_ratio, ht_dat$wet_mass_g)
-abline(lm(ht_dat$herbivore_average_ratio ~ ht_dat$wet_mass_g))
+
 
 # CN by morphospecies richness
 
@@ -274,7 +274,6 @@ morphospecies_glm <- glm(morphospecies ~ tree + herbivore_average_n + herbivore_
 summary(morphospecies_glm)
 
 plot(ht_dat$morphospecies, ht_dat$herbivore_average_c)
-abline(lm(ht_dat$morphospecies ~ ht_dat$herbivore_average_c))
 
 # Spider CN ####
 # remove spider high value on barberry
@@ -290,7 +289,18 @@ plot(emmeans(tree_cn_mod_6, ~ tree))
 
 hist(ht_dat_2$spider_average_ratio)
 
+tree_cn_mod_7 <- glm(spider_average_c ~ exo, data=ht_dat_2)
+Anova(tree_cn_mod_7)
+plot(emmeans(tree_cn_mod_7, ~ exo))
+
+tree_cn_mod_8 <- glm(spider_average_n ~ exo, data=ht_dat_2)
+Anova(tree_cn_mod_8)
+plot(emmeans(tree_cn_mod_8, ~ exo))
+
+
 
 # Figures 3AB #####
+
+
 
 
