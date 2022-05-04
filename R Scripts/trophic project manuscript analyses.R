@@ -223,6 +223,8 @@ ggsave(filename = "./Figures/Fig2abcd.png", plot = Fig_2abcd, device = "png",
 
 head(ht_dat)
 
+
+# Herbivore CN ####
 tree_cn_mod_1 <- glm(herbivore_average_n ~ tree, data=ht_dat)
 Anova(tree_cn_mod_1)
 plot(emmeans(tree_cn_mod, ~ tree))
@@ -249,6 +251,16 @@ plot(emmeans(tree_cn_mod_4, ~ tree))
 
 hist(ht_dat$herbivore_average_ratio)
 
+# CN by herbivores
+
+cnbh_glm <- glm(herbivore_average_n ~ hemiptera + orthopterids + lepidoptera + log(coleoptera+1), data=ht_dat)
+Anova(cnbh_glm)
+summary(cnbh_glm)
+
+plot(ht_dat$herbivore_average_ratio, ht_dat$coleoptera)
+abline(lm(ht_dat$herbivore_average_ratio ~ log(ht_dat$coleoptera+1)))
+
+# Spider CN ####
 # remove spider high value on barberry
 ht_dat_2 <- subset(ht_dat, spider_average_ratio < 7)
 
