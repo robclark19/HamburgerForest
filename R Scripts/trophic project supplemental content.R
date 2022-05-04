@@ -26,6 +26,13 @@ biomass_cld <- cld(emmeans(model_1, ~ tree, type="response"), adjust="scheffe", 
 # figure generation
 # write a summary table of totals and means for insects by host plant
 # mean, total, SEM
+
+# slug fix
+hotf_dat <- left_join(hotf_dat, slug_dat, by = c("branch_code","time_block"))
+slug_dat$gastropod_biomass[is.na(slug_dat$gastropod_biomass)] <- 0  
+# subtract from total biomass to get arthropod only biomass
+hotf_dat$wet_mass_g <- hotf_dat$wet_mass_g - hotf_dat$gastropod_biomass
+
 biomass_summary <- hotf_dat %>% 
   filter(treatment == 'bag') %>%
   group_by(tree,exo) %>% 

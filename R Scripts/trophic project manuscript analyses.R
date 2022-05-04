@@ -11,43 +11,12 @@ library("ggpubr")
 library("plotrix") # for std.error function
 
 
-
-# Data ######
-# Branch data called "pilot" branch data until it is validated
-# Branch data #####
-hotf_dat <- read.csv("./Data/Originals/pilot branch data.csv")
-trophic_dat <- read.csv("./Data/Output/clean_trophic_groups.csv")
-
-# make a guiding table
-native_dat <- tibble(
-  id = c("Honeysuckle", "Barberry", "Burning Bush", "Autumn Olive", "Musclewood", "Sweet Birch", "Beech", "Black Cherry", "Witch-hazel", "Striped Maple"),
-  exo = c("Non-native", "Non-native", "Non-native", "Non-native", "Native", "Native", "Native", "Native", "Native", "Native")
-)
-
-# merge guiding table and raw data
-hotf_dat <- hotf_dat %>%
-  left_join(y = native_dat, by = c(tree = "id"))
-
-# Shadbush fix #####
-# exclude cherry pairs 5 6 and 7 in which black cherry was accidentally sampled
-# All shadbush were then misproperly labeled as cherry in the field, fixed at the next step
-bc_drop <- data.frame(branch_code = c("BC5B", "BC5C","BC6B", "BC6C","BC7B", "BC7C"))
-
-# drop cherries and change column to the correct name "shadbush"
-hotf_dat <- hotf_dat %>% anti_join(bc_drop, by = "branch_code", copy=TRUE) %>%
-  mutate(tree = replace(tree, tree == "Black Cherry", "Shadbush"))
+# Data ###
+ht_dat <- read.csv(x=ht_dat, file="./Data/Output/manuscript_dat.csv")
 
 
-# merge the cleaned insect community data (trophic_dat) with the branch-level data (hotf_dat)
-ht_dat <- left_join(hotf_dat, trophic_dat)
-str(ht_dat)
+# Analysis #####
 
-# gastropod fix
-ht_dat$gastro_mass <- ht_dat$gastropods * (0.01)
-ht_dat
-
-#
-ht_dat$wet_mass_g <- ht_dat$wet_mass_g - ht_dat$gastro_mass 
 
 # Model 1a: Bird x Tree #####
 # Figure 1: Bird effect across 10 host plants
@@ -61,10 +30,11 @@ Anova(model_1)
 tree.lsm <- emmeans(model_1, ~ treatment | tree, type = "response") %>% cld(adjust="scheffe")
 
 # effect size calculations using emmeans
-tree.lsm <- emmeans(model_1, ~ treatment | tree, type = "response")
-eff_size(tree.lsm, sigma = sigma(model_1), edf = 205)
-plot(eff_size(tree.lsm, sigma = sigma(model_1), edf = 205))
-cld(eff_size(tree.lsm, sigma = sigma(model_1), edf = 205), adjust="none")
+# not included for now since it introduces unnecessary complexity to the paper
+# tree.lsm <- emmeans(model_1, ~ treatment | tree, type = "response")
+# eff_size(tree.lsm, sigma = sigma(model_1), edf = 205)
+# plot(eff_size(tree.lsm, sigma = sigma(model_1), edf = 205))
+# cld(eff_size(tree.lsm, sigma = sigma(model_1), edf = 205), adjust="none")
 
 # Exo model
 # emmeans(model_1, ~ treatment | exo, type = "response") %>% cld() %>% plot()
@@ -247,12 +217,52 @@ ggsave(filename = "./Figures/Fig2abcd.png", plot = Fig_2abcd, device = "png",
 
 
 
-
+# Models 3ab CN ####
 # Figure 3: C:N content among native and non-native plants for spiders and insect herbivores
 # should be a simple clustered bar chart with no treatment effects
 
+head(ht_dat)
+
+tree_cn_mod_1 <- glm(herbivore_average_n ~ tree, data=ht_dat)
+Anova(tree_cn_mod_1)
+plot(emmeans(tree_cn_mod, ~ tree))
+
+tree_cn_mod_1a <- glm(herbivore_average_n ~ exo, data=ht_dat)
+Anova(tree_cn_mod_1a)
+plot(emmeans(tree_cn_mod_1a, ~ exo))
+
+tree_cn_mod_2 <- glm(herbivore_average_c ~ tree, data=ht_dat)
+Anova(tree_cn_mod_2)
+plot(emmeans(tree_cn_mod_2, ~ tree))
+
+tree_cn_mod_2a <- glm(herbivore_average_c ~ exo, data=ht_dat)
+Anova(tree_cn_mod_2a)
+plot(emmeans(tree_cn_mod_2a, ~ exo))
+
+tree_cn_mod_3 <- glm(herbivore_average_ratio ~ exo, data=ht_dat)
+Anova(tree_cn_mod_3)
+plot(emmeans(tree_cn_mod_3, ~ exo))
+
+tree_cn_mod_4 <- glm(herbivore_average_ratio ~ tree, data=ht_dat)
+Anova(tree_cn_mod_4)
+plot(emmeans(tree_cn_mod_4, ~ tree))
+
+hist(ht_dat$herbivore_average_ratio)
+
+# remove spider high value on barberry
+ht_dat_2 <- subset(ht_dat, spider_average_ratio < 7)
+
+tree_cn_mod_5 <- glm(spider_average_ratio ~ exo, data=ht_dat_2)
+Anova(tree_cn_mod_5)
+plot(emmeans(tree_cn_mod_5, ~ exo))
+
+tree_cn_mod_6 <- glm(spider_average_ratio ~ tree, data=ht_dat_2)
+Anova(tree_cn_mod_6)
+plot(emmeans(tree_cn_mod_6, ~ tree))
+
+hist(ht_dat_2$spider_average_ratio)
 
 
-
+# Figures 3AB #####
 
 
