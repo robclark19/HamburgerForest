@@ -268,6 +268,13 @@ summary(biomass_glm)
 plot(ht_dat$herbivore_average_ratio, ht_dat$wet_mass_g)
 abline(lm(ht_dat$herbivore_average_ratio ~ ht_dat$wet_mass_g))
 
+# CN by morphospecies richness
+
+morphospecies_glm <- glm(morphospecies ~ tree + herbivore_average_n + herbivore_average_c + spider_average_n + spider_average_c, data=ht_dat)
+summary(morphospecies_glm)
+
+plot(ht_dat$morphospecies, ht_dat$herbivore_average_c)
+abline(lm(ht_dat$morphospecies ~ ht_dat$herbivore_average_c))
 
 # Spider CN ####
 # remove spider high value on barberry
