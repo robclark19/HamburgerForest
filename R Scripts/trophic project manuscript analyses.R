@@ -12,7 +12,7 @@ library("plotrix") # for std.error function
 
 
 # Data ###
-ht_dat <- read.csv(x=ht_dat, file="./Data/Output/manuscript_dat.csv")
+ht_dat <- read.csv(file="./Data/Output/manuscript_dat.csv")
 
 
 # Analysis #####
@@ -55,13 +55,13 @@ Fig_1 <- ggplot(data=tree.lsm, aes(x = treatment, y = response)) +
 Fig_1
 
 # Model 1b
-model_1b <- lmer(log(wet_mass_g) ~ exo * treatment + (1|tree)  + (1 | branch_code), data = hotf_dat)
+model_1b <- lmer(log(wet_mass_g) ~ exo * treatment + (1|tree)  + (1 | branch_code), data = ht_dat)
 
 # Table for Figure 1b
 Anova(model_1b)
 
 # Parameter estimates and posthoc tests
-tree.lsm <- emmeans(model_1b, ~ treatment | exo, type = "response") %>% cld()
+tree.lsm <- emmeans(model_1b, ~ treatment * exo, type = "response") %>% cld()
 
 # Fig 1 #####
 # Modified from 10 species newsletter figure in hotf pilot analysis
@@ -86,8 +86,8 @@ Fig_1ab <- ggarrange(Fig_1, Fig_1b, labels = c("A", "B"), nrow = 2,
 
 
 # Output 1ab ####
- ggsave(filename = "./Figures/Fig_1ab.png", plot = Fig_1ab, device = "png",
-        width = 6, height = 9, units = "in")
+ # ggsave(filename = "./Figures/Fig_1ab.png", plot = Fig_1ab, device = "png",
+ #        width = 6, height = 9, units = "in")
 
 
 
@@ -227,7 +227,7 @@ head(ht_dat)
 # Herbivore CN ####
 tree_cn_mod_1 <- glm(herbivore_average_n ~ tree, data=ht_dat)
 Anova(tree_cn_mod_1)
-plot(emmeans(tree_cn_mod, ~ tree))
+plot(emmeans(tree_cn_mod_1, ~ tree))
 
 tree_cn_mod_1a <- glm(herbivore_average_n ~ exo, data=ht_dat)
 Anova(tree_cn_mod_1a)
@@ -278,28 +278,40 @@ plot(ht_dat$morphospecies, ht_dat$herbivore_average_c)
 # Spider CN ####
 # remove spider high value on barberry
 ht_dat_2 <- subset(ht_dat, spider_average_ratio < 7)
+ht_dat_2 <- ht_dat
 
-tree_cn_mod_5 <- glm(spider_average_ratio ~ exo, data=ht_dat_2)
+tree_cn_mod_5 <- glm(spider_average_n ~ tree, data=ht_dat_2)
 Anova(tree_cn_mod_5)
-plot(emmeans(tree_cn_mod_5, ~ exo))
+plot(emmeans(tree_cn_mod_5, ~ tree))
 
-tree_cn_mod_6 <- glm(spider_average_ratio ~ tree, data=ht_dat_2)
+tree_cn_mod_6 <- glm(spider_average_n ~ exo, data=ht_dat_2)
 Anova(tree_cn_mod_6)
-plot(emmeans(tree_cn_mod_6, ~ tree))
+plot(emmeans(tree_cn_mod_6, ~ exo))
 
 hist(ht_dat_2$spider_average_ratio)
 
-tree_cn_mod_7 <- glm(spider_average_c ~ exo, data=ht_dat_2)
+tree_cn_mod_7 <- glm(spider_average_ratio ~tree, data=ht_dat_2)
 Anova(tree_cn_mod_7)
-plot(emmeans(tree_cn_mod_7, ~ exo))
+plot(emmeans(tree_cn_mod_7, ~tree))
 
-tree_cn_mod_8 <- glm(spider_average_n ~ exo, data=ht_dat_2)
+tree_cn_mod_8 <- glm(spider_average_n ~ tree, data=ht_dat_2)
 Anova(tree_cn_mod_8)
-plot(emmeans(tree_cn_mod_8, ~ exo))
+plot(emmeans(tree_cn_mod_8, ~ tree))
+
+#spider N by herbivore N
+
+tree_cn_mod_9 <- glm(spider_average_n ~ herbivore_average_n, data=ht_dat)
+Anova(tree_cn_mod_9)
+summary(tree_cn_mod_9)
+
+tree_cn_mod_10 <- glm(spider_average_ratio ~ herbivore_average_ratio, data=ht_dat)
+Anova(tree_cn_mod_10)
+summary(tree_cn_mod_10)
+
+# Figure 3A #####
 
 
-
-# Figures 3AB #####
+# Figure 3b ######
 
 
 

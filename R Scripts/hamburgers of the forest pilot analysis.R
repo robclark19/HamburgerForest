@@ -293,6 +293,10 @@ NI.2018.percent.increase
 # bug diveristy data
 trophic_nmds_dat <- read.csv("./Data/Output/trophicnmds1.csv", header=TRUE)
 
+
+# make an exo variable
+
+
 # 
 #make new object so commands below dont edit primary data
 matrix.dat <- trophic_nmds_dat
@@ -334,7 +338,7 @@ orditorp(trophic.mds,display="species",col="black",air=0.2,cex=1)
 
 # Bag effect NMDS plot ####
 # draws a shape around it based on the environmental variable of interest
-ordihull(trophic.mds, groups=treatment, draw="polygon",col="grey90",label=T)
+ordihull(trophic.mds, groups=tree, draw="polygon",col="grey90",label=T)
 
 # now for tree
 ordihull(trophic.mds, groups=tree, draw="polygon",col="grey90",label=T)

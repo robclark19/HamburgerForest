@@ -27,7 +27,7 @@ biomass_cld <- cld(emmeans(model_1, ~ tree, type="response"), adjust="scheffe", 
 # write a summary table of totals and means for insects by host plant
 # mean, total, SEM
 
-biomass_summary <- hotf_dat %>% 
+biomass_summary <- ht_dat %>% 
   filter(treatment == 'bag') %>%
   group_by(tree,exo) %>% 
   summarise(biomass_mean = mean(wet_mass_g), sem = std.error(wet_mass_g, na.rm=TRUE)) 
