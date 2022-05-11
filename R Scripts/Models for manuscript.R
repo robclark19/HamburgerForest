@@ -83,6 +83,15 @@ plot(emmeans(model_7, ~ tree))
 mod7_cld <- cld(emmeans(model_7, ~ tree, type="response"), adjust="scheffe", type="response")
 
 # pooled contrast of natives vs. non-natives using an emmeans reference grid
+Native = c(0, 0, 1, 0, 0, 1, 1, 1, 1, 1)
+Exotic = c(1, 1, 0, 1, 1, 0, 0, 0, 0, 0)
+
+# do contrast among native and non-native plants
+# I dont think this is doing the contrast correct, the p-value is absurdly low
+mod7_contrast <- contrast(emmeans(model_7, ~ tree, type="response"), 
+            method = list("Native - Exotic" = Native - Exotic))
+mod7_contrast
+
 
 # mean, total, SEM
 
