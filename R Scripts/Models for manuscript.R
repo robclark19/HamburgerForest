@@ -76,6 +76,28 @@ write.csv(tree.lsm, "./Data/Models/model2.csv")
 
 
 # Model 7: Herbivore N ####
+model_7 <- glm(herbivore_average_n ~ tree, data=ht_dat)
+Anova(model_7)
+plot(emmeans(model_7, ~ tree))
+
+mod7_cld <- cld(emmeans(model_7, ~ tree, type="response"), adjust="scheffe", type="response")
+
+# pooled contrast of natives vs. non-natives using an emmeans reference grid
+
+# mean, total, SEM
+
+mod7_summary <- ht_dat %>% 
+  filter(treatment == 'bag') %>%
+  group_by(tree,exo) %>% 
+  summarise(mean_nitrogen = mean(herbivore_average_n), sem = std.error(herbivore_average_n, na.rm=TRUE)) 
+
+# merge biomass cld with summary
+mod7_summary  <- mod7_summary  %>%
+  left_join(y=mod7_cld , by = c("tree"))%>%
+  as.data.frame()
+
+# write csv for summary table to use in figure generation
+write.csv(mod7_summary, "./Data/Models/model7.csv")
 
 
 # Model 8: Herbivore CN ####

@@ -15,6 +15,7 @@ library("ggsignif")
 # Fig 1a: Bagged branch biomass ####
 biomass_summary <- read.csv("./Data/Models/model1.csv")
 
+# Plant arrangment rule ######
 # Arrange in order of native vs exotic
 biomass_order <- c("Beech","Musclewood","Shadbush","Striped Maple", "Sweet Birch", "Witch-hazel", "Autumn Olive", "Barberry", "Burning Bush", "Honeysuckle")
 biomass_summary <- arrange(transform(biomass_summary, tree=factor(tree,levels=biomass_order)), tree) 
@@ -68,3 +69,38 @@ Fig_1b
 
 # Fig 2abcd #####
 # Insect abundances #####
+
+
+
+
+
+
+
+
+
+
+# Fig 3 #####
+# 3a: Herbivore N% ######
+# write csv for summary table to use in figure generation
+mod7_summary <- read.csv("./Data/Models/model7.csv")
+mod7_summary  <- arrange(transform(mod7_summary , tree=factor(tree,levels=biomass_order)), tree) 
+
+HN_plot <- ggplot(data=mod7_summary , aes(x = tree, y = mean_nitrogen, shape=exo)) +
+  theme_bw(base_size=16) +
+  geom_point(size=4.5) +
+  geom_errorbar(aes(ymin=mean_nitrogen-(sem), ymax=mean_nitrogen+(sem), width=0)) +
+  ylab("Nitrogen content of insect herbivores (% mass)") +
+  xlab("Plant species") +
+  guides(shape=guide_legend(title="", title.position = "left")) +
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.background = element_blank(), axis.line = element_line(colour = "black")) +
+  theme(legend.position="bottom") +
+  geom_signif(comparisons = list(c("Shadbush", "Barberry")), 
+              y_position = 11.5,
+              tip_length = 0.235,
+              annotation = c("P = 0.002")) +
+  geom_signif(y_position = c(11.2), 
+              xmin = c(0.9, 6.9), 
+              xmax = c(6.1, 10),
+              annotation = c(" ", " "), tip_length = 0.01)
+HN_plot
