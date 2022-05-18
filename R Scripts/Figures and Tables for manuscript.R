@@ -36,12 +36,12 @@ biomass_plot <- ggplot(data=biomass_summary, aes(x = tree, y = response, shape=e
         panel.background = element_blank(), axis.line = element_line(colour = "black")) +
   theme(legend.position="bottom") +
   geom_signif(comparisons = list(c("Shadbush", "Barberry")), 
-              y_position = 0.12,
-              tip_length = 0.21,
+              y_position = 0.155,
+              tip_length = 0.05,
               annotation = c("***")) +
-  geom_signif(y_position = c(0.11), 
+  geom_signif(y_position = c(0.155), 
               xmin = c(0.9, 6.9), 
-              xmax = c(6.1, 10),
+              xmax = c(6.1, 10.1),
     annotation = c(" ", " "), tip_length = 0.01)
 biomass_plot 
 
@@ -102,7 +102,7 @@ lrr_plot <- ggplot(data=mod2a_lsm, aes(x = tree, y = LRR_mean, shape=exo)) +
               annotation = c("See Fig 2b")) +
   geom_signif(y_position = c(1.35), 
               xmin = c(0.9, 6.9), 
-              xmax = c(6.1, 10),
+              xmax = c(6.1, 10.1),
               annotation = c(" ", " "), tip_length = 0.01) +
   geom_hline(yintercept=0.0,linetype=2)  +
   ylim(-0.25,1.5)
