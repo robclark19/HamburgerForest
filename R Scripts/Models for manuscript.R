@@ -57,7 +57,7 @@ str(biomass_group)
 # write the contrast, then save the contrast values and round to nearest 3rd decimal
 biomass_contrast <- emmeans(biomass_group, pairwise ~ Exo)
 
-biomass_contrast$contrasts %>% 
+biomass_contrast$emmeans %>% 
   as.data.frame() %>% 
   mutate(across(where(is.numeric), ~ round(., 3))) %>%
   write.csv("./Data/Models/model1_posthoc.csv")
