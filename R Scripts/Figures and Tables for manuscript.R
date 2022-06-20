@@ -145,12 +145,99 @@ ggsave(filename = "./Figures/Fig_2ab.svg", plot = Fig_2ab , device = "svg",
 
 
 # Fig 3abcd #####
-# Insect abundances #####
+# Insect abundances #
+# Araneae plot
+spider_lsm <- read.csv("./Data/Models/spider_model.csv")
+
+# ! manually set tukey letters ####
+spider_lsm$.group <- c("b","a","b","a")
+
+Fig_3a <- ggplot(data=spider_lsm, aes(x = treatment, y = response)) +
+  theme_bw(base_size=12) +
+  geom_point(size=2) +
+  geom_line(aes(group = exo)) +
+  geom_errorbar(aes(ymin=response-(SE), ymax=response+(SE), width=0)) +
+  ylab("Araneae count per branch") +
+  xlab("Bird Exclusion") +
+  scale_x_discrete(labels=c("bag" = "- Birds", "control" = "+ Birds")) +
+  geom_text(aes(x = treatment, y = (response+SE), label = .group, hjust=-.5)) +
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank()) +
+  facet_wrap( ~ exo, nrow=1) 
+Fig_3a
+
+# Hemiptera plot
+
+hemiptera_lsm <- read.csv("./Data/Models/hemiptera_model.csv")
+
+#manually set tukey letters
+hemiptera_lsm$.group <- c("a","a","a","a")
+
+Fig_3b <- ggplot(data=hemiptera_lsm, aes(x = treatment, y = response)) +
+  theme_bw(base_size=12) +
+  geom_point(size=2) +
+  geom_line(aes(group = exo)) +
+  geom_errorbar(aes(ymin=response-(SE), ymax=response+(SE), width=0)) +
+  ylab("Hemiptera count per branch") +
+  xlab("Bird Exclusion") +
+  scale_x_discrete(labels=c("bag" = "- Birds", "control" = "+ Birds")) +
+  geom_text(aes(x = treatment, y = (response+SE), label = .group, hjust=-.5)) +
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank()) +
+  facet_wrap( ~ exo, nrow=1) 
+Fig_3b
+
+# Lepidopetera plot
+lepidoptera_lsm <- read.csv("./Data/Models/lepidoptera_model.csv")
+
+lepidoptera_lsm
+
+#manually set tukey letters
+lepidoptera_lsm$.group <- c("c","bc","ab","a")
+
+Fig_3c <- ggplot(data=lepidoptera_lsm, aes(x = treatment, y = response)) +
+  theme_bw(base_size=12) +
+  geom_point(size=2) +
+  geom_line(aes(group = exo)) +
+  geom_errorbar(aes(ymin=response-(SE), ymax=response+(SE), width=0)) +
+  ylab("Lepidoptera count per branch") +
+  xlab("Bird Exclusion") +
+  scale_x_discrete(labels=c("bag" = "- Birds", "control" = "+ Birds")) +
+  geom_text(aes(x = treatment, y = (response+SE), label = .group, hjust=-.5)) +
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank()) +
+  facet_wrap( ~ exo, nrow=1) 
+Fig_3c
+
+# Orthoptera plot
+orthoptera_lsm <- read.csv("./Data/Models/orthoptera_model.csv")
+
+orthoptera_lsm 
+
+#manually set tukey letters
+orthoptera_lsm$.group <- c("b","a","b","a")
+
+Fig_3d <- ggplot(data=orthoptera_lsm, aes(x = treatment, y = response)) +
+  theme_bw(base_size=12) +
+  geom_point(size=2) +
+  geom_line(aes(group = exo)) +
+  geom_errorbar(aes(ymin=response-(SE), ymax=response+(SE), width=0)) +
+  ylab("Orthoptera count per branch") +
+  xlab("Bird Exclusion") +
+  scale_x_discrete(labels=c("bag" = "- Birds", "control" = "+ Birds")) +
+  geom_text(aes(x = treatment, y = (response+SE), label = .group, hjust=-.5)) +
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank()) +
+  facet_wrap( ~ exo, nrow=1) 
+Fig_3d
 
 
+# Fig 3 all #####
+# arrange figure 2
+Fig_3abcd <- ggarrange(Fig_3a, Fig_3b, Fig_3c, Fig_3d,
+                       labels = c("A","B","C","D"), 
+                       nrow = 2, ncol = 2)
+Fig_3abcd 
 
-
-
+# write figure 3 to folder
+ggsave(filename = "./Figures/Fig3abcd.png", plot = Fig_3abcd, device = "png",
+       width = 10, height = 8, units = "in")
 
 
 

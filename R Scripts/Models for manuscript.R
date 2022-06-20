@@ -1,3 +1,5 @@
+# refactored modeling code for ecology report / PNAS paper
+# models pulled from "trophic project manuscript analyses", that file is now the old one
 # only glmms and lookup tables for plotting
 
 # Libraries ####
@@ -40,6 +42,7 @@ biomass_summary <- biomass_summary %>%
 # write the arranged model outputs 
 write.csv(biomass_summary, "./Data/Models/model1.csv")
 
+# Planned contrast method ######
 # biomass posthoc test
 Anova(model_1)
 summary(model_1)
@@ -47,14 +50,17 @@ summary(model_1)
 native_list <- c("Non-native","Non-native","Native","Non-native","Non-native",
                  "Native","Native","Native","Native", "Native")
 
+# apply native vs non-native list to lsm table
 biomass_group <- add_grouping(biomass_lsm, "Exo", "tree", native_list)
 str(biomass_group)
 
+# write the contrast, then save the contrast values and round to nearest 3rd decimal
 biomass_contrast <- emmeans(biomass_group, pairwise ~ Exo)
 
 biomass_contrast$contrasts %>% 
   as.data.frame() %>% 
-  mutate(across(where(is.numeric), ~ round(., 3)))
+  mutate(across(where(is.numeric), ~ round(., 3))) %>%
+  write.csv("./Data/Models/model1_posthoc.csv")
 
 
 
@@ -115,7 +121,9 @@ summary(model_2a)
 
 # Parameter estimates and posthoc tests
 # this should be "pairs" and report p-values
-lrr.lsm <- emmeans(model_2a, ~ tree, type = "response") %>% 
+lrr_lsm <- emmeans(model_2a, ~ tree, type = "response")
+
+lrr_cld <- lrr_lsm %>% 
   cld(adjust="scheffe", Letters=c("abcd")) %>%
   as.data.frame()
 
@@ -126,7 +134,7 @@ lrr_summary <- ht_dat_wide %>%
 
 # merge biomass cld with biomass_summary
 lrr_summary <- lrr_summary %>%
-  left_join(y=lrr.lsm, by = c("tree"))%>%
+  left_join(y=lrr_cld, by = c("tree"))%>%
   as.data.frame()
 
 # Write the lsm object to a .csv for ggplot to use
@@ -134,31 +142,64 @@ write.csv(lrr_summary, "./Data/Models/model2a.csv")
 
 
 # posthoc test
-# fix this contrast later ######
+# apply native vs non-native list to lsm table
+lrr_group <- add_grouping(lrr_lsm, "Exo", "tree", native_list)
+lrr_group
 
-model_2a_posthoc <- glm(LRR ~ exo, data=ht_dat_wide)
+# write the contrast, then save the contrast values and round to nearest 3rd decimal
+lrr_contrast <- emmeans(lrr_group, pairwise ~ Exo)
 
-model_2a_posthoc <- emmeans(model_2a_posthoc, ~exo) %>% as.data.frame()
+lrr_contrast$contrasts %>% 
+  as.data.frame() %>% 
+  mutate(across(where(is.numeric), ~ round(., 3))) %>%
+  write.csv("./Data/Models/model2_posthoc.csv")
 
-write.csv(model_2a_posthoc, "./Data/Models/model2a_posthoc.csv")
-
-# is it normally distributed?
+# final check - is it normally distributed?
 # Yes hooray
 hist(ht_dat_wide$LRR)
 shapiro.test(ht_dat_wide$LRR)
 
 
-
-
 # Model 3: Araneae #####
+spider_glm <- glmer.nb(arachnids ~ exo * treatment + (1|branch_code) + (1|tree), data=ht_dat)
+
+spider_lsm <- cld(emmeans(spider.glm, ~  treatment|exo, type="response"))
+
+spider_lsm %>%
+  as.data.frame() %>%
+  write.csv("./Data/Models/spider_model.csv")
 
 # Model 4: Hemiptera ####
 
+hemiptera_glm <- glmer.nb(hemiptera ~ exo * treatment + (1|branch_code) + (1|tree), data=ht_dat)
+
+hemiptera_lsm <- cld(emmeans(hemiptera_glm, ~  treatment|exo, type="response"))
+
+hemiptera_lsm %>%
+  as.data.frame() %>%
+  write.csv("./Data/Models/hemiptera_model.csv")
+
 # Model 5: Lepidoptera ####
+lepidoptera_glm <- glmer.nb(lepidoptera ~ exo * treatment + (1|branch_code) + (1|tree), data=ht_dat)
+ 
+
+lepidoptera_lsm <- cld(emmeans(lepidoptera_glm, ~  treatment*exo, type="response"))
+
+lepidoptera_lsm %>%
+  as.data.frame() %>%
+  write.csv("./Data/Models/lepidoptera_model.csv")
+
+
 
 # Model 6: Orthoptera ####
+orthoptera_glm <- glmer.nb(orthopterids ~ exo * treatment + (1|branch_code) + (1|tree), data=ht_dat)
 
+orthoptera_lsm <- cld(emmeans(orthoptera_glm, ~  treatment|exo, type="response"), adjust="scheffe")
+# https://en.wikipedia.org/wiki/Scheff%C3%A9%27s_method
 
+orthoptera_lsm %>%
+  as.data.frame() %>%
+  write.csv("./Data/Models/orthoptera_model.csv")
 
 
 # Model 7: Herbivore N ####
@@ -168,19 +209,7 @@ plot(emmeans(model_7, ~ tree))
 
 mod7_cld <- cld(emmeans(model_7, ~ tree, type="response"), adjust="scheffe", type="response")
 
-# pooled contrast of natives vs. non-natives using an emmeans reference grid
-Native = c(0, 0, 1, 0, 0, 1, 1, 1, 1, 1)
-Exotic = c(1, 1, 0, 1, 1, 0, 0, 0, 0, 0)
-
-# do contrast among native and non-native plants
-# I dont think this is doing the contrast correct, the p-value is absurdly low
-mod7_contrast <- contrast(emmeans(model_7, ~ tree, type="response"), 
-            method = list("Native - Exotic" = Native - Exotic))
-mod7_contrast
-
-
 # mean, total, SEM
-
 mod7_summary <- ht_dat %>% 
   filter(treatment == 'bag') %>%
   group_by(tree,exo) %>% 
@@ -196,6 +225,7 @@ write.csv(mod7_summary, "./Data/Models/model7.csv")
 
 
 # Model 8: Herbivore CN ####
+
 
 
 # Model 9: Spider N ####

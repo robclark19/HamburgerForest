@@ -1,4 +1,8 @@
-# Trophic project 2021 Primary Figures
+# Trophic project 2021 first run at manuscript figures
+
+# all final figures were pulled from this and moved to the models for manuscript,
+# figure and tables for manuscript, and etl for manuscript document
+
 # Libraries ####
 library("tidyverse")
 library("readr")
@@ -158,7 +162,7 @@ lepidoptera.glm <- glmer.nb(lepidoptera ~ exo * treatment + (1|branch_code) + (1
 
 lepidoptera_lsm <- cld(emmeans(lepidoptera.glm, ~  treatment*exo, type="response"))
 
-# hemiptera pub fig #####
+# lep pub fig #####
 Fig_2c <- ggplot(data=lepidoptera_lsm, aes(x = treatment, y = response)) +
   theme_bw(base_size=12) +
   geom_point(size=2) +
