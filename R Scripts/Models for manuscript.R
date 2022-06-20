@@ -204,28 +204,55 @@ orthoptera_lsm %>%
 
 # Model 7: Herbivore N ####
 model_7 <- glm(herbivore_average_n ~ tree, data=ht_dat)
-Anova(model_7)
-plot(emmeans(model_7, ~ tree))
 
-mod7_cld <- cld(emmeans(model_7, ~ tree, type="response"), adjust="scheffe", type="response")
+mod7_lsm <- emmeans(model_7, ~ tree, type="response")
+
+mod7_cld <- cld(mod7_lsm, type="response")
 
 # mean, total, SEM
 mod7_summary <- ht_dat %>% 
   filter(treatment == 'bag') %>%
   group_by(tree,exo) %>% 
-  summarise(mean_nitrogen = mean(herbivore_average_n), sem = std.error(herbivore_average_n, na.rm=TRUE)) 
-
-# merge biomass cld with summary
-mod7_summary  <- mod7_summary  %>%
-  left_join(y=mod7_cld , by = c("tree"))%>%
+  summarise(mean_nitrogen = mean(herbivore_average_n), sem = std.error(herbivore_average_n, na.rm=TRUE)) %>%
+  left_join(y=mod7_cld , by = c("tree")) %>%
   as.data.frame()
-
 # write csv for summary table to use in figure generation
 write.csv(mod7_summary, "./Data/Models/model7.csv")
 
 
-# Model 8: Herbivore CN ####
+# posthoc test
+# apply native vs non-native list to lsm table
+mod7_group <- add_grouping(mod7_lsm, "Exo", "tree", native_list)
+mod7_group
 
+# write the contrast, then save the contrast values and round to nearest 3rd decimal
+mod7_contrast <- emmeans(mod7_group, pairwise ~ Exo)
+
+mod7_contrast$emmeans %>% 
+  as.data.frame() %>% 
+  mutate(across(where(is.numeric), ~ round(., 3))) %>%
+  write.csv("./Data/Models/mod7_posthoc.csv")
+
+
+
+
+
+# Model 8: Herbivore C ####
+model_8 <- glm(herbivore_average_c ~ tree, data=ht_dat)
+
+
+mod8_cld <- cld(emmeans(model_8, ~ tree, type="response"), adjust="scheffe", type="response", sort=FALSE)
+
+
+# mean, total, SEM
+mod8_summary <- ht_dat %>% 
+  filter(treatment == 'bag') %>%
+  group_by(tree,exo) %>% 
+  summarise(mean_nitrogen = mean(herbivore_average_n), sem = std.error(herbivore_average_n, na.rm=TRUE)) %>%
+  left_join(y=mod8_cld , by = c("tree")) %>%
+  as.data.frame()
+# write csv for summary table to use in figure generation
+write.csv(mod7_summary, "./Data/Models/model8.csv")
 
 
 # Model 9: Spider N ####

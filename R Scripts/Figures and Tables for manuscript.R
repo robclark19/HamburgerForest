@@ -109,14 +109,14 @@ lrr_plot <- ggplot(data=mod2a_lsm, aes(x = tree, y = LRR_mean, shape=exo)) +
 lrr_plot
 
 # Fig 2b #####
-model_2a_posthoc <- read.csv("./Data/Models/model2a_posthoc.csv")
+model_2a_posthoc <- read.csv("./Data/Models/model2_posthoc.csv")
 
 # import p-value #
 nugget_1 <- "P = 0.364" 
 
 # this needs to use the same mean and SEM as the other figure, it currently does NOT
 
-lrr_posthoc <- ggplot(data=model_2a_posthoc, aes(x = exo, y = emmean,shape=exo)) +
+lrr_posthoc <- ggplot(data=model_2a_posthoc, aes(x = Exo, y = emmean,shape=Exo)) +
   theme_bw(base_size=16) +
   geom_point(size=4.5) +
   geom_errorbar(aes(ymin=emmean -(SE), ymax=emmean +(SE), width=0)) +
@@ -244,8 +244,7 @@ ggsave(filename = "./Figures/Fig3abcd.png", plot = Fig_3abcd, device = "png",
 
 
 # Fig 4 #####
-# 4a: Herbivore N% ######
-# write csv for summary table to use in figure generation
+# 4a: Herbivore N % ######
 mod7_summary <- read.csv("./Data/Models/model7.csv")
 mod7_summary  <- arrange(transform(mod7_summary , tree=factor(tree,levels=biomass_order)), tree) 
 
@@ -253,16 +252,16 @@ HN_plot <- ggplot(data=mod7_summary , aes(x = tree, y = mean_nitrogen, shape=exo
   theme_bw(base_size=16) +
   geom_point(size=4.5) +
   geom_errorbar(aes(ymin=mean_nitrogen-(sem), ymax=mean_nitrogen+(sem), width=0)) +
-  ylab("Nitrogen content of insect herbivores (% mass)") +
+  ylab("% N content of insect herbivores") +
   xlab("Plant species") +
   guides(shape=guide_legend(title="", title.position = "left")) +
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
         panel.background = element_blank(), axis.line = element_line(colour = "black")) +
-  theme(legend.position="bottom") +
+  theme(legend.position="none") +
   geom_signif(comparisons = list(c("Shadbush", "Barberry")), 
               y_position = 11.5,
               tip_length = 0.235,
-              annotation = c("P = 0.002")) +
+              annotation = c("See Fig. 4b")) +
   geom_signif(y_position = c(11.2), 
               xmin = c(0.9, 6.9), 
               xmax = c(6.1, 10),
@@ -270,7 +269,51 @@ HN_plot <- ggplot(data=mod7_summary , aes(x = tree, y = mean_nitrogen, shape=exo
 HN_plot
 
 # 4b: Herbivore posthoc ####
+model_4b_posthoc <- read.csv("./Data/Models/mod7_posthoc.csv")
+
+# import p-value #
+nugget_2 <- "P = 0.001" 
+
+# this needs to use the same mean and SEM as the other figure, it currently does NOT
+
+model_4b_plot <- ggplot(data=model_4b_posthoc, aes(x = Exo, y = emmean,shape=Exo)) +
+  theme_bw(base_size=16) +
+  geom_point(size=4.5) +
+  geom_errorbar(aes(ymin=emmean -(SE), ymax=emmean +(SE), width=0)) +
+  ylab("") +
+  xlab("Plant group") +
+  guides(shape=guide_legend(title="", title.position = "left")) +
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.background = element_blank(), axis.line = element_line(colour = "black")) +
+  geom_hline(yintercept=0.0,linetype=2) +
+  ylim(9.5,11.5) +
+  theme(axis.title.y = element_blank()) +
+  theme(legend.position='none') +
+  geom_signif(y_position = c(10.5), 
+              xmin = c(1), 
+              xmax = c(2),
+              annotation = c(nugget_2), tip_length = 0.01)
+model_4b_plot
+
+
+
+
+# Merge 4a4b ####
+# merge 2a and 2b
+Fig_4ab <- ggarrange(HN_plot, model_4b_plot, labels = c("4A", "4B"), nrow = 1,
+                     common.legend = FALSE, widths = c(1.75, 0.5))
+
+ggsave(filename = "./Figures/Fig_4ab.svg", plot = Fig_4ab , device = "svg",
+       width = 15, height = 5, units = "in")
+
+
+
+
+
 
 # 4c: Spider N% ####
 
 # 4d: Spider posthoc ####
+
+
+
