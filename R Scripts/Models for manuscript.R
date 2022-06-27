@@ -164,9 +164,11 @@ shapiro.test(ht_dat_wide$LRR)
 
 
 # Model 3: Araneae #####
+# Dropping all treatment*exo interactions in emmeans
+# adds far too much complexity and weakens power of pairwise comparisons
 spider_glm <- glmer.nb(arachnids ~ exo * treatment + (1|branch_code) + (1|tree), data=ht_dat)
 
-spider_lsm <- cld(emmeans(spider.glm, ~  treatment|exo, type="response"))
+spider_lsm <- cld(emmeans(spider_glm, ~  treatment|exo, type="response"))
 
 spider_lsm %>%
   as.data.frame() %>%
@@ -186,7 +188,7 @@ hemiptera_lsm %>%
 lepidoptera_glm <- glmer.nb(lepidoptera ~ exo * treatment + (1|branch_code) + (1|tree), data=ht_dat)
  
 
-lepidoptera_lsm <- cld(emmeans(lepidoptera_glm, ~  treatment*exo, type="response"))
+lepidoptera_lsm <- cld(emmeans(lepidoptera_glm, ~  treatment|exo, type="response"))
 
 lepidoptera_lsm %>%
   as.data.frame() %>%
