@@ -292,8 +292,9 @@ mod9_contrast$emmeans %>%
 
 
 
-
-
+# Model 9A HN x SN ####
+tree_cn_mod_9 <- glm(spider_average_n ~ herbivore_average_n, data=ht_dat)
+Anova(tree_cn_mod_9)
 
 
 

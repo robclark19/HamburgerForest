@@ -339,7 +339,6 @@ model_4b_plot
 
 
 # Merge 4a4b ####
-# merge 2a and 2b
 Fig_4ab <- ggarrange(HN_plot, model_4b_plot, labels = c("4A", "4B"), nrow = 1,
                      common.legend = FALSE, widths = c(1.75, 0.5))
 
@@ -352,8 +351,62 @@ ggsave(filename = "./Figures/Fig_4ab.svg", plot = Fig_4ab , device = "svg",
 
 
 # 4c: Spider N% ####
+mod9_summary <- read.csv("./Data/Models/model9.csv")
+mod9_summary  <- arrange(transform(mod9_summary , tree=factor(tree,levels=biomass_order)), tree) 
+
+SN_plot <- ggplot(data=mod9_summary , aes(x = tree, y = mean_nitrogen, shape=exo)) +
+  theme_bw(base_size=16) +
+  geom_point(size=4.5) +
+  geom_errorbar(aes(ymin=mean_nitrogen-(sem), ymax=mean_nitrogen+(sem), width=0)) +
+  ylab("% N content of spiders") +
+  xlab("Plant species") +
+  guides(shape=guide_legend(title="", title.position = "left")) +
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.background = element_blank(), axis.line = element_line(colour = "black")) +
+  theme(legend.position="none") +
+  geom_signif(comparisons = list(c("Shadbush", "Barberry")), 
+              y_position = 11.9,
+              tip_length = 0.195,
+              annotation = c("See Fig. 4d")) +
+  geom_signif(y_position = c(11.7), 
+              xmin = c(0.9, 6.9), 
+              xmax = c(6.1, 10),
+              annotation = c(" ", " "), tip_length = 0.01)
+SN_plot
+
+
+
+
 
 # 4d: Spider posthoc ####
+model_4d_posthoc <- read.csv("./Data/Models/mod9_posthoc.csv")
 
+# import p-value #
+nugget_3 <- "P = 0.002" 
 
+# now uses model emmeans
+model_4d_plot <- ggplot(data=model_4d_posthoc, aes(x = Exo, y = emmean,shape=Exo)) +
+  theme_bw(base_size=16) +
+  geom_point(size=4.5) +
+  geom_errorbar(aes(ymin=emmean -(SE), ymax=emmean +(SE), width=0)) +
+  ylab("") +
+  xlab("Plant group") +
+  guides(shape=guide_legend(title="", title.position = "left")) +
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.background = element_blank(), axis.line = element_line(colour = "black")) +
+  geom_hline(yintercept=0.0,linetype=2) +
+  ylim(10.5,12) +
+  theme(axis.title.y = element_blank()) +
+  theme(legend.position='none') +
+  geom_signif(y_position = c(11.5), 
+              xmin = c(1), 
+              xmax = c(2),
+              annotation = c(nugget_3), tip_length = 0.01)
+model_4d_plot
+
+Fig_4cd <- ggarrange(SN_plot, model_4d_plot, labels = c("4C", "4D"), nrow = 1,
+common.legend = FALSE, widths = c(1.75, 0.5))
+
+ggsave(filename = "./Figures/Fig_4cd.svg", plot = Fig_4cd, device = "svg",
+       width = 15, height = 5, units = "in")
 
