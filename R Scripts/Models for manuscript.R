@@ -14,6 +14,11 @@ library("plotrix") # for std.error function
 # Data ####
 ht_dat <- read.csv(file="./Data/Output/manuscript_dat.csv")
 
+# Native list ######
+# list of native and non-natives following the order of invasives that appear in EMMEANS
+native_list <- c("Non-native","Non-native","Native","Non-native","Non-native",
+                 "Native","Native","Native","Native", "Native")
+
 
 # Manuscript Body Analyses #####
 # These are models that go into the main figures or are connected to the main text of the manuscript
@@ -47,8 +52,6 @@ write.csv(biomass_summary, "./Data/Models/model1.csv")
 Anova(model_1)
 summary(model_1)
 
-native_list <- c("Non-native","Non-native","Native","Non-native","Non-native",
-                 "Native","Native","Native","Native", "Native")
 
 # apply native vs non-native list to lsm table
 biomass_group <- add_grouping(biomass_lsm, "Exo", "tree", native_list)
@@ -248,18 +251,75 @@ mod8_cld <- cld(emmeans(model_8, ~ tree, type="response"), adjust="scheffe", typ
 mod8_summary <- ht_dat %>% 
   filter(treatment == 'bag') %>%
   group_by(tree,exo) %>% 
-  summarise(mean_nitrogen = mean(herbivore_average_n), sem = std.error(herbivore_average_n, na.rm=TRUE)) %>%
+  summarise(mean_carbon = mean(herbivore_average_c), sem = std.error(herbivore_average_c, na.rm=TRUE)) %>%
   left_join(y=mod8_cld , by = c("tree")) %>%
   as.data.frame()
 # write csv for summary table to use in figure generation
-write.csv(mod7_summary, "./Data/Models/model8.csv")
+write.csv(mod8_summary, "./Data/Models/model8.csv")
 
 
 # Model 9: Spider N ####
+model_9 <- glm(spider_average_n ~ tree, data=ht_dat)
+
+mod9_lsm <- emmeans(model_9, ~ tree, type="response")
+
+mod9_cld <- cld(mod9_lsm, adjust="scheffe", type="response", sort=FALSE)
+
+
+# mean, total, SEM
+mod9_summary <- ht_dat %>% 
+  filter(treatment == 'bag') %>%
+  group_by(tree,exo) %>% 
+  summarise(mean_nitrogen = mean(spider_average_n), sem = std.error(spider_average_n, na.rm=TRUE)) %>%
+  left_join(y=mod9_cld , by = c("tree")) %>%
+  as.data.frame()
+# write csv for summary table to use in figure generation
+write.csv(mod9_summary, "./Data/Models/model9.csv")
+
+
+# posthoc test
+# apply native vs non-native list to lsm table
+mod9_group <- add_grouping(mod9_lsm, "Exo", "tree", native_list)
+mod9_group
+
+# write the contrast, then save the contrast values and round to nearest 3rd decimal
+mod9_contrast <- emmeans(mod9_group, pairwise ~ Exo)
+
+mod9_contrast$emmeans %>% 
+  as.data.frame() %>% 
+  mutate(across(where(is.numeric), ~ round(., 3))) %>%
+  write.csv("./Data/Models/mod9_posthoc.csv")
 
 
 
-# Model 10: Spider CN ####
+
+
+
+
+
+# Model 10: Spider C ####
+model_10 <- glm(spider_average_c ~ tree, data=ht_dat)
+
+mod10_lsm <- emmeans(model_10, ~ tree, type="response")
+
+mod10_cld <- cld(mod10_lsm, adjust="scheffe", type="response", sort=FALSE)
+
+
+# mean, total, SEM
+mod10_summary <- ht_dat %>% 
+  filter(treatment == 'bag') %>%
+  group_by(tree,exo) %>% 
+  summarise(mean_carbon = mean(spider_average_c), sem = std.error(spider_average_c, na.rm=TRUE)) %>%
+  left_join(y=mod10_cld , by = c("tree")) %>%
+  as.data.frame()
+# write csv for summary table to use in figure generation
+write.csv(mod10_summary, "./Data/Models/model10.csv")
+
+
+
+
+
+
 
 
 
