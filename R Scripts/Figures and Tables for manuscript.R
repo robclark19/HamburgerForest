@@ -12,11 +12,12 @@ library("ggpubr")
 library("plotrix") # for std.error function
 library("ggsignif")
 
-# Plant arrangment rule ######
+# Plant arrangement rule ######
 # Arrange in order of native vs exotic
 biomass_order <- c("Beech","Musclewood","Shadbush","Striped Maple", "Sweet Birch", "Witch-hazel", "Autumn Olive", "Barberry", "Burning Bush", "Honeysuckle")
 
 # plant letter codes #####
+# do we need to move sweet birch and shadbush to keep things in alphabetical order?
 plant_short = c("Beech" = "BE",
                 "Musclewood" = "MW",
                 "Shadbush" = "SH",
@@ -39,21 +40,21 @@ biomass_plot <- ggplot(data=biomass_summary, aes(x = tree, y = response, shape=e
   theme_bw(base_size=16) +
   geom_point(size=4.5) +
   geom_errorbar(aes(ymin=response-(SE), ymax=response+(SE), width=0)) +
-  ylab("Biomass on bagged branches (g)") +
+  ylab("Arthropod biomass (g)") +
   xlab("Plant species") +
-  guides(shape=guide_legend(title="", title.position = "left")) +
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
         panel.background = element_blank(), axis.line = element_line(colour = "black")) +
   theme(legend.position="none") +
   geom_signif(comparisons = list(c("Shadbush", "Barberry")), 
               y_position = 0.155,
               tip_length = 0.05,
-              annotation = c("See Fig 1b")) +
+              annotation = c("Planned contrast groups")) +
   geom_signif(y_position = c(0.155), 
               xmin = c(0.9, 6.9), 
               xmax = c(6.1, 10.1),
   annotation = c(" ", " "), tip_length = 0.01) +
-  scale_x_discrete(labels=plant_short)
+  scale_x_discrete(labels=plant_short) +
+  ylim(0.06,0.165)
 biomass_plot 
 
 # Fig 1b: Biomass posthoc ####
@@ -76,8 +77,9 @@ biomass_posthoc_plot <- ggplot(data=mod1_posthoc, aes(x = Exo, y = response,shap
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
         panel.background = element_blank(), axis.line = element_line(colour = "black")) +
   geom_hline(yintercept=0.0,linetype=2) +
-  ylim(0.06,0.16) +
-  theme(axis.title.y = element_blank()) +
+  ylim(0.06,0.165) +
+  theme(axis.title.y = element_blank(),
+        axis.text.y = element_blank()) +
   theme(legend.position='none') +
   geom_signif(y_position = c(0.12), 
               xmin = c(1), 
@@ -86,11 +88,11 @@ biomass_posthoc_plot <- ggplot(data=mod1_posthoc, aes(x = Exo, y = response,shap
 biomass_posthoc_plot
 
 # merge 1a and 1b
-Fig_1ab <- ggarrange(biomass_plot, biomass_posthoc_plot, labels = c("1A", "1B"), nrow = 1,
+Fig_1ab <- ggarrange(biomass_plot, biomass_posthoc_plot, labels = c("", ""), nrow = 1,
                      common.legend = FALSE, widths = c(1.75, 0.5))
 
 ggsave(filename = "./Figures/Fig_1ab.svg", plot = Fig_1ab , device = "svg",
-       width = 10, height = 2.5, units = "in")
+       width = 10, height = 4, units = "in", scale = 0.9)
 
 
 
@@ -143,19 +145,19 @@ lrr_plot <- ggplot(data=mod2a_lsm, aes(x = tree, y = LRR_mean, shape=exo)) +
   geom_errorbar(aes(ymin=LRR_mean-(LRR_sem), ymax=LRR_mean+(LRR_sem), width=0)) +
   ylab("Bird effect on biomass (LRR)") +
   xlab("Plant species") +
-  guides(shape=guide_legend(title="", title.position = "left")) +
+  theme(legend.position="none") +
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
         panel.background = element_blank(), axis.line = element_line(colour = "black")) +
-  theme(legend.position = c(0.075,0.3)) +
   geom_signif(comparisons = list(c("Shadbush", "Barberry")), 
               y_position = 1.35,
               tip_length = 0.05,
-              annotation = c("See Fig 2b")) +
+              annotation = c("Planned contrast groups")) +
   geom_signif(y_position = c(1.35), 
               xmin = c(0.9, 6.9), 
               xmax = c(6.1, 10.1),
               annotation = c(" ", " "), tip_length = 0.01) +
   geom_hline(yintercept=0.0,linetype=2)  +
+  scale_x_discrete(labels=plant_short) +
   ylim(-0.25,1.5)
 lrr_plot
 
@@ -173,25 +175,27 @@ lrr_posthoc <- ggplot(data=model_2a_posthoc, aes(x = Exo, y = emmean,shape=Exo))
   geom_errorbar(aes(ymin=emmean -(SE), ymax=emmean +(SE), width=0)) +
   ylab("Bird effect on biomass (LRR)") +
   xlab("Plant group") +
-  guides(shape=guide_legend(title="", title.position = "left")) +
+  guides(shape=guide_legend(title="none")) +
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
         panel.background = element_blank(), axis.line = element_line(colour = "black")) +
   geom_hline(yintercept=0.0,linetype=2) +
   ylim(-0.25,1.5) +
-  theme(axis.title.y = element_blank()) +
+  theme(axis.title.y = element_blank(),
+        axis.text.y = element_blank()) +
   theme(legend.position='none') +
   geom_signif(y_position = c(1), 
               xmin = c(1), 
               xmax = c(2),
               annotation = c(nugget_1), tip_length = 0.01)
-lrr_posthoc
+
 
 # merge 2a and 2b
-Fig_2ab <- ggarrange(lrr_plot, lrr_posthoc , labels = c("2A", "2B"), nrow = 1,
+Fig_2ab <- ggarrange(lrr_plot, lrr_posthoc , labels = c("", ""), nrow = 1,
                      common.legend = FALSE, widths = c(1.75, 0.5))
 
 ggsave(filename = "./Figures/Fig_2ab.svg", plot = Fig_2ab , device = "svg",
-              width = 15, height = 5, units = "in")
+       width = 10, height = 4, units = "in", scale = 0.9)
+
 
 
 
@@ -308,7 +312,7 @@ HN_plot <- ggplot(data=mod7_summary , aes(x = tree, y = mean_nitrogen, shape=exo
   theme_bw(base_size=16) +
   geom_point(size=4.5) +
   geom_errorbar(aes(ymin=mean_nitrogen-(sem), ymax=mean_nitrogen+(sem), width=0)) +
-  ylab("% N content of insect herbivores") +
+  ylab("% N content of herbivores") +
   xlab("Plant species") +
   guides(shape=guide_legend(title="", title.position = "left")) +
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
@@ -317,11 +321,13 @@ HN_plot <- ggplot(data=mod7_summary , aes(x = tree, y = mean_nitrogen, shape=exo
   geom_signif(comparisons = list(c("Shadbush", "Barberry")), 
               y_position = 11.5,
               tip_length = 0.235,
-              annotation = c("See Fig. 4b")) +
+              annotation = c("Planned contrast groups")) +
   geom_signif(y_position = c(11.2), 
               xmin = c(0.9, 6.9), 
               xmax = c(6.1, 10),
-              annotation = c(" ", " "), tip_length = 0.01)
+              annotation = c(" ", " "), tip_length = 0.01) +
+  scale_x_discrete(labels=plant_short) +
+  ylim(9.25,11.75)
 HN_plot
 
 # 4b: Herbivore posthoc ####
@@ -342,8 +348,9 @@ model_4b_plot <- ggplot(data=model_4b_posthoc, aes(x = Exo, y = emmean,shape=Exo
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
         panel.background = element_blank(), axis.line = element_line(colour = "black")) +
   geom_hline(yintercept=0.0,linetype=2) +
-  ylim(9.5,11.5) +
-  theme(axis.title.y = element_blank()) +
+  ylim(9,12) +
+  theme(axis.title.y = element_blank(),
+        axis.text.y = element_blank()) +
   theme(legend.position='none') +
   geom_signif(y_position = c(10.5), 
               xmin = c(1), 
@@ -355,11 +362,11 @@ model_4b_plot
 
 
 # Merge 4a4b ####
-Fig_4ab <- ggarrange(HN_plot, model_4b_plot, labels = c("4A", "4B"), nrow = 1,
+Fig_4ab <- ggarrange(HN_plot, model_4b_plot, labels = c("4A", ""), nrow = 1,
                      common.legend = FALSE, widths = c(1.75, 0.5))
 
 ggsave(filename = "./Figures/Fig_4ab.svg", plot = Fig_4ab , device = "svg",
-       width = 15, height = 5, units = "in")
+       width = 10, height = 4, units = "in", scale = 0.9)
 
 
 
@@ -383,11 +390,13 @@ SN_plot <- ggplot(data=mod9_summary , aes(x = tree, y = mean_nitrogen, shape=exo
   geom_signif(comparisons = list(c("Shadbush", "Barberry")), 
               y_position = 11.9,
               tip_length = 0.195,
-              annotation = c("See Fig. 4d")) +
+              annotation = c("Planned contrast groups")) +
   geom_signif(y_position = c(11.7), 
               xmin = c(0.9, 6.9), 
               xmax = c(6.1, 10),
-              annotation = c(" ", " "), tip_length = 0.01)
+              annotation = c(" ", " "), tip_length = 0.01) +
+  scale_x_discrete(labels=plant_short)  +
+  ylim(10.25,12.25)
 SN_plot
 
 
@@ -411,8 +420,9 @@ model_4d_plot <- ggplot(data=model_4d_posthoc, aes(x = Exo, y = emmean,shape=Exo
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
         panel.background = element_blank(), axis.line = element_line(colour = "black")) +
   geom_hline(yintercept=0.0,linetype=2) +
-  ylim(10.5,12) +
-  theme(axis.title.y = element_blank()) +
+  ylim(10.25,12.25) +
+  theme(axis.title.y = element_blank(),
+        axis.text.y = element_blank()) +
   theme(legend.position='none') +
   geom_signif(y_position = c(11.5), 
               xmin = c(1), 
@@ -420,9 +430,9 @@ model_4d_plot <- ggplot(data=model_4d_posthoc, aes(x = Exo, y = emmean,shape=Exo
               annotation = c(nugget_3), tip_length = 0.01)
 model_4d_plot
 
-Fig_4cd <- ggarrange(SN_plot, model_4d_plot, labels = c("4C", "4D"), nrow = 1,
+Fig_4cd <- ggarrange(SN_plot, model_4d_plot, labels = c("4B", ""), nrow = 1,
 common.legend = FALSE, widths = c(1.75, 0.5))
 
 ggsave(filename = "./Figures/Fig_4cd.svg", plot = Fig_4cd, device = "svg",
-       width = 15, height = 5, units = "in")
+       width = 10, height = 4, units = "in", scale = 0.9)
 
