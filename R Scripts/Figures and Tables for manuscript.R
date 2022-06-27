@@ -16,7 +16,17 @@ library("ggsignif")
 # Arrange in order of native vs exotic
 biomass_order <- c("Beech","Musclewood","Shadbush","Striped Maple", "Sweet Birch", "Witch-hazel", "Autumn Olive", "Barberry", "Burning Bush", "Honeysuckle")
 
-
+# plant letter codes #####
+plant_short = c("Beech" = "BE",
+                "Musclewood" = "MW",
+                "Shadbush" = "SH",
+                "Striped Maple" = "SM",
+                "Sweet Birch" = "SB",
+                "Witch-hazel" = "WH",
+                "Autumn Olive" = "AO",
+                "Barberry" = "BA",
+                "Burning Bush" = "BU",
+                "Honeysuckle" = "HS")
 
 # Fig 1a: Bagged biomass ####
 biomass_summary <- read.csv("./Data/Models/model1.csv")
@@ -42,7 +52,8 @@ biomass_plot <- ggplot(data=biomass_summary, aes(x = tree, y = response, shape=e
   geom_signif(y_position = c(0.155), 
               xmin = c(0.9, 6.9), 
               xmax = c(6.1, 10.1),
-    annotation = c(" ", " "), tip_length = 0.01)
+  annotation = c(" ", " "), tip_length = 0.01) +
+  scale_x_discrete(labels=plant_short)
 biomass_plot 
 
 # Fig 1b: Biomass posthoc ####
@@ -79,7 +90,7 @@ Fig_1ab <- ggarrange(biomass_plot, biomass_posthoc_plot, labels = c("1A", "1B"),
                      common.legend = FALSE, widths = c(1.75, 0.5))
 
 ggsave(filename = "./Figures/Fig_1ab.svg", plot = Fig_1ab , device = "svg",
-       width = 15, height = 5, units = "in")
+       width = 10, height = 2.5, units = "in")
 
 
 
