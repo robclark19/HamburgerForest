@@ -12,6 +12,10 @@ library("ggpubr")
 library("plotrix") # for std.error function
 library("ggsignif")
 
+# problem solving links
+# https://stackoverflow.com/questions/20041136/avoid-ggplot-sorting-the-x-axis-while-plotting-geom-bar
+# https://stackoverflow.com/questions/11889625/annotating-text-on-individual-facet-in-ggplot2
+
 # Plant arrangement rule ######
 # Arrange in order of native vs exotic
 biomass_order <- c("Beech","Musclewood","Shadbush","Striped Maple", "Sweet Birch", "Witch-hazel", "Autumn Olive", "Barberry", "Burning Bush", "Honeysuckle")
