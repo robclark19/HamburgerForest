@@ -25,6 +25,9 @@ native_list <- c("Non-native","Non-native","Native","Non-native","Non-native",
 
 # Model 1: Bagged biomass #####
 model_1 <- lmer(log(wet_mass_g) ~ tree +  (1 | branch_code), data = subset(ht_dat, treatment=="bag"))
+model_1 <- lmer(log(wet_mass_g) ~ tree + treatment + (1 | branch_code), data = ht_dat)
+
+Anova(model_1)
 
 biomass_lsm <- emmeans(model_1, ~ tree, type="response")
 

@@ -9,6 +9,9 @@
       stroke-linejoin: round;
       stroke-miterlimit: 10.00;
     }
+    .svglite text {
+      white-space: pre;
+    }
   ]]></style>
 </defs>
 <rect width='100%' height='100%' style='stroke: none; fill: none;'/>
@@ -75,15 +78,15 @@
 <polyline points='469.69,71.94 469.69,71.94 ' style='stroke-width: 1.07; stroke-linecap: butt;' />
 <polyline points='469.69,71.94 469.69,97.38 ' style='stroke-width: 1.07; stroke-linecap: butt;' />
 <polyline points='469.69,97.38 469.69,97.38 ' style='stroke-width: 1.07; stroke-linecap: butt;' />
-<text x='272.18' y='27.96' text-anchor='middle' style='font-size: 11.04px; font-family: Arial;' textLength='119.58px' lengthAdjust='spacingAndGlyphs'>Planned contrast groups</text>
+<text x='272.18' y='27.96' text-anchor='middle' style='font-size: 11.04px; font-family: "Arial";' textLength='119.58px' lengthAdjust='spacingAndGlyphs'>Planned contrast groups</text>
 <line x1='381.91' y1='57.86' x2='381.91' y2='30.01' style='stroke-width: 1.07;' />
 <line x1='381.91' y1='30.01' x2='162.45' y2='30.01' style='stroke-width: 1.07;' />
 <line x1='162.45' y1='30.01' x2='162.45' y2='57.86' style='stroke-width: 1.07;' />
-<text x='184.40' y='56.26' text-anchor='middle' style='font-size: 11.04px; font-family: Arial;' textLength='3.07px' lengthAdjust='spacingAndGlyphs'> </text>
+<text x='184.40' y='56.26' text-anchor='middle' style='font-size: 11.04px; font-family: "Arial";' textLength='3.07px' lengthAdjust='spacingAndGlyphs'> </text>
 <line x1='70.28' y1='59.50' x2='70.28' y2='58.31' style='stroke-width: 1.07;' />
 <line x1='70.28' y1='58.31' x2='298.52' y2='58.31' style='stroke-width: 1.07;' />
 <line x1='298.52' y1='58.31' x2='298.52' y2='59.50' style='stroke-width: 1.07;' />
-<text x='401.66' y='56.26' text-anchor='middle' style='font-size: 11.04px; font-family: Arial;' textLength='3.07px' lengthAdjust='spacingAndGlyphs'> </text>
+<text x='401.66' y='56.26' text-anchor='middle' style='font-size: 11.04px; font-family: "Arial";' textLength='3.07px' lengthAdjust='spacingAndGlyphs'> </text>
 <line x1='333.63' y1='59.50' x2='333.63' y2='58.31' style='stroke-width: 1.07;' />
 <line x1='333.63' y1='58.31' x2='469.69' y2='58.31' style='stroke-width: 1.07;' />
 <line x1='469.69' y1='58.31' x2='469.69' y2='59.50' style='stroke-width: 1.07;' />
@@ -91,8 +94,8 @@
 </g>
 <g clip-path='url(#cpMC4wMHw2NDguMDB8MC4wMHwyNTkuMjA=)'>
 <polyline points='48.33,213.08 48.33,7.97 ' style='stroke-width: 1.55; stroke-linecap: butt;' />
-<text x='41.16' y='152.40' text-anchor='end' style='font-size: 12.80px; fill: #4D4D4D; font-family: Arial;' textLength='14.23px' lengthAdjust='spacingAndGlyphs'>10</text>
-<text x='41.16' y='77.81' text-anchor='end' style='font-size: 12.80px; fill: #4D4D4D; font-family: Arial;' textLength='13.28px' lengthAdjust='spacingAndGlyphs'>11</text>
+<text x='41.16' y='152.40' text-anchor='end' style='font-size: 12.80px;fill: #4D4D4D; font-family: "Arial";' textLength='14.23px' lengthAdjust='spacingAndGlyphs'>10</text>
+<text x='41.16' y='77.81' text-anchor='end' style='font-size: 12.80px;fill: #4D4D4D; font-family: "Arial";' textLength='13.28px' lengthAdjust='spacingAndGlyphs'>11</text>
 <polyline points='44.35,147.82 48.33,147.82 ' style='stroke-width: 1.55; stroke: #333333; stroke-linecap: butt;' />
 <polyline points='44.35,73.23 48.33,73.23 ' style='stroke-width: 1.55; stroke: #333333; stroke-linecap: butt;' />
 <polyline points='48.33,213.08 496.03,213.08 ' style='stroke-width: 1.55; stroke-linecap: butt;' />
@@ -106,19 +109,19 @@
 <polyline points='381.91,217.06 381.91,213.08 ' style='stroke-width: 1.55; stroke: #333333; stroke-linecap: butt;' />
 <polyline points='425.80,217.06 425.80,213.08 ' style='stroke-width: 1.55; stroke: #333333; stroke-linecap: butt;' />
 <polyline points='469.69,217.06 469.69,213.08 ' style='stroke-width: 1.55; stroke: #333333; stroke-linecap: butt;' />
-<text x='74.67' y='229.41' text-anchor='middle' style='font-size: 12.80px; fill: #4D4D4D; font-family: Arial;' textLength='17.06px' lengthAdjust='spacingAndGlyphs'>BE</text>
-<text x='118.56' y='229.41' text-anchor='middle' style='font-size: 12.80px; fill: #4D4D4D; font-family: Arial;' textLength='22.73px' lengthAdjust='spacingAndGlyphs'>MW</text>
-<text x='162.45' y='229.41' text-anchor='middle' style='font-size: 12.80px; fill: #4D4D4D; font-family: Arial;' textLength='17.77px' lengthAdjust='spacingAndGlyphs'>SH</text>
-<text x='206.34' y='229.41' text-anchor='middle' style='font-size: 12.80px; fill: #4D4D4D; font-family: Arial;' textLength='19.19px' lengthAdjust='spacingAndGlyphs'>SM</text>
-<text x='250.23' y='229.41' text-anchor='middle' style='font-size: 12.80px; fill: #4D4D4D; font-family: Arial;' textLength='17.06px' lengthAdjust='spacingAndGlyphs'>SB</text>
-<text x='294.13' y='229.41' text-anchor='middle' style='font-size: 12.80px; fill: #4D4D4D; font-family: Arial;' textLength='21.31px' lengthAdjust='spacingAndGlyphs'>WH</text>
-<text x='338.02' y='229.41' text-anchor='middle' style='font-size: 12.80px; fill: #4D4D4D; font-family: Arial;' textLength='18.48px' lengthAdjust='spacingAndGlyphs'>AO</text>
-<text x='381.91' y='229.41' text-anchor='middle' style='font-size: 12.80px; fill: #4D4D4D; font-family: Arial;' textLength='17.06px' lengthAdjust='spacingAndGlyphs'>BA</text>
-<text x='425.80' y='229.41' text-anchor='middle' style='font-size: 12.80px; fill: #4D4D4D; font-family: Arial;' textLength='17.77px' lengthAdjust='spacingAndGlyphs'>BU</text>
-<text x='469.69' y='229.41' text-anchor='middle' style='font-size: 12.80px; fill: #4D4D4D; font-family: Arial;' textLength='17.77px' lengthAdjust='spacingAndGlyphs'>HS</text>
-<text x='272.18' y='247.71' text-anchor='middle' style='font-size: 16.00px; font-family: Arial;' textLength='95.16px' lengthAdjust='spacingAndGlyphs'>Plant species</text>
-<text transform='translate(19.43,110.52) rotate(-90)' text-anchor='middle' style='font-size: 16.00px; font-family: Arial;' textLength='184.08px' lengthAdjust='spacingAndGlyphs'>% N content of herbivores</text>
-<text x='8.95' y='15.03' style='font-size: 14.00px; font-weight: bold; font-family: Arial;' textLength='17.89px' lengthAdjust='spacingAndGlyphs'>4A</text>
+<text x='74.67' y='229.41' text-anchor='middle' style='font-size: 12.80px;fill: #4D4D4D; font-family: "Arial";' textLength='17.06px' lengthAdjust='spacingAndGlyphs'>BE</text>
+<text x='118.56' y='229.41' text-anchor='middle' style='font-size: 12.80px;fill: #4D4D4D; font-family: "Arial";' textLength='22.73px' lengthAdjust='spacingAndGlyphs'>MW</text>
+<text x='162.45' y='229.41' text-anchor='middle' style='font-size: 12.80px;fill: #4D4D4D; font-family: "Arial";' textLength='17.77px' lengthAdjust='spacingAndGlyphs'>SH</text>
+<text x='206.34' y='229.41' text-anchor='middle' style='font-size: 12.80px;fill: #4D4D4D; font-family: "Arial";' textLength='19.19px' lengthAdjust='spacingAndGlyphs'>SM</text>
+<text x='250.23' y='229.41' text-anchor='middle' style='font-size: 12.80px;fill: #4D4D4D; font-family: "Arial";' textLength='17.06px' lengthAdjust='spacingAndGlyphs'>SB</text>
+<text x='294.13' y='229.41' text-anchor='middle' style='font-size: 12.80px;fill: #4D4D4D; font-family: "Arial";' textLength='21.31px' lengthAdjust='spacingAndGlyphs'>WH</text>
+<text x='338.02' y='229.41' text-anchor='middle' style='font-size: 12.80px;fill: #4D4D4D; font-family: "Arial";' textLength='18.48px' lengthAdjust='spacingAndGlyphs'>AO</text>
+<text x='381.91' y='229.41' text-anchor='middle' style='font-size: 12.80px;fill: #4D4D4D; font-family: "Arial";' textLength='17.06px' lengthAdjust='spacingAndGlyphs'>BA</text>
+<text x='425.80' y='229.41' text-anchor='middle' style='font-size: 12.80px;fill: #4D4D4D; font-family: "Arial";' textLength='17.77px' lengthAdjust='spacingAndGlyphs'>BU</text>
+<text x='469.69' y='229.41' text-anchor='middle' style='font-size: 12.80px;fill: #4D4D4D; font-family: "Arial";' textLength='17.77px' lengthAdjust='spacingAndGlyphs'>HS</text>
+<text x='272.18' y='247.71' text-anchor='middle' style='font-size: 16.00px; font-family: "Arial";' textLength='95.16px' lengthAdjust='spacingAndGlyphs'>Plant species</text>
+<text transform='translate(19.43,110.52) rotate(-90)' text-anchor='middle' style='font-size: 16.00px; font-family: "Arial";' textLength='184.08px' lengthAdjust='spacingAndGlyphs'>% N content of herbivores</text>
+<text x='8.95' y='15.03' style='font-size: 14.00px; font-weight: bold; font-family: "Arial";' textLength='17.89px' lengthAdjust='spacingAndGlyphs'>4A</text>
 </g>
 <defs>
   <clipPath id='cpNTA0LjAwfDY0OC4wMHwwLjAwfDI1OS4yMA=='>
@@ -138,16 +141,16 @@
 <g clip-path='url(#cpNTE1Ljk2fDY0MC4wM3w3Ljk3fDIxMy4wOA==)'>
 <circle cx='549.79' cy='149.25' r='5.16' style='stroke-width: 0.71; stroke: none; fill: #000000;' />
 <polygon points='606.19,118.36 613.13,130.38 599.25,130.38 ' style='stroke-width: 0.71; stroke: none; fill: #000000;' />
-<polyline points='549.79,144.83 549.79,144.83 ' style='stroke-width: 1.07; stroke-linecap: butt;' />
-<polyline points='549.79,144.83 549.79,153.66 ' style='stroke-width: 1.07; stroke-linecap: butt;' />
-<polyline points='549.79,153.66 549.79,153.66 ' style='stroke-width: 1.07; stroke-linecap: butt;' />
-<polyline points='606.19,121.09 606.19,121.09 ' style='stroke-width: 1.07; stroke-linecap: butt;' />
-<polyline points='606.19,121.09 606.19,131.66 ' style='stroke-width: 1.07; stroke-linecap: butt;' />
-<polyline points='606.19,131.66 606.19,131.66 ' style='stroke-width: 1.07; stroke-linecap: butt;' />
-<text x='577.99' y='108.47' text-anchor='middle' style='font-size: 11.04px; font-family: Arial;' textLength='47.34px' lengthAdjust='spacingAndGlyphs'>P = 0.001</text>
-<line x1='549.79' y1='116.94' x2='549.79' y2='110.52' style='stroke-width: 1.07;' />
+<polyline points='549.79,140.54 549.79,140.54 ' style='stroke-width: 1.07; stroke-linecap: butt;' />
+<polyline points='549.79,140.54 549.79,157.89 ' style='stroke-width: 1.07; stroke-linecap: butt;' />
+<polyline points='549.79,157.89 549.79,157.89 ' style='stroke-width: 1.07; stroke-linecap: butt;' />
+<polyline points='606.19,115.99 606.19,115.99 ' style='stroke-width: 1.07; stroke-linecap: butt;' />
+<polyline points='606.19,115.99 606.19,136.69 ' style='stroke-width: 1.07; stroke-linecap: butt;' />
+<polyline points='606.19,136.69 606.19,136.69 ' style='stroke-width: 1.07; stroke-linecap: butt;' />
+<text x='577.99' y='108.47' text-anchor='middle' style='font-size: 11.04px; font-family: "Arial";' textLength='47.34px' lengthAdjust='spacingAndGlyphs'>P = 0.001</text>
+<line x1='549.79' y1='117.00' x2='549.79' y2='110.52' style='stroke-width: 1.07;' />
 <line x1='549.79' y1='110.52' x2='606.19' y2='110.52' style='stroke-width: 1.07;' />
-<line x1='606.19' y1='110.52' x2='606.19' y2='116.94' style='stroke-width: 1.07;' />
+<line x1='606.19' y1='110.52' x2='606.19' y2='117.00' style='stroke-width: 1.07;' />
 <rect x='515.96' y='7.97' width='124.07' height='205.11' style='stroke-width: 1.55; stroke: #333333;' />
 </g>
 <g clip-path='url(#cpMC4wMHw2NDguMDB8MC4wMHwyNTkuMjA=)'>
@@ -159,8 +162,8 @@
 <polyline points='515.96,213.08 640.03,213.08 ' style='stroke-width: 1.55; stroke-linecap: butt;' />
 <polyline points='549.79,217.06 549.79,213.08 ' style='stroke-width: 1.55; stroke: #333333; stroke-linecap: butt;' />
 <polyline points='606.19,217.06 606.19,213.08 ' style='stroke-width: 1.55; stroke: #333333; stroke-linecap: butt;' />
-<text x='549.79' y='229.41' text-anchor='middle' style='font-size: 12.80px; fill: #4D4D4D; font-family: Arial;' textLength='36.27px' lengthAdjust='spacingAndGlyphs'>Native</text>
-<text x='606.19' y='229.41' text-anchor='middle' style='font-size: 12.80px; fill: #4D4D4D; font-family: Arial;' textLength='61.87px' lengthAdjust='spacingAndGlyphs'>Non-native</text>
-<text x='577.99' y='247.71' text-anchor='middle' style='font-size: 16.00px; font-family: Arial;' textLength='81.84px' lengthAdjust='spacingAndGlyphs'>Plant group</text>
+<text x='549.79' y='229.41' text-anchor='middle' style='font-size: 12.80px;fill: #4D4D4D; font-family: "Arial";' textLength='36.27px' lengthAdjust='spacingAndGlyphs'>Native</text>
+<text x='606.19' y='229.41' text-anchor='middle' style='font-size: 12.80px;fill: #4D4D4D; font-family: "Arial";' textLength='61.87px' lengthAdjust='spacingAndGlyphs'>Non-native</text>
+<text x='577.99' y='247.71' text-anchor='middle' style='font-size: 16.00px; font-family: "Arial";' textLength='81.84px' lengthAdjust='spacingAndGlyphs'>Plant group</text>
 </g>
 </svg>

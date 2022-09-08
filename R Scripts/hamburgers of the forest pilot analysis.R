@@ -401,7 +401,8 @@ trophic_dat <- trophic_dat %>% anti_join(bc_drop, by = "branch_code", copy=TRUE)
 str(trophic_dat)
 
 # aquatic glmm ####
-aquatics.glm <- glm.nb(aquatics ~ treatment*tree, data=trophic_dat)
+aquatics.glm <- glm.nb(aquatics ~ treatment + tree, data=trophic_dat)
+Anova(aquatics.glm)
 summary(aquatics.glm)
 
 # aquatic glmm #

@@ -58,7 +58,7 @@ biomass_plot <- ggplot(data=biomass_summary, aes(x = tree, y = response, shape=e
               xmax = c(6.1, 10.1),
   annotation = c(" ", " "), tip_length = 0.01) +
   scale_x_discrete(labels=plant_short) +
-  ylim(0.06,0.165)
+  ylim(0.00,0.165)
 biomass_plot 
 
 # Fig 1b: Biomass posthoc ####
@@ -345,7 +345,7 @@ nugget_2 <- "P = 0.001"
 model_4b_plot <- ggplot(data=model_4b_posthoc, aes(x = Exo, y = emmean,shape=Exo)) +
   theme_bw(base_size=16) +
   geom_point(size=4.5) +
-  geom_errorbar(aes(ymin=emmean -(SE), ymax=emmean +(SE), width=0)) +
+  geom_errorbar(aes(ymin=lower.CL, ymax=upper.CL, width=0)) +
   ylab("") +
   xlab("Plant group") +
   guides(shape=guide_legend(title="", title.position = "left")) +
@@ -417,7 +417,7 @@ nugget_3 <- "P = 0.002"
 model_4d_plot <- ggplot(data=model_4d_posthoc, aes(x = Exo, y = emmean,shape=Exo)) +
   theme_bw(base_size=16) +
   geom_point(size=4.5) +
-  geom_errorbar(aes(ymin=emmean -(SE), ymax=emmean +(SE), width=0)) +
+  geom_errorbar(aes(ymin=lower.CL, ymax=upper.CL, width=0)) +
   ylab("") +
   xlab("Plant group") +
   guides(shape=guide_legend(title="", title.position = "left")) +
