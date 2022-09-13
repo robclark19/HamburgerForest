@@ -38,9 +38,9 @@ biomass_cld <- cld(biomass_lsm, adjust="none", type="response")
 # mean, total, SEM
 
 biomass_summary <- ht_dat %>% 
-  filter(treatment == 'bag') %>%
+  # filter(treatment == 'bag') %>%
   group_by(tree,exo) %>% 
-  summarise(biomass_mean = mean(wet_mass_g), sem = std.error(wet_mass_g, na.rm=TRUE)) 
+  summarise(biomass_mean = mean(wet_mass_g, na.rm=TRUE), sem = std.error(wet_mass_g, na.rm=TRUE)) 
 
 # merge biomass cld with biomass_summary
 biomass_summary <- biomass_summary %>%
@@ -63,10 +63,28 @@ str(biomass_group)
 # write the contrast, then save the contrast values and round to nearest 3rd decimal
 biomass_contrast <- emmeans(biomass_group, pairwise ~ Exo)
 
-biomass_contrast$emmeans %>% 
+# make an object with just emmeans
+bcm_1 <- biomass_contrast$emmeans %>% 
   as.data.frame() %>% 
-  mutate(across(where(is.numeric), ~ round(., 3))) %>%
-  write.csv("./Data/Models/model1_posthoc.csv")
+  mutate(across(where(is.numeric), ~ round(., 3))) 
+
+# make headers lower case
+names(bcm_1) <- tolower(names(bcm_1))
+bcm_1
+
+# find mean and SE for all native and non-native plants
+bcm_summary <- ht_dat %>% 
+  # filter(treatment == 'bag') %>%
+  group_by(exo) %>% 
+  summarise(biomass_mean = mean(wet_mass_g, na.rm=TRUE), sem = std.error(wet_mass_g, na.rm=TRUE)) 
+
+# merge biomass contrasts with mean and SE
+bcm_1 <- bcm_1 %>%
+  left_join(y=bcm_summary , by = c("exo"))%>%
+  as.data.frame()
+
+
+write.csv(bcm_1, "./Data/Models/model1_posthoc.csv")
 
 
 

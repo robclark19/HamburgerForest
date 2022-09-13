@@ -40,25 +40,27 @@ biomass_summary <- arrange(transform(biomass_summary, tree=factor(tree,levels=bi
 
 biomass_summary
 
-biomass_plot <- ggplot(data=biomass_summary, aes(x = tree, y = response, shape=exo)) +
+# great, now this uses actual mean and SEM, not parameter estimates
+
+biomass_plot <- ggplot(data=biomass_summary, aes(x = tree, y = biomass_mean, shape=exo)) +
   theme_bw(base_size=16) +
   geom_point(size=4.5) +
-  geom_errorbar(aes(ymin=response-(SE), ymax=response+(SE), width=0)) +
+  geom_errorbar(aes(ymin=biomass_mean-(sem), ymax=biomass_mean+(sem), width=0)) +
   ylab("Arthropod biomass (g)") +
   xlab("Plant species") +
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
         panel.background = element_blank(), axis.line = element_line(colour = "black")) +
   theme(legend.position="none") +
   geom_signif(comparisons = list(c("Shadbush", "Barberry")), 
-              y_position = 0.155,
+              y_position = 0.167,
               tip_length = 0.05,
               annotation = c("Planned contrast groups")) +
-  geom_signif(y_position = c(0.155), 
+  geom_signif(y_position = c(0.167), 
               xmin = c(0.9, 6.9), 
               xmax = c(6.1, 10.1),
   annotation = c(" ", " "), tip_length = 0.01) +
   scale_x_discrete(labels=plant_short) +
-  ylim(0.00,0.165)
+  ylim(0.06,0.175)
 biomass_plot 
 
 # Fig 1b: Biomass posthoc ####
@@ -67,28 +69,27 @@ mod1_posthoc <- read.csv("./Data/Models/model1_posthoc.csv")
 
 
 # import p-value #
-nugget_1 <- "P = 0.089" 
+nugget_1 <- "P = 0.133" 
 
-# this needs to use the same mean and SEM as the other figure, it currently does NOT
+# this needs to use the same mean and SEM as the other figure
 
-biomass_posthoc_plot <- ggplot(data=mod1_posthoc, aes(x = Exo, y = response,shape=Exo)) +
+biomass_posthoc_plot <- ggplot(data=mod1_posthoc, aes(x = exo, y = biomass_mean, shape=exo)) +
   theme_bw(base_size=16) +
   geom_point(size=4.5) +
-  geom_errorbar(aes(ymin=response -(SE), ymax=response +(SE), width=0)) +
+  geom_errorbar(aes(ymin=biomass_mean -(sem), ymax=biomass_mean +(sem), width=0)) +
   ylab("Arthropod biomass on bagged branches") +
   xlab("Plant group") +
   guides(shape=guide_legend(title="", title.position = "left")) +
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
         panel.background = element_blank(), axis.line = element_line(colour = "black")) +
-  geom_hline(yintercept=0.0,linetype=2) +
-  ylim(0.06,0.165) +
+  ylim(0.06,0.175) +
   theme(axis.title.y = element_blank(),
         axis.text.y = element_blank()) +
   theme(legend.position='none') +
-  geom_signif(y_position = c(0.12), 
+  geom_signif(y_position = c(0.13), 
               xmin = c(1), 
               xmax = c(2),
-              annotation = c(nugget_1), tip_length = 0.01)
+              annotation = c(nugget_1), tip_length = 0.02)
 biomass_posthoc_plot
 
 # merge 1a and 1b
