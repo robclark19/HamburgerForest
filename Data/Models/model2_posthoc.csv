@@ -1,2 +1,6 @@
-"","contrast","estimate","SE","df","t.ratio","p.value"
-"1","Native - (Non-native)",0.156,0.163,106,0.954,0.342
+"","Exo","emmean","SE","df","lower.CL","upper.CL"
+"1","Autumn Olive",0.704,0.249,106,0.21,1.198
+"2","Barberry",0.343,0.249,106,-0.151,0.837
+"3","Burning Bush",0.62,0.249,106,0.126,1.114
+"4","Honeysuckle",0.701,0.249,106,0.207,1.195
+"5","Native",0.748,0.105,106,0.539,0.956
