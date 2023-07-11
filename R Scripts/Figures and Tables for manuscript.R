@@ -11,6 +11,7 @@ library("emmeans")
 library("ggpubr")
 library("plotrix") # for std.error function
 library("ggsignif")
+library("patchwork")
 
 # problem solving links
 # https://stackoverflow.com/questions/20041136/avoid-ggplot-sorting-the-x-axis-while-plotting-geom-bar
@@ -51,14 +52,14 @@ biomass_plot <- ggplot(data=biomass_summary, aes(x = tree, y = biomass_mean, sha
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
         panel.background = element_blank(), axis.line = element_line(colour = "black")) +
   theme(legend.position="none") +
-  geom_signif(comparisons = list(c("Shadbush", "Barberry")), 
-              y_position = 0.167,
-              tip_length = 0.05,
-              annotation = c("Planned contrast groups")) +
-  geom_signif(y_position = c(0.167), 
-              xmin = c(0.9, 6.9), 
-              xmax = c(6.1, 10.1),
-  annotation = c(" ", " "), tip_length = 0.01) +
+  # geom_signif(comparisons = list(c("Shadbush", "Barberry")), 
+  #             y_position = 0.167,
+  #             tip_length = 0.05,
+  #             annotation = c("Planned contrast groups")) +
+  # geom_signif(y_position = c(0.167), 
+  #             xmin = c(0.9, 6.9), 
+  #             xmax = c(6.1, 10.1),
+  # annotation = c(" ", " "), tip_length = 0.01) +
   scale_x_discrete(labels=plant_short) +
   ylim(0.06,0.175)
 biomass_plot 
@@ -67,37 +68,94 @@ biomass_plot
 
 mod1_posthoc <- read.csv("./Data/Models/model1_posthoc.csv")
 
-
-# import p-value #
-nugget_1 <- "P = 0.133" 
-
-# this needs to use the same mean and SEM as the other figure
-
-biomass_posthoc_plot <- ggplot(data=mod1_posthoc, aes(x = exo, y = biomass_mean, shape=exo)) +
+b1 = ggplot(data=mod1_posthoc %>% filter(exo %in% c("Autumn Olive","Native")), aes(x = exo, y = biomass_mean)) +
   theme_bw(base_size=16) +
   geom_point(size=4.5) +
   geom_errorbar(aes(ymin=biomass_mean -(sem), ymax=biomass_mean +(sem), width=0)) +
-  ylab("Arthropod biomass on bagged branches") +
-  xlab("Plant group") +
+  labs(subtitle="A.",x="",y="") +
   guides(shape=guide_legend(title="", title.position = "left")) +
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
-        panel.background = element_blank(), axis.line = element_line(colour = "black")) +
+  panel.background = element_blank(), axis.line = element_line(colour = "black")) +
   ylim(0.06,0.175) +
-  theme(axis.title.y = element_blank(),
-        axis.text.y = element_blank()) +
+  # theme(axis.title.y = element_blank(),
+  #       axis.text.y = element_blank()) +
   theme(legend.position='none') +
-  geom_signif(y_position = c(0.13), 
-              xmin = c(1), 
-              xmax = c(2),
-              annotation = c(nugget_1), tip_length = 0.02)
-biomass_posthoc_plot
+  geom_signif(y_position = c(0.13),
+  xmin = c(1),
+  xmax = c(2),
+  annotation = c("P = 0.27"), tip_length = 0.02)
+b1
+
+b2 = ggplot(data=mod1_posthoc %>% filter(exo %in% c("Barberry","Native")), aes(x = exo, y = biomass_mean)) +
+  theme_bw(base_size=16) +
+  geom_point(size=4.5) +
+  geom_errorbar(aes(ymin=biomass_mean -(sem), ymax=biomass_mean +(sem), width=0)) +
+  labs(subtitle="B.",x="",y="") +
+  guides(shape=guide_legend(title="", title.position = "left")) +
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+  panel.background = element_blank(), axis.line = element_line(colour = "black")) +
+  ylim(0.06,0.175) +
+  # theme(axis.title.y = element_blank(),
+  #       axis.text.y = element_blank()) +
+  theme(legend.position='none') +
+  geom_signif(y_position = c(0.13),
+  xmin = c(1),
+  xmax = c(2),
+  annotation = c("P = 0.21"), tip_length = 0.02)
+b2
+
+b3 = ggplot(data=mod1_posthoc %>% filter(exo %in% c("Burning Bush","Native")), aes(x = exo, y = biomass_mean)) +
+  theme_bw(base_size=16) +
+  geom_point(size=4.5) +
+  geom_errorbar(aes(ymin=biomass_mean -(sem), ymax=biomass_mean +(sem), width=0)) +
+  labs(subtitle="C.",x="",y="") +
+  guides(shape=guide_legend(title="", title.position = "left")) +
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+  panel.background = element_blank(), axis.line = element_line(colour = "black")) +
+  ylim(0.06,0.175) +
+  # theme(axis.title.y = element_blank(),
+  #       axis.text.y = element_blank()) +
+  theme(legend.position='none') +
+  geom_signif(y_position = c(0.13),
+  xmin = c(1),
+  xmax = c(2),
+  annotation = c("P = 0.24"), tip_length = 0.02)
+b3
+
+b4 = ggplot(data=mod1_posthoc %>% filter(exo %in% c("Honeysuckle","Native")), aes(x = exo, y = biomass_mean)) +
+  theme_bw(base_size=16) +
+  geom_point(size=4.5) +
+  geom_errorbar(aes(ymin=biomass_mean -(sem), ymax=biomass_mean +(sem), width=0)) +
+  labs(subtitle="D.",x="",y="") +
+  guides(shape=guide_legend(title="", title.position = "left")) +
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+  panel.background = element_blank(), axis.line = element_line(colour = "black")) +
+  ylim(0.06,0.175) +
+  # theme(axis.title.y = element_blank(),
+  #       axis.text.y = element_blank()) +
+  theme(legend.position='none') +
+  geom_signif(y_position = c(0.16),
+  xmin = c(1),
+  xmax = c(2),
+  annotation = c("P = 0.56"), tip_length = 0.02)
+b4
+
+b_ag = (b1|b2)/(b3|b4)
+
+b_fin = wrap_elements(panel=b_ag) +
+labs(tag = "Arthropod biomass on bagged branches") +
+theme(
+plot.tag = element_text(size = rel(1.5), angle = 90),
+plot.tag.position = "left"
+)
+
+ggsave(filename = "./Figures/Fig_1_4p.svg", plot = b_fin , device = "svg",
+width = 10, height = 10, units = "in", scale = 0.9)
+
 
 # merge 1a and 1b
-Fig_1ab <- ggarrange(biomass_plot, biomass_posthoc_plot, labels = c("", ""), nrow = 1,
-                     common.legend = FALSE, widths = c(1.75, 0.5))
-
-ggsave(filename = "./Figures/Fig_1ab.svg", plot = Fig_1ab , device = "svg",
-       width = 10, height = 4, units = "in", scale = 0.9)
+ggsave(filename = "./Figures/Fig_1.svg", plot = biomass_plot , device = "svg",
+       width = 6, height = 4, units = "in", scale = 0.9)
 
 
 
@@ -153,14 +211,14 @@ lrr_plot <- ggplot(data=mod2a_lsm, aes(x = tree, y = LRR_mean, shape=exo)) +
   theme(legend.position="none") +
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
         panel.background = element_blank(), axis.line = element_line(colour = "black")) +
-  geom_signif(comparisons = list(c("Shadbush", "Barberry")), 
-              y_position = 1.35,
-              tip_length = 0.05,
-              annotation = c("Planned contrast groups")) +
-  geom_signif(y_position = c(1.35), 
-              xmin = c(0.9, 6.9), 
-              xmax = c(6.1, 10.1),
-              annotation = c(" ", " "), tip_length = 0.01) +
+  # geom_signif(comparisons = list(c("Shadbush", "Barberry")), 
+  #             y_position = 1.35,
+  #             tip_length = 0.05,
+  #             annotation = c("Planned contrast groups")) +
+  # geom_signif(y_position = c(1.35), 
+  #             xmin = c(0.9, 6.9), 
+  #             xmax = c(6.1, 10.1),
+  #             annotation = c(" ", " "), tip_length = 0.01) +
   geom_hline(yintercept=0.0,linetype=2)  +
   scale_x_discrete(labels=plant_short) +
   ylim(-0.25,1.5)
@@ -169,45 +227,113 @@ lrr_plot
 # Fig 2b #####
 model_2a_posthoc <- read.csv("./Data/Models/model2_posthoc.csv")
 
-# import p-value #
-nugget_1 <- "P = 0.364" 
 
-# this needs to use the same mean and SEM as the other figure, it currently does NOT
-
-lrr_posthoc <- ggplot(data=model_2a_posthoc, aes(x = Exo, y = emmean,shape=Exo)) +
+b1 = ggplot(data=model_2a_posthoc %>% filter(Exo %in% c("Autumn Olive","Native")), aes(x = Exo, y = emmean)) +
   theme_bw(base_size=16) +
   geom_point(size=4.5) +
   geom_errorbar(aes(ymin=emmean -(SE), ymax=emmean +(SE), width=0)) +
-  ylab("Bird effect on biomass (LRR)") +
-  xlab("Plant group") +
-  guides(shape=guide_legend(title="none")) +
+  labs(subtitle="A.",x="",y="") +
+  guides(shape=guide_legend(title="", title.position = "left")) +
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
         panel.background = element_blank(), axis.line = element_line(colour = "black")) +
-  geom_hline(yintercept=0.0,linetype=2) +
+  # geom_hline(yintercept=0.0,linetype=2) +
   ylim(-0.25,1.5) +
-  theme(axis.title.y = element_blank(),
-        axis.text.y = element_blank()) +
+  # theme(axis.title.y = element_blank(),
+  #       axis.text.y = element_blank()) +
   theme(legend.position='none') +
-  geom_signif(y_position = c(1), 
-              xmin = c(1), 
+  geom_signif(y_position = c(1),
+              xmin = c(1),
               xmax = c(2),
-              annotation = c(nugget_1), tip_length = 0.01)
+              annotation = c("P = 0.99"), tip_length = 0.01)
+b1
+
+b2 =ggplot(data=model_2a_posthoc %>% filter(Exo %in% c("Barberry","Native")), aes(x = Exo, y = emmean)) +
+  theme_bw(base_size=16) +
+  geom_point(size=4.5) +
+  geom_errorbar(aes(ymin=emmean -(SE), ymax=emmean +(SE), width=0)) +
+  labs(subtitle="B.",x="",y="") +
+  guides(shape=guide_legend(title="", title.position = "left")) +
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.background = element_blank(), axis.line = element_line(colour = "black")) +
+  # geom_hline(yintercept=0.0,linetype=2) +
+  ylim(-0.25,1.5) +
+  # theme(axis.title.y = element_blank(),
+  #       axis.text.y = element_blank()) +
+  theme(legend.position='none') +
+  geom_signif(y_position = c(1),
+              xmin = c(1),
+              xmax = c(2),
+              annotation = c("P = 0.38"), tip_length = 0.01)
+b2
+
+b3 = ggplot(data=model_2a_posthoc %>% filter(Exo %in% c("Burning Bush","Native")), aes(x = Exo, y = emmean)) +
+  theme_bw(base_size=16) +
+  geom_point(size=4.5) +
+  geom_errorbar(aes(ymin=emmean -(SE), ymax=emmean +(SE), width=0)) +
+  labs(subtitle="C.",x="",y="") +
+  guides(shape=guide_legend(title="", title.position = "left")) +
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.background = element_blank(), axis.line = element_line(colour = "black")) +
+  # geom_hline(yintercept=0.0,linetype=2) +
+  ylim(-0.25,1.5) +
+  # theme(axis.title.y = element_blank(),
+  #       axis.text.y = element_blank()) +
+  theme(legend.position='none') +
+  geom_signif(y_position = c(1),
+              xmin = c(1),
+              xmax = c(2),
+              annotation = c("P = 0.94"), tip_length = 0.01)
+b3
+
+b4 = ggplot(data=model_2a_posthoc %>% filter(Exo %in% c("Honeysuckle","Native")), aes(x = Exo, y = emmean)) +
+  theme_bw(base_size=16) +
+  geom_point(size=4.5) +
+  geom_errorbar(aes(ymin=emmean -(SE), ymax=emmean +(SE), width=0)) +
+  labs(subtitle="D.",x="",y="") +
+  guides(shape=guide_legend(title="", title.position = "left")) +
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.background = element_blank(), axis.line = element_line(colour = "black")) +
+  # geom_hline(yintercept=0.0,linetype=2) +
+  ylim(-0.25,1.5) +
+  # theme(axis.title.y = element_blank(),
+  #       axis.text.y = element_blank()) +
+  theme(legend.position='none') +
+  geom_signif(y_position = c(1),
+              xmin = c(1),
+              xmax = c(2),
+              annotation = c("P = 0.99"), tip_length = 0.01)
+b4
+
+b_ag = (b1|b2)/(b3|b4)
+
+b_fin = wrap_elements(panel=b_ag) +
+  labs(tag = "Bird effect on biomass (LRR)") +
+  theme(
+    plot.tag = element_text(size = rel(1.5), angle = 90),
+    plot.tag.position = "left"
+  )
+
+ggsave(filename = "./Figures/Fig_2_4p.svg", plot = b_fin , device = "svg",
+       width = 10, height = 10, units = "in", scale = 0.9)
+
 
 
 # merge 2a and 2b
-Fig_2ab <- ggarrange(lrr_plot, lrr_posthoc , labels = c("", ""), nrow = 1,
-                     common.legend = FALSE, widths = c(1.75, 0.5))
+# Fig_2ab <- ggarrange(lrr_plot, lrr_posthoc , labels = c("", ""), nrow = 1,
+#                      common.legend = FALSE, widths = c(1.75, 0.5))
 
-ggsave(filename = "./Figures/Fig_2ab.svg", plot = Fig_2ab , device = "svg",
-       width = 10, height = 4, units = "in", scale = 0.9)
+ggsave(filename = "./Figures/Fig_2.svg", plot = lrr_plot , device = "svg",
+       width = 6, height = 4, units = "in", scale = 0.9)
 
 
 
 
 # Fig 3abcd #####
+
 # Insect abundances #
 # Araneae plot
-spider_lsm <- read.csv("./Data/Models/spider_model.csv")
+spider_lsm <- read.csv("./Data/Models/spider_model.csv") %>%
+  mutate(exo = str_replace(exo,'Non-native','Invasive'))
 
 # ! manually set tukey letters ####
 # this is pairwise within treatment only
@@ -229,7 +355,8 @@ Fig_3a
 
 # Hemiptera plot
 
-hemiptera_lsm <- read.csv("./Data/Models/hemiptera_model.csv")
+hemiptera_lsm <- read.csv("./Data/Models/hemiptera_model.csv") %>%
+  mutate(exo = str_replace(exo,'Non-native','Invasive'))
 
 #manually set tukey letters
 hemiptera_lsm$.group2 <- c("a","a","a","a")
@@ -249,7 +376,8 @@ Fig_3b <- ggplot(data=hemiptera_lsm, aes(x = treatment, y = response)) +
 Fig_3b
 
 # Lepidopetera plot
-lepidoptera_lsm <- read.csv("./Data/Models/lepidoptera_model.csv")
+lepidoptera_lsm <- read.csv("./Data/Models/lepidoptera_model.csv") %>%
+  mutate(exo = str_replace(exo,'Non-native','Invasive'))
 
 lepidoptera_lsm
 
@@ -271,7 +399,8 @@ Fig_3c <- ggplot(data=lepidoptera_lsm, aes(x = treatment, y = response)) +
 Fig_3c
 
 # Orthoptera plot
-orthoptera_lsm <- read.csv("./Data/Models/orthoptera_model.csv")
+orthoptera_lsm <- read.csv("./Data/Models/orthoptera_model.csv") %>%
+  mutate(exo = str_replace(exo,'Non-native','Invasive'))
 
 orthoptera_lsm 
 
@@ -296,7 +425,7 @@ Fig_3d
 # Fig 3 all #####
 # arrange figure 2
 Fig_3abcd <- ggarrange(Fig_3a, Fig_3b, Fig_3c, Fig_3d,
-                       labels = c("3A","3B","3C","3D"), 
+                       labels = c("A","B","C","D"), 
                        nrow = 2, ncol = 2)
 Fig_3abcd 
 
@@ -323,14 +452,14 @@ HN_plot <- ggplot(data=mod7_summary , aes(x = tree, y = mean_nitrogen, shape=exo
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
         panel.background = element_blank(), axis.line = element_line(colour = "black")) +
   theme(legend.position="none") +
-  geom_signif(comparisons = list(c("Shadbush", "Barberry")), 
-              y_position = 11.5,
-              tip_length = 0.235,
-              annotation = c("Planned contrast groups")) +
-  geom_signif(y_position = c(11.2), 
-              xmin = c(0.9, 6.9), 
-              xmax = c(6.1, 10),
-              annotation = c(" ", " "), tip_length = 0.01) +
+  # geom_signif(comparisons = list(c("Shadbush", "Barberry")), 
+  #             y_position = 11.5,
+  #             tip_length = 0.235,
+  #             annotation = c("Planned contrast groups")) +
+  # geom_signif(y_position = c(11.2), 
+  #             xmin = c(0.9, 6.9), 
+  #             xmax = c(6.1, 10),
+  #             annotation = c(" ", " "), tip_length = 0.01) +
   scale_x_discrete(labels=plant_short) +
   ylim(9.25,11.75)
 HN_plot
@@ -338,40 +467,103 @@ HN_plot
 # 4b: Herbivore posthoc ####
 model_4b_posthoc <- read.csv("./Data/Models/mod7_posthoc.csv")
 
-# import p-value #
-nugget_2 <- "P = 0.001" 
-
-# this needs to use the same mean and SEM as the other figure, it currently does NOT
-
-model_4b_plot <- ggplot(data=model_4b_posthoc, aes(x = Exo, y = emmean,shape=Exo)) +
+b1 = ggplot(data=model_4b_posthoc %>% filter(Exo %in% c("Autumn Olive","Native")), aes(x = Exo, y = emmean)) +
   theme_bw(base_size=16) +
   geom_point(size=4.5) +
   geom_errorbar(aes(ymin=lower.CL, ymax=upper.CL, width=0)) +
-  ylab("") +
-  xlab("Plant group") +
+  labs(subtitle="A.",x="",y="") +
   guides(shape=guide_legend(title="", title.position = "left")) +
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
         panel.background = element_blank(), axis.line = element_line(colour = "black")) +
-  geom_hline(yintercept=0.0,linetype=2) +
+  # geom_hline(yintercept=0.0,linetype=2) +
   ylim(9,12) +
-  theme(axis.title.y = element_blank(),
-        axis.text.y = element_blank()) +
+  # theme(axis.title.y = element_blank(),
+  #       axis.text.y = element_blank()) +
   theme(legend.position='none') +
-  geom_signif(y_position = c(10.5), 
-              xmin = c(1), 
+  geom_signif(y_position = c(11),
+              xmin = c(1),
               xmax = c(2),
-              annotation = c(nugget_2), tip_length = 0.01)
-model_4b_plot
+              annotation = c("P = 0.19"), tip_length = 0.01)
+b1
+
+b2 =ggplot(data=model_4b_posthoc %>% filter(Exo %in% c("Barberry","Native")), aes(x = Exo, y = emmean)) +
+  theme_bw(base_size=16) +
+  geom_point(size=4.5) +
+  geom_errorbar(aes(ymin=lower.CL, ymax=upper.CL, width=0)) +
+  labs(subtitle="B.",x="",y="") +
+  guides(shape=guide_legend(title="", title.position = "left")) +
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.background = element_blank(), axis.line = element_line(colour = "black")) +
+  # geom_hline(yintercept=0.0,linetype=2) +
+  ylim(9,12) +
+  # theme(axis.title.y = element_blank(),
+  #       axis.text.y = element_blank()) +
+  theme(legend.position='none') +
+  geom_signif(y_position = c(11),
+              xmin = c(1),
+              xmax = c(2),
+              annotation = c("P = 0.99"), tip_length = 0.01)
+b2
+
+b3 = ggplot(data=model_4b_posthoc %>% filter(Exo %in% c("Burning Bush","Native")), aes(x = Exo, y = emmean)) +
+  theme_bw(base_size=16) +
+  geom_point(size=4.5) +
+  geom_errorbar(aes(ymin=lower.CL, ymax=upper.CL, width=0)) +
+  labs(subtitle="C.",x="",y="") +
+  guides(shape=guide_legend(title="", title.position = "left")) +
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.background = element_blank(), axis.line = element_line(colour = "black")) +
+  # geom_hline(yintercept=0.0,linetype=2) +
+  ylim(9,12) +
+  # theme(axis.title.y = element_blank(),
+  #       axis.text.y = element_blank()) +
+  theme(legend.position='none') +
+  geom_signif(y_position = c(11),
+              xmin = c(1),
+              xmax = c(2),
+              annotation = c("P = 0.88"), tip_length = 0.01)
+b3
+
+b4 = ggplot(data=model_4b_posthoc %>% filter(Exo %in% c("Honeysuckle","Native")), aes(x = Exo, y = emmean)) +
+  theme_bw(base_size=16) +
+  geom_point(size=4.5) +
+  geom_errorbar(aes(ymin=lower.CL, ymax=upper.CL, width=0)) +
+  labs(subtitle="D.",x="",y="") +
+  guides(shape=guide_legend(title="", title.position = "left")) +
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.background = element_blank(), axis.line = element_line(colour = "black")) +
+  # geom_hline(yintercept=0.0,linetype=2) +
+  ylim(9,12) +
+  # theme(axis.title.y = element_blank(),
+  #       axis.text.y = element_blank()) +
+  theme(legend.position='none') +
+  geom_signif(y_position = c(11.5),
+              xmin = c(1),
+              xmax = c(2),
+              annotation = c("P < 0.0001"), tip_length = 0.01)
+b4
+
+b_ag = (b1|b2)/(b3|b4)
+
+b_fin = wrap_elements(panel=b_ag) +
+  labs(tag = "% N content of herbivores") +
+  theme(
+    plot.tag = element_text(size = rel(1.5), angle = 90),
+    plot.tag.position = "left"
+  )
+
+ggsave(filename = "./Figures/Fig_4a_4p.svg", plot = b_fin , device = "svg",
+       width = 10, height = 10, units = "in", scale = 0.9)
 
 
 
 
 # Merge 4a4b ####
-Fig_4ab <- ggarrange(HN_plot, model_4b_plot, labels = c("4A", ""), nrow = 1,
-                     common.legend = FALSE, widths = c(1.75, 0.5))
+# Fig_4ab <- ggarrange(HN_plot, model_4b_plot, labels = c("4A", ""), nrow = 1,
+#                      common.legend = FALSE, widths = c(1.75, 0.5))
 
-ggsave(filename = "./Figures/Fig_4ab.svg", plot = Fig_4ab , device = "svg",
-       width = 10, height = 4, units = "in", scale = 0.9)
+ggsave(filename = "./Figures/Fig_4a.svg", plot = HN_plot , device = "svg",
+       width = 6, height = 4, units = "in", scale = 0.9)
 
 
 
@@ -392,14 +584,14 @@ SN_plot <- ggplot(data=mod9_summary , aes(x = tree, y = mean_nitrogen, shape=exo
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
         panel.background = element_blank(), axis.line = element_line(colour = "black")) +
   theme(legend.position="none") +
-  geom_signif(comparisons = list(c("Shadbush", "Barberry")), 
-              y_position = 11.9,
-              tip_length = 0.195,
-              annotation = c("Planned contrast groups")) +
-  geom_signif(y_position = c(11.7), 
-              xmin = c(0.9, 6.9), 
-              xmax = c(6.1, 10),
-              annotation = c(" ", " "), tip_length = 0.01) +
+  # geom_signif(comparisons = list(c("Shadbush", "Barberry")), 
+  #             y_position = 11.9,
+  #             tip_length = 0.195,
+  #             annotation = c("Planned contrast groups")) +
+  # geom_signif(y_position = c(11.7), 
+  #             xmin = c(0.9, 6.9), 
+  #             xmax = c(6.1, 10),
+  #             annotation = c(" ", " "), tip_length = 0.01) +
   scale_x_discrete(labels=plant_short)  +
   ylim(10.25,12.25)
 SN_plot
@@ -411,33 +603,98 @@ SN_plot
 # 4d: Spider posthoc ####
 model_4d_posthoc <- read.csv("./Data/Models/mod9_posthoc.csv")
 
-# import p-value #
-nugget_3 <- "P = 0.002" 
-
-# now uses model emmeans
-model_4d_plot <- ggplot(data=model_4d_posthoc, aes(x = Exo, y = emmean,shape=Exo)) +
+b1 = ggplot(data=model_4d_posthoc %>% filter(Exo %in% c("Autumn Olive","Native")), aes(x = Exo, y = emmean)) +
   theme_bw(base_size=16) +
   geom_point(size=4.5) +
   geom_errorbar(aes(ymin=lower.CL, ymax=upper.CL, width=0)) +
-  ylab("") +
-  xlab("Plant group") +
+  labs(subtitle="A.",x="",y="") +
   guides(shape=guide_legend(title="", title.position = "left")) +
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
         panel.background = element_blank(), axis.line = element_line(colour = "black")) +
-  geom_hline(yintercept=0.0,linetype=2) +
+  # geom_hline(yintercept=0.0,linetype=2) +
   ylim(10.25,12.25) +
-  theme(axis.title.y = element_blank(),
-        axis.text.y = element_blank()) +
+  # theme(axis.title.y = element_blank(),
+  #       axis.text.y = element_blank()) +
   theme(legend.position='none') +
   geom_signif(y_position = c(11.5), 
-              xmin = c(1), 
+              xmin = c(1),
               xmax = c(2),
-              annotation = c(nugget_3), tip_length = 0.01)
-model_4d_plot
+              annotation = c("P = 0.08"), tip_length = 0.01)
+b1
 
-Fig_4cd <- ggarrange(SN_plot, model_4d_plot, labels = c("4B", ""), nrow = 1,
-common.legend = FALSE, widths = c(1.75, 0.5))
+b2 =ggplot(data=model_4d_posthoc %>% filter(Exo %in% c("Barberry","Native")), aes(x = Exo, y = emmean)) +
+  theme_bw(base_size=16) +
+  geom_point(size=4.5) +
+  geom_errorbar(aes(ymin=lower.CL, ymax=upper.CL, width=0)) +
+  labs(subtitle="B.",x="",y="") +
+  guides(shape=guide_legend(title="", title.position = "left")) +
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.background = element_blank(), axis.line = element_line(colour = "black")) +
+  # geom_hline(yintercept=0.0,linetype=2) +
+  ylim(10.25,12.25) +
+  # theme(axis.title.y = element_blank(),
+  #       axis.text.y = element_blank()) +
+  theme(legend.position='none') +
+  geom_signif(y_position = c(11.5), 
+              xmin = c(1),
+              xmax = c(2),
+              annotation = c("P < 0.0001"), tip_length = 0.01)
+b2
 
-ggsave(filename = "./Figures/Fig_4cd.svg", plot = Fig_4cd, device = "svg",
-       width = 10, height = 4, units = "in", scale = 0.9)
+b3 = ggplot(data=model_4d_posthoc %>% filter(Exo %in% c("Burning Bush","Native")), aes(x = Exo, y = emmean)) +
+  theme_bw(base_size=16) +
+  geom_point(size=4.5) +
+  geom_errorbar(aes(ymin=lower.CL, ymax=upper.CL, width=0)) +
+  labs(subtitle="C.",x="",y="") +
+  guides(shape=guide_legend(title="", title.position = "left")) +
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.background = element_blank(), axis.line = element_line(colour = "black")) +
+  # geom_hline(yintercept=0.0,linetype=2) +
+  ylim(10.25,12.25) +
+  # theme(axis.title.y = element_blank(),
+  #       axis.text.y = element_blank()) +
+  theme(legend.position='none') +
+  geom_signif(y_position = c(11.5), 
+              xmin = c(1),
+              xmax = c(2),
+              annotation = c("P = 0.96"), tip_length = 0.01)
+b3
+
+b4 = ggplot(data=model_4d_posthoc %>% filter(Exo %in% c("Honeysuckle","Native")), aes(x = Exo, y = emmean)) +
+  theme_bw(base_size=16) +
+  geom_point(size=4.5) +
+  geom_errorbar(aes(ymin=lower.CL, ymax=upper.CL, width=0)) +
+  labs(subtitle="D.",x="",y="") +
+  guides(shape=guide_legend(title="", title.position = "left")) +
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+        panel.background = element_blank(), axis.line = element_line(colour = "black")) +
+  # geom_hline(yintercept=0.0,linetype=2) +
+  ylim(10.25,12.25) +
+  # theme(axis.title.y = element_blank(),
+  #       axis.text.y = element_blank()) +
+  theme(legend.position='none') +
+  geom_signif(y_position = c(12.0), 
+              xmin = c(1),
+              xmax = c(2),
+              annotation = c("P = 0.98"), tip_length = 0.01)
+b4
+
+b_ag = (b1|b2)/(b3|b4)
+
+b_fin = wrap_elements(panel=b_ag) +
+  labs(tag = "% N content of spiders") +
+  theme(
+    plot.tag = element_text(size = rel(1.5), angle = 90),
+    plot.tag.position = "left"
+  )
+
+ggsave(filename = "./Figures/Fig_4b_4p.svg", plot = b_fin , device = "svg",
+       width = 10, height = 10, units = "in", scale = 0.9)
+
+
+# Fig_4cd <- ggarrange(SN_plot, model_4d_plot, labels = c("4B", ""), nrow = 1,
+# common.legend = FALSE, widths = c(1.75, 0.5))
+
+ggsave(filename = "./Figures/Fig_4b.svg", plot = SN_plot, device = "svg",
+       width = 6, height = 4, units = "in", scale = 0.9)
 

@@ -11,43 +11,40 @@ library("multcomp")
 library("emmeans")
 library("plotrix") # for std.error function
 
-# Data ####
-ht_dat <- read.csv(file="./Data/Output/manuscript_dat.csv")
-
 # Native list ######
 # list of native and non-natives following the order of invasives that appear in EMMEANS
-native_list <- c("Non-native","Non-native","Native","Non-native","Non-native",
-                 "Native","Native","Native","Native", "Native")
+# native_list <- c("Non-native","Non-native","Native","Non-native","Non-native",
+#                  "Native","Native","Native","Native", "Native")
 
+native_list <- c("Autumn Olive","Barberry","Native","Burning Bush","Honeysuckle",
+"Native","Native","Native","Native", "Native")
+
+invasives = c("Autumn Olive","Barberry","Burning Bush","Honeysuckle")
 
 # Manuscript Body Analyses #####
 # These are models that go into the main figures or are connected to the main text of the manuscript
-
 # Model 1: Bagged biomass #####
 model_1 <- lmer(log(wet_mass_g) ~ tree +  (1 | branch_code), data = subset(ht_dat, treatment=="bag"))
-model_1 <- lmer(log(wet_mass_g) ~ tree + treatment + (1 | branch_code), data = ht_dat)
+# model_1 <- lmer(log(wet_mass_g) ~ tree + treatment + (1 | branch_code), data = ht_dat)
 
 Anova(model_1)
-
 biomass_lsm <- emmeans(model_1, ~ tree, type="response")
-
 biomass_cld <- cld(biomass_lsm, adjust="none", type="response")
 
 # figure generation
 # write a summary table of totals and means for insects by host plant
 # mean, total, SEM
-
-biomass_summary <- ht_dat %>% 
-  # filter(treatment == 'bag') %>%
-  group_by(tree,exo) %>% 
-  summarise(biomass_mean = mean(wet_mass_g, na.rm=TRUE), sem = std.error(wet_mass_g, na.rm=TRUE)) 
+biomass_summary <- ht_dat %>%
+# filter(treatment == 'bag') %>%
+  group_by(tree,exo) %>%
+  summarise(biomass_mean = mean(wet_mass_g, na.rm=TRUE), sem = std.error(wet_mass_g, na.rm=TRUE))
 
 # merge biomass cld with biomass_summary
 biomass_summary <- biomass_summary %>%
   left_join(y=biomass_cld, by = c("tree"))%>%
   as.data.frame()
 
-# write the arranged model outputs 
+# write the arranged model outputs
 write.csv(biomass_summary, "./Data/Models/model1.csv")
 
 # Planned contrast method ######
@@ -55,36 +52,38 @@ write.csv(biomass_summary, "./Data/Models/model1.csv")
 Anova(model_1)
 summary(model_1)
 
-
 # apply native vs non-native list to lsm table
 biomass_group <- add_grouping(biomass_lsm, "Exo", "tree", native_list)
 str(biomass_group)
 
 # write the contrast, then save the contrast values and round to nearest 3rd decimal
-biomass_contrast <- emmeans(biomass_group, pairwise ~ Exo)
+# biomass_contrast <- emmeans(biomass_group, pairwise ~ Exo)
+biomass_contrast <- emmeans(biomass_group, trt.vs.ctrlk ~ Exo, ref=5) #native is 5th row in $emmeans
+# even with dunnett's test (least conservative) no significant diff between invasives and natives
 
 # make an object with just emmeans
-bcm_1 <- biomass_contrast$emmeans %>% 
-  as.data.frame() %>% 
-  mutate(across(where(is.numeric), ~ round(., 3))) 
+bcm_1 <- biomass_contrast$emmeans %>%
+  as.data.frame() %>%
+  mutate(across(where(is.numeric), ~ round(., 3)))
 
 # make headers lower case
 names(bcm_1) <- tolower(names(bcm_1))
 bcm_1
-
 # find mean and SE for all native and non-native plants
-bcm_summary <- ht_dat %>% 
-  # filter(treatment == 'bag') %>%
-  group_by(exo) %>% 
-  summarise(biomass_mean = mean(wet_mass_g, na.rm=TRUE), sem = std.error(wet_mass_g, na.rm=TRUE)) 
+
+bcm_summary <- ht_dat %>%
+# filter(treatment == 'bag') %>%
+  mutate(exo = ifelse(tree %in% invasives,tree,"Native")) %>% #added to get correct means for plotting
+  group_by(exo) %>%
+  summarise(biomass_mean = mean(wet_mass_g, na.rm=TRUE), sem = std.error(wet_mass_g, na.rm=TRUE))
 
 # merge biomass contrasts with mean and SE
 bcm_1 <- bcm_1 %>%
   left_join(y=bcm_summary , by = c("exo"))%>%
   as.data.frame()
 
-
 write.csv(bcm_1, "./Data/Models/model1_posthoc.csv")
+biomass_contrast
 
 
 
@@ -171,9 +170,9 @@ lrr_group <- add_grouping(lrr_lsm, "Exo", "tree", native_list)
 lrr_group
 
 # write the contrast, then save the contrast values and round to nearest 3rd decimal
-lrr_contrast <- emmeans(lrr_group, pairwise ~ Exo)
+lrr_contrast <- emmeans(lrr_group, trt.vs.ctrlk ~ Exo, ref=5) #native is 5th row in $emmeans
 
-lrr_contrast$contrasts %>% 
+lrr_contrast$emmeans %>% 
   as.data.frame() %>% 
   mutate(across(where(is.numeric), ~ round(., 3))) %>%
   write.csv("./Data/Models/model2_posthoc.csv")
@@ -252,7 +251,8 @@ mod7_group <- add_grouping(mod7_lsm, "Exo", "tree", native_list)
 mod7_group
 
 # write the contrast, then save the contrast values and round to nearest 3rd decimal
-mod7_contrast <- emmeans(mod7_group, pairwise ~ Exo)
+mod7_contrast <- emmeans(mod7_group, trt.vs.ctrlk ~ Exo, ref=5) #native is 5th row in $emmeans
+
 
 mod7_contrast$emmeans %>% 
   as.data.frame() %>% 
@@ -306,7 +306,8 @@ mod9_group <- add_grouping(mod9_lsm, "Exo", "tree", native_list)
 mod9_group
 
 # write the contrast, then save the contrast values and round to nearest 3rd decimal
-mod9_contrast <- emmeans(mod9_group, pairwise ~ Exo)
+mod9_contrast <- emmeans(mod9_group, trt.vs.ctrlk ~ Exo, ref=5) #native is 5th row in $emmeans
+
 
 mod9_contrast$emmeans %>% 
   as.data.frame() %>% 
