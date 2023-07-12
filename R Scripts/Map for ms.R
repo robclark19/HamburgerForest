@@ -18,12 +18,12 @@ dat = read_excel("./Data/Originals/full branch data 2021.xlsx",
 ct = tigris::states(cb=T,resolution="20m") %>%
   filter(STUSPS=="CT")
 
-# Red = B, Gold = C
+# Red = B, Gold/Blue = C
 ggplot() +
-  base_map(st_bbox(dat) %>% expand_bbox(X=100,Y=0),basemap='mapnik',increase_zoom=2,nolabels=T) +
-  geom_sf(data=dat,aes(colour=bird_treatment),alpha=.8) +
-  scale_colour_manual(values=c('red','gold')) +
-  scale_x_continuous(limits=c(-73.542,-73.522)) + scale_y_continuous() +
+  base_map(st_bbox(dat) %>% expand_bbox(X=100,Y=0),basemap='mapnik',increase_zoom=3,nolabels=T) +
+  geom_sf(data=dat,aes(colour=bird_treatment),alpha=.8,size=2,shape=4) +
+  scale_colour_manual(values=c('red','blue')) +
+  scale_x_continuous(limits=c(-73.536,-73.522), breaks=c(seq(-73.536,-73.522,.004))) + scale_y_continuous() +
   labs(caption = "Map © 2023 OpenStreetMap") +
   coord_sf() +
   theme(
@@ -31,4 +31,4 @@ ggplot() +
     panel.grid = element_blank(),
     legend.position = 'none'
   )
-ggsave(filename="map.png",path="./Figures",width=6,height=6,units='in',dpi=300)
+ggsave(filename="map.png",path="./Figures",width=5,height=8,units='in',dpi=600)
