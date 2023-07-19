@@ -149,13 +149,13 @@ plot.tag = element_text(size = rel(1.5), angle = 90),
 plot.tag.position = "left"
 )
 
-ggsave(filename = "./Figures/Fig_1_4p.svg", plot = b_fin , device = "svg",
+ggsave(filename = "./Figures/Fig_1_4p.png", plot = b_fin , device = "png",
 width = 10, height = 10, units = "in", scale = 0.9)
 
 
 # merge 1a and 1b
-ggsave(filename = "./Figures/Fig_1.svg", plot = biomass_plot , device = "svg",
-       width = 6, height = 4, units = "in", scale = 0.9)
+ggsave(filename = "./Figures/Fig_1.png", plot = biomass_plot , device = "png",
+       width = 8, height = 4, units = "in", scale = 0.9)
 
 
 
@@ -313,7 +313,7 @@ b_fin = wrap_elements(panel=b_ag) +
     plot.tag.position = "left"
   )
 
-ggsave(filename = "./Figures/Fig_2_4p.svg", plot = b_fin , device = "svg",
+ggsave(filename = "./Figures/Fig_2_4p.png", plot = b_fin , device = "png",
        width = 10, height = 10, units = "in", scale = 0.9)
 
 
@@ -322,13 +322,14 @@ ggsave(filename = "./Figures/Fig_2_4p.svg", plot = b_fin , device = "svg",
 # Fig_2ab <- ggarrange(lrr_plot, lrr_posthoc , labels = c("", ""), nrow = 1,
 #                      common.legend = FALSE, widths = c(1.75, 0.5))
 
-ggsave(filename = "./Figures/Fig_2.svg", plot = lrr_plot , device = "svg",
-       width = 6, height = 4, units = "in", scale = 0.9)
+ggsave(filename = "./Figures/Fig_2.png", plot = lrr_plot , device = "png",
+       width = 8, height = 4, units = "in", scale = 0.9)
 
 
 
 
-# Fig 3abcd #####
+# Fig S3 #####
+# Now supplemental figure not in manuscript
 
 # Insect abundances #
 # Araneae plot
@@ -422,22 +423,21 @@ Fig_3d <- ggplot(data=orthoptera_lsm, aes(x = treatment, y = response)) +
 Fig_3d
 
 
-# Fig 3 all #####
-# arrange figure 2
+# Fig S3 all #####
 Fig_3abcd <- ggarrange(Fig_3a, Fig_3b, Fig_3c, Fig_3d,
                        labels = c("A","B","C","D"), 
                        nrow = 2, ncol = 2)
 Fig_3abcd 
 
 # write figure 3 to folder
-ggsave(filename = "./Figures/Fig3abcd.svg", plot = Fig_3abcd, device = "svg",
+ggsave(filename = "./Figures/FigS3.png", plot = Fig_3abcd, device = "png",
        width = 6, height = 5, units = "in")
 
 
 
 
 
-# Fig 4 #####
+# Fig 3 #####
 # 4a: Herbivore N % ######
 mod7_summary <- read.csv("./Data/Models/model7.csv")
 mod7_summary  <- arrange(transform(mod7_summary , tree=factor(tree,levels=biomass_order)), tree) 
@@ -464,7 +464,7 @@ HN_plot <- ggplot(data=mod7_summary , aes(x = tree, y = mean_nitrogen, shape=exo
   ylim(9.25,11.75)
 HN_plot
 
-# 4b: Herbivore posthoc ####
+# 3b: Herbivore posthoc ####
 model_4b_posthoc <- read.csv("./Data/Models/mod7_posthoc.csv")
 
 b1 = ggplot(data=model_4b_posthoc %>% filter(Exo %in% c("Autumn Olive","Native")), aes(x = Exo, y = emmean)) +
@@ -552,7 +552,7 @@ b_fin = wrap_elements(panel=b_ag) +
     plot.tag.position = "left"
   )
 
-ggsave(filename = "./Figures/Fig_4a_4p.svg", plot = b_fin , device = "svg",
+ggsave(filename = "./Figures/Fig_3_4p.png", plot = b_fin , device = "png",
        width = 10, height = 10, units = "in", scale = 0.9)
 
 
@@ -562,8 +562,8 @@ ggsave(filename = "./Figures/Fig_4a_4p.svg", plot = b_fin , device = "svg",
 # Fig_4ab <- ggarrange(HN_plot, model_4b_plot, labels = c("4A", ""), nrow = 1,
 #                      common.legend = FALSE, widths = c(1.75, 0.5))
 
-ggsave(filename = "./Figures/Fig_4a.svg", plot = HN_plot , device = "svg",
-       width = 6, height = 4, units = "in", scale = 0.9)
+ggsave(filename = "./Figures/Fig_3.png", plot = HN_plot , device = "png",
+       width = 8, height = 4, units = "in", scale = 0.9)
 
 
 
@@ -688,13 +688,13 @@ b_fin = wrap_elements(panel=b_ag) +
     plot.tag.position = "left"
   )
 
-ggsave(filename = "./Figures/Fig_4b_4p.svg", plot = b_fin , device = "svg",
+ggsave(filename = "./Figures/Fig_4_4p.png", plot = b_fin , device = "png",
        width = 10, height = 10, units = "in", scale = 0.9)
 
 
 # Fig_4cd <- ggarrange(SN_plot, model_4d_plot, labels = c("4B", ""), nrow = 1,
 # common.legend = FALSE, widths = c(1.75, 0.5))
 
-ggsave(filename = "./Figures/Fig_4b.svg", plot = SN_plot, device = "svg",
-       width = 6, height = 4, units = "in", scale = 0.9)
+ggsave(filename = "./Figures/Fig_4.png", plot = SN_plot, device = "png",
+       width = 8, height = 4, units = "in", scale = 0.9)
 
