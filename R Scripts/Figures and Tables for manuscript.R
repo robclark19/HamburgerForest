@@ -154,7 +154,7 @@ width = 10, height = 10, units = "in", scale = 0.9)
 
 
 # merge 1a and 1b
-ggsave(filename = "./Figures/Fig_1.png", plot = biomass_plot , device = "png",
+ggsave(filename = "./Figures/Fig_S4.png", plot = biomass_plot , device = "png",
        width = 8, height = 4, units = "in", scale = 0.9)
 
 
@@ -562,8 +562,8 @@ ggsave(filename = "./Figures/Fig_3_4p.png", plot = b_fin , device = "png",
 # Fig_4ab <- ggarrange(HN_plot, model_4b_plot, labels = c("4A", ""), nrow = 1,
 #                      common.legend = FALSE, widths = c(1.75, 0.5))
 
-ggsave(filename = "./Figures/Fig_3.png", plot = HN_plot , device = "png",
-       width = 8, height = 4, units = "in", scale = 0.9)
+# ggsave(filename = "./Figures/Fig_3.png", plot = HN_plot , device = "png",
+#        width = 8, height = 4, units = "in", scale = 0.9)
 
 
 
@@ -694,7 +694,7 @@ ggsave(filename = "./Figures/Fig_4_4p.png", plot = b_fin , device = "png",
 
 # Fig_4cd <- ggarrange(SN_plot, model_4d_plot, labels = c("4B", ""), nrow = 1,
 # common.legend = FALSE, widths = c(1.75, 0.5))
-
-ggsave(filename = "./Figures/Fig_4.png", plot = SN_plot, device = "png",
-       width = 8, height = 4, units = "in", scale = 0.9)
+# 
+# ggsave(filename = "./Figures/Fig_4.png", plot = SN_plot, device = "png",
+#        width = 8, height = 4, units = "in", scale = 0.9)
 
