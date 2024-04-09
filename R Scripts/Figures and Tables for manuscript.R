@@ -143,7 +143,7 @@ b4
 b_ag = (b1|b2)/(b3|b4)
 
 b_fin = wrap_elements(panel=b_ag) +
-labs(tag = "Arthropod biomass on bagged branches") +
+labs(tag = "Arthropod biomass on bird-exclusion branches") +
 theme(
 plot.tag = element_text(size = rel(1.5), angle = 90),
 plot.tag.position = "left"
